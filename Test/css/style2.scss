@@ -1,0 +1,42 @@
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    height: 50px;
+    border: solid 1px #eee;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+    padding: 0 24px;
+    
+
+    .title {
+
+        a {
+            text-decoration: none;
+            color: #000;
+            padding: 5px 5px;
+
+            &:hover {
+                text-decoration: underline solid #e55 3px;
+            }
+        }
+    }
+
+    .menu {
+        list-style: none;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        &-item {
+            display: inline-block;
+            list-style: none;
+            padding: 0 12px;
+        }
+    }
+}
