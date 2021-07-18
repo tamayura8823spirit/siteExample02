@@ -1,0 +1,39 @@
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 60px 25px;
+    background-color: #cfc;
+
+
+    .box {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 0;
+
+
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .boxImg {
+            background-color: #fcc;
+            height: 200px;
+            width: 280px;
+            box-shadow: 0 0 3px 1px rgba(0 ,0 ,0 , 0.16);
+        }
+
+        .boxItem {
+            width: 280px;
+
+            .boxTitle {
+                font-size: large;
+                font-weight: bold;
+                color: #f55;
+            }
+
+            .boxText {
+
+            }
+        }
+    }
+}

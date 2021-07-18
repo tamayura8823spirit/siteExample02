@@ -1,0 +1,42 @@
+.container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 60px 25px;
+  background-color: #cfc;
+}
+
+.container .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 0;
+}
+
+.container .box:nth-child(odd) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.container .box .boxImg {
+  background-color: #fcc;
+  height: 200px;
+  width: 280px;
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.16);
+}
+
+.container .box .boxItem {
+  width: 280px;
+}
+
+.container .box .boxItem .boxTitle {
+  font-size: large;
+  font-weight: bold;
+  color: #f55;
+}
+/*# sourceMappingURL=style.css.map */
