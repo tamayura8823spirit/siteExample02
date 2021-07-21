@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style6.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- デモマーク -->
+        <div class="demo">DEMO（デモ）</div>
+    
+        <!-- スワイパー -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://picsum.photos/700/400" alt="Swiper01"></div>
+                <div class="swiper-slide"><img src="https://picsum.photos/699/400" alt="Swiper02"></div>
+                <div class="swiper-slide"><img src="https://picsum.photos/700/399" alt="Swiper03"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+    </div>
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+
+        // swiper.js の起動
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            autoplay: {
+		        delay: 3000,
+	        	disableOnInteraction: true
+	        },
+            speed: 200,
+            pagination: {
+	            el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+
+    </script>
+</body>
+</html>
