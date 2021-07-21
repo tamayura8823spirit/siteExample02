@@ -1,0 +1,63 @@
+
+.demo {
+    background-color: #35b;
+    color: #fff;
+    margin: 20px 20px;
+    padding: 10px 13px;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 2px;
+
+    &::after{
+        background-color: #35b;
+        height: 10px;
+        width: 10px;
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        z-index: -100;
+    }
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+    &>*+* {
+        margin-top: 30px;
+    }
+
+    .swiper-container {
+        text-align: center;
+        background-color: #eee;
+        border-radius: 8px;
+
+        // スクロールボタンのアイコンを変更
+        .swiper-button-prev {
+            background: url(https://haniwaman.com/wp/wp-content/uploads/2018/05/swiper3.png) no-repeat center center / contain;
+            width: 32px;
+            height: 32px;
+            margin-top: -16px;
+
+            &::after {
+                content: "";
+            }
+        }
+        .swiper-button-next {
+            background: url(https://haniwaman.com/wp/wp-content/uploads/2018/05/swiper4.png) no-repeat center center / contain;
+            width: 32px;
+            height: 32px;
+            margin-top: -16px;
+
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    
+
+}
