@@ -1,0 +1,12 @@
+.dropdown-menu {
+  border: none;
+}
+
+.dropdown-menu li {
+  padding: .5rem 1.5rem;
+}
+
+.dropdown-menu li:not(:nth-child(3)) {
+  border-bottom: solid 1px #eee;
+}
+/*# sourceMappingURL=style7.css.map */
