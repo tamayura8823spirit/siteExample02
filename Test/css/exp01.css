@@ -1,0 +1,78 @@
+.container {
+  width: 80%;
+  margin: 15px auto 100px;
+}
+
+.container > h2 {
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+.unko {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+}
+
+.unko__items {
+  height: 250px;
+  text-align: center;
+  background-color: #ddd;
+}
+
+.unko__items a {
+  text-decoration: none;
+  color: #000;
+}
+
+.unko__item1 a {
+  display: inline-block;
+  background-color: #fcc;
+}
+
+.unko__item2 {
+  line-height: 250px;
+}
+
+.unko__item2 a {
+  display: inline-block;
+  background-color: #fcc;
+  white-space: nowrap;
+}
+
+.unko__item3 {
+  line-height: 250px;
+}
+
+.unko__item3 a {
+  display: block;
+  background-color: #fcc;
+  white-space: nowrap;
+}
+
+.unko__item4 a {
+  display: block;
+  background-color: #fcc;
+  padding: 113px 0;
+  white-space: nowrap;
+}
+
+.unko__item5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.unko__item5 a {
+  display: block;
+  background-color: #fcc;
+}
+/*# sourceMappingURL=exp01.css.map */
