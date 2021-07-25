@@ -1,0 +1,278 @@
+.container {
+  width: 80%;
+  margin: 15px auto 0;
+}
+
+.container > * + * {
+  margin-top: 30px;
+}
+
+.container > h2 {
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+.container > * + h2 {
+  margin-top: 300px;
+}
+
+.menu1 {
+  border: 1px solid #35b;
+}
+
+.menu1__ttl {
+  background-color: #35b;
+  color: #fff;
+  padding: .4em .8em;
+  font-weight: bold;
+}
+
+.menu1 ul {
+  margin: 0;
+}
+
+.menu1 ul li {
+  padding: .4em 1.2em;
+}
+
+.menu1 ul li:nth-child(-n+2) {
+  border-bottom: 1px dotted #35b;
+}
+
+.menu1 ul li a {
+  font-weight: bold;
+  color: #35b;
+  text-decoration: none;
+}
+
+.menu2 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu2 ul li {
+  width: 20%;
+  position: relative;
+}
+
+.menu2 ul li::before {
+  content: '';
+}
+
+.menu2 ul li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  text-align: center;
+  padding: 8px 12px;
+}
+
+.menu2 ul li a:hover {
+  background-color: #eee;
+}
+
+.menu2 ul li ul {
+  width: 100%;
+  display: none;
+}
+
+.menu2 ul li:hover ul {
+  display: block;
+}
+
+.menu2 ul li li {
+  width: 100%;
+}
+
+.menu3 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu3 ul li {
+  width: 20%;
+}
+
+.menu3 ul li a {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  display: block;
+  padding: 8px 12px;
+}
+
+.menu3 ul li a span {
+  font-size: .7em;
+  display: block;
+  white-space: nowrap;
+}
+
+.menu3 ul li a:hover {
+  background-color: #eee;
+}
+
+.menu4 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.menu4 ul li:nth-child(n+2):nth-child(-n+5) {
+  border-left: 1px solid #ddd;
+}
+
+.menu4 ul li::before {
+  content: "";
+}
+
+.menu4 ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: .4em .8em;
+  display: block;
+}
+
+.menu4 ul li a:hover {
+  background-color: #eee;
+}
+
+.menu5 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu5 ul li {
+  width: 100%;
+}
+
+.menu5 ul li::before {
+  content: "";
+}
+
+.menu5 ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: .4em .8em;
+  display: block;
+  text-align: center;
+}
+
+.menu5 ul li a:hover {
+  background-color: #eee;
+}
+
+.menu6 li {
+  width: 100%;
+}
+
+.menu6 li::before {
+  content: "";
+}
+
+.menu6 li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: .4em .8em;
+}
+
+.menu6 li a:hover {
+  background-color: #eee;
+}
+
+.menu6 li li a {
+  padding-left: 1.8em;
+  font-size: .9em;
+}
+
+.menu7 li {
+  width: 100%;
+  counter-increment: number;
+}
+
+.menu7 li::before {
+  content: "";
+}
+
+.menu7 li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: .4em .8em;
+  margin: 0.2em 0;
+}
+
+.menu7 li a:hover {
+  background-color: #eee;
+}
+
+.menu7 li a::before {
+  content: counter(number);
+  color: #fff;
+  background-color: #f43;
+  padding: .4em .4em;
+  font-size: .9em;
+  margin-right: 0.5em;
+}
+
+.menu8 li {
+  width: 100%;
+  position: relative;
+}
+
+.menu8 li::before {
+  content: "";
+}
+
+.menu8 li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: .4em .8em;
+  margin: 0.2em 0;
+}
+
+.menu8 li a i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.menu8 li a:hover {
+  background-color: #eee;
+}
+
+.menu9 li {
+  width: 100%;
+  position: relative;
+}
+
+.menu9 li::before {
+  content: "";
+}
+
+.menu9 li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: .4em .8em;
+  margin: 0.2em 0;
+}
+
+.menu9 li a:hover {
+  background-color: #eee;
+}
+/*# sourceMappingURL=styleMenu.css.map */
