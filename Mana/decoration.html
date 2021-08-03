@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="node_modules/luminous-lightbox/dist/luminous-basic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/decoration.css">
+
+</head>
+<body>
+
+    <div class="post-title1" data-aos="fade-right">
+        <h2>吾輩は猫である。名前はまだない。</h2>
+    </div>
+    
+    <div class="post-title2">
+        <h1 class="animate__animated animate__bounce">吾輩は猫である。名前はまだない。</h1>
+    </div>
+
+    <div>
+        <img class="post-img" data-aos="flip-left" src="https://picsum.photos/300/200" alt="猫">
+        <p class="post-desc">
+            猫を飼い始めることになったら、まず何が必要なのでしょうか？<br>
+            必ず必要になるグッズと、あると便利な猫グッズを紹介します。<br>
+            猫はこれからの１０数年、共に生きていく家族の一員です。<br>
+            気持ちよく生活をスタートできるよう、事前にしっかりと準備しておきましょう！<br>
+            おすすめのキャットフードランキングもまとめました！
+        </p>
+    </div>
+
+
+    <div class="btn">
+        <button data-aos="flip-up">続きを読む</button>
+        <nav data-aos="slide-up">
+            <ul>
+                <li>ありしひのアリクイ</li>
+                <li>ありしひのアリクイ</li>
+                <li>ありしひのアリクイ</li>
+            </ul>
+        </nav>
+        <p data-aos="slide-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
+
+
+    <div>
+        <div class="blendImg" data-aos="zoom-in"></div>
+        <div class="blendImg2" data-aos="zoom-out"></div>
+        <div class="blendImg3" data-aos="fade-up"  data-aos-duration="800">
+            <h1>Small Hanges, <br>Big Results</h1>
+        </div>
+    </div>
+
+
+    <div class="clip">
+        <div class="stripe"></div>
+    </div>
+
+
+    <!-- <img src="https://picsum.photos/300/200" alt="kaniba" 
+    sizes="100vw"
+    srcset="img/el-6494302_1920.jpg 2000w,
+    img/the-sun-3057622_1280.jpg 1500w,
+    img/macroperspective-6503070_640.jpg 1000w"> -->
+
+
+    <a href="https://picsum.photos/1600/800" class="luminous">
+        ここをクリックすると画像が表示されるよ
+    </a>
+
+
+    <div class="home-chart">
+        <div class="pie-chart"></div>
+    </div>
+
+
+    <div class="home-chart">
+        <div class="bar-chart"></div>
+        <p>リモート社員数の推移</p>
+    </div>
+
+
+
+    <script src="node_modules/luminous-lightbox/dist/Luminous.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        new Luminous(document.querySelector(".luminous"));
+
+
+        // 円グラフ
+        var pieData =  {
+            labels: ['Webデザイナー','Webデベロッパー','サーバーエンジニア','営業職'],
+            series: [14,9,8,6]
+        };
+        var pieOptions = {
+            width: '100%',
+            height: '440px'
+        };
+        new Chartist.Pie('.pie-chart', pieData, pieOptions);
+        
+        
+        // 棒グラフ
+        var barData =  {
+            labels: ['2018年','2019年','2020年'],
+            series: [[10,16,29]]
+        };
+        var barOptions = {
+            axisY: {
+                offset: 60,
+                scaleMinSpace: 50,
+                labelInterpolationFnc: function(value) {
+                    return value + ' 人'
+                }
+            },
+            width: '100%',
+            height: '400px'
+        };
+        new Chartist.Bar('.bar-chart', barData, barOptions);
+
+
+
+        // AOSを実行するよ
+        AOS.init();
+
+    </script>
+
+</body>
+</html>

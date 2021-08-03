@@ -1,0 +1,198 @@
+body {
+    margin-bottom: 300px;
+
+    &>*+* {
+        margin-top: 300px;
+    }
+
+}
+
+.post-title1 {
+    padding-bottom: 10px;
+    background-image: linear-gradient(45deg, #fff 30%, #464 30%, #464 50%, #fff 50%, #fff 80%, #464 80%, #464 100%);
+    background-size: 6px 6px;
+    width: 400px;
+
+    h2 {
+        background-color: #fff;
+        color: #464;
+        padding: 0.5rem 0.875rem;
+        padding-right: 0;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+}
+
+.post-title2 {
+
+    h1 {
+        background: linear-gradient(transparent 50%, #ff6 50%);
+        display: inline-block;
+        padding-bottom: .25rem;
+    }
+}
+
+ 
+.post-img {
+    height: 260px;
+    object-fit: cover;
+    border-radius: 40% 70% 50% 30% / 50%;
+    margin-right: 200px;
+    shape-outside: circle();
+    float: left;
+
+    p {
+       clear: left;
+    }
+}    
+
+
+.btn {
+    display: flex;
+    
+    button {
+        margin-left: 10px;
+        height: 80px;
+        width: 300px;
+        background-color: rgb(207, 94, 81);
+        color: rgb(235, 235, 235);
+        font-size: 1.4em;
+        border: 3px dashed rgb(158, 61, 50);
+        box-shadow: 0 0 0 5px rgb(207, 94, 81);
+        border-radius: 10px;    
+    }
+
+    nav {
+        margin-left: 20px;
+        width: 200px;
+        line-height: 60px;
+        text-align: center;
+        background-color: #eee;
+        padding: 20px;
+        border: 1px solid #999;
+        border-radius: 7px;
+        outline:2px solid #999;
+        outline-offset: 4px;
+    }
+
+    p {
+        width: 400px;
+        padding: 20px;
+        margin-left: 20px;
+        background-color: #eee;
+        border: 2px dashed #555;
+        border-radius: 5px 50px 5px 50px / 50px 5px 50px 5px;
+    }
+}
+
+
+.blendImg {
+    background-image: url('../img/book-1659717.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #4db1ec;
+    background-blend-mode: hard-light;
+}
+
+.blendImg2 {
+    background-image: url('../img/img03.jpg') , url('../img/drops-6389474_1920.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #4db1ec;
+    background-blend-mode: hard-light;
+}
+
+.blendImg3 {
+    background-image: url('../img/book-1659717.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 6rem;
+        text-align: center;
+        font-weight: bold;
+        mix-blend-mode: overlay;
+        margin: 0;
+    }
+}
+
+
+.clip {
+    height: 300px; 
+    width: 100%;  
+    background-image: url("../img/book-1659717.jpg");
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 60px, 100% 210px, 0 100%);
+    
+    .stripe {
+        height: 100%;
+        width: 100%;  
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px, #fff 3px, #fff 4px);
+                    // repeating-linear-gradient(90deg, transparent, transparent 3px, #fff 3px, #fff 4px);
+    }
+}
+
+
+.luminous {
+    display: inline-block;
+    text-decoration: none;
+    color: blue;
+    font-size: 1.5rem;
+}
+
+.lum-lightbox {
+    margin: 0;
+    
+    .lum-lightbox-inner img {
+        max-width: 80vw;
+        min-height: 80vh;
+        object-fit: contain;
+    }
+}
+
+
+// グラフの文字
+.ct-label {
+    font-size: 1rem;
+    fill: #fff;
+}
+
+// 円グラフ
+.ct-series-a .ct-slice-pie {
+    fill: #2d3374;
+}
+.ct-series-b .ct-slice-pie {
+    fill: #3a7edf;
+}
+.ct-series-c .ct-slice-pie {
+    fill: #9cf;
+}
+.ct-series-d .ct-slice-pie {
+    fill: #bbb;
+}
+
+// 棒グラフ
+.ct-series-a .ct-bar {
+    stroke: #37d
+}
+.ct-bar {
+    stroke-width: 16%;
+}
+.home-chart {
+    p {
+        text-align: center;
+    }
+}
+
+

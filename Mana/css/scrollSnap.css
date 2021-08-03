@@ -1,0 +1,47 @@
+.container {
+  overflow: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+.container h1 {
+  color: aqua;
+  margin: 0;
+}
+
+.container section {
+  height: 100vh;
+  scroll-snap-align: start;
+  background: url("https://picsum.photos/1000/1000") no-repeat center center;
+  background-size: cover;
+}
+
+.section {
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  margin: 0 auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  background-color: #0865a3;
+}
+
+.section__item {
+  height: 200px;
+  min-width: 300px;
+  margin: 10px 5px;
+  scroll-snap-align: start;
+  scroll-margin: 10px;
+}
+
+.section__item:nth-child(even) {
+  background-color: #fcc;
+}
+
+.section__item:nth-child(odd) {
+  background-color: #cfc;
+}
+/*# sourceMappingURL=scrollSnap.css.map */

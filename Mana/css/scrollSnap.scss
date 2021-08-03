@@ -1,0 +1,43 @@
+.container {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+
+    h1 {
+        color: aqua;
+        margin: 0;
+    }
+
+    section {
+        height: 100vh;
+        scroll-snap-align: start;
+
+        background: url('https://picsum.photos/1000/1000') no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.section {
+    overflow-x: auto;
+    display: flex;
+    width: 30%;
+    margin: 0 auto;
+    scroll-snap-type: x mandatory;
+    background-color: rgb(8, 101, 163);
+
+    &__item {
+        height: 200px;
+        min-width: 300px;
+        margin: 10px 5px;
+        scroll-snap-align: start;
+        scroll-margin: 10px;
+
+        &:nth-child(even){
+            background-color: #fcc;
+        }
+
+        &:nth-child(odd){
+            background-color: #cfc;
+        }
+    }
+}
