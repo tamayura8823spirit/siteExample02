@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/wow.js/css/libs/animate.css">
+    <link rel="stylesheet" href="css/wow.css">
+
+</head>
+<body>
+
+    <img class="parallax1" src="img/controller-1294077_640.png" alt="">
+    <img class="parallax2" src="img/film-reel-147631_640.png" alt="">
+
+    <div class="container">
+
+
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow shake">セクション1</h2>
+                <p class="wow swing">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+    
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow wobble">セクション2</h2>
+                <p class="wow bounceIn">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+    
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow fadeIn">セクション3</h2>
+                <p class="wow flipInX">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+    
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow rotateIn">セクション4</h2>
+                <p class="wow hinge">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+    
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow rollIn">セクション5</h2>
+                <p class="wow rotateOutUpRight">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow slideInDown">セクション6</h2>
+                <p class="wow tada">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+        
+        
+        <section class="section">
+            <div class="inner">
+                <h2 class="wow flash">セクション7</h2>
+                <p class="wow lightSpeedOut">コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+            </div>
+        </section>
+
+    </div>
+
+
+
+    
+    <div class="main-content-wrapper">
+        <!-- section1 -->
+        <section id="section1" class="section">
+        <div class="inner">
+        <h2>セクション1</h2>
+        <p>コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+        </div><!-- /inner -->
+        </section><!-- /section1 -->
+
+        <!-- section2 -->
+        <section id="section2" class="section">
+        <div class="inner">
+        <h2>セクション2</h2>
+        <p>コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+        </div><!-- /inner -->
+        </section><!-- /section2 -->
+        
+        <!-- section3 -->
+        <section id="section3" class="section">
+        <div class="inner">
+        <h2>セクション3</h2>
+        <p>コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+        </div><!-- /inner -->
+        </section><!-- /section3 -->
+        
+        <section id="section4" class="section">
+        <div class="inner">
+        <h2>セクション4</h2>
+        <p>コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+        </div><!-- /inner -->
+        </section><!-- /section4 -->
+        
+        <section id="section5" class="section">
+        <div class="inner">
+        <h2>セクション5</h2>
+        <p>コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。コンテンツです。</p>
+        </div><!-- /inner -->
+        </section><!-- /section5 -->
+    </div><!-- /main-content-wrapper -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="node_modules/wow.js/dist/wow.min.js"></script>
+    <script src="js/jquery.stickystack.min.js"></script>
+    <script>
+        new WOW().init();
+
+        // $('.inner > h2,p').attr('data-wow-iteration','100')
+
+        $(window).on( 'scroll', function() {
+            scrolled = $(window).scrollTop();
+            weight1 = 0.5;
+            weight2 = 0.12;
+            $( '.parallax1' ).css( 'top', 300 - scrolled * weight1 + 'px' );
+            $( '.parallax2' ).css( 'top', 100 - scrolled * weight2 + 'px' );
+        });
+
+        $( '.main-content-wrapper' ).stickyStack();
+
+    </script>
+</body>
+
+</html>
