@@ -1,0 +1,153 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.container > * + * {
+  margin-top: 80px;
+}
+
+form input {
+  display: block;
+}
+
+form .checkbox {
+  margin-top: 18px;
+}
+
+form .checkbox [type="checkbox"] {
+  display: inline-block;
+  display: none;
+}
+
+form .checkbox [type="checkbox"]:checked + label {
+  padding-left: 2em;
+}
+
+form .checkbox [type="checkbox"]:checked + label::before {
+  width: 1.8em;
+  height: 1.8em;
+  -webkit-transform: translateY(-50%) rotate(-360deg);
+          transform: translateY(-50%) rotate(-360deg);
+  background: #F44336;
+}
+
+form .checkbox [type="checkbox"]:checked + label::after {
+  -webkit-transform: translateY(-50%) rotate(-405deg);
+          transform: translateY(-50%) rotate(-405deg);
+  width: 1.3em;
+  height: .9em;
+  border-width: 0.3125em;
+}
+
+form .checkbox label {
+  display: inline-block;
+  padding: 10px 10px 10px 1.7em;
+  position: relative;
+  cursor: pointer;
+}
+
+form .checkbox label::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%) rotate(0);
+          transform: translateY(-50%) rotate(0);
+  background: #333;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  display: block;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+form .checkbox label::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0.25em;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+  width: 1em;
+  height: 0.6em;
+  margin-top: -0.2em;
+  display: block;
+  border-left: 0.1875em solid #fff;
+  border-bottom: 0.1875em solid #fff;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
+form #select {
+  display: block;
+}
+
+form fieldset {
+  margin: 20px;
+  padding: 20px;
+}
+
+.colmuns {
+  -webkit-columns: 4 auto;
+          columns: 4 auto;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  -webkit-column-rule: dashed 1px #ccc;
+          column-rule: dashed 1px #ccc;
+}
+
+.colmuns p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1100px) {
+  .colmuns {
+    -webkit-columns: 3 auto;
+            columns: 3 auto;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .colmuns {
+    -webkit-columns: 2 auto;
+            columns: 2 auto;
+  }
+}
+
+.writing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 500px;
+}
+
+.writing p {
+  margin-bottom: 20px;
+}
+
+.writing .vertical-rl {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
+.writing .vertical-lr {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,130 @@
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    &>*+* {
+        margin-top: 80px;
+    }
+}
+
+form {
+
+    input {
+        display: block;
+    }
+    
+    .checkbox {
+        margin-top: 18px;
+        
+        [type="checkbox"] {
+            display: inline-block;
+            display: none;
+
+            &:checked + label {
+                padding-left: 2em;
+    
+                &::before {
+                    width: 1.8em;
+                    height: 1.8em;
+                    transform: translateY(-50%) rotate(-360deg);
+                    background: #F44336;
+                }
+    
+                &::after {
+                    transform: translateY(-50%) rotate(-405deg);
+                    width: 1.3em;
+                    height: .9em;
+                    border-width: 0.3125em;
+                }
+            }
+        }
+
+        label {
+            display: inline-block;
+            padding: 10px 10px 10px 1.7em;
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) rotate(0);
+                background: #333;
+                border-radius: 4px;
+                width: 24px;
+                height: 24px;
+                display: block;
+                transition: all 0.5s ease-in-out;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 0.25em;
+                transform: translateY(-50%) rotate(-45deg);
+                width: 1em;
+                height: 0.6em;
+                margin-top: -0.2em;
+                display: block;
+                border-left: 0.1875em solid #fff;
+                border-bottom: 0.1875em solid #fff;
+                transition: all 0.5s ease-in-out;
+                opacity: 1;
+            }
+        }
+    }
+
+    #select {
+        display: block;
+    }
+    
+    fieldset {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+
+
+.colmuns {
+    columns: 4 auto;
+    column-gap: 30px;
+    column-rule: dashed 1px #ccc;
+
+    p {
+        margin: 0;
+    }
+
+    @media only screen and (max-width:1100px) {
+        columns: 3 auto;
+    }
+    @media only screen and (max-width:700px) {
+        columns: 2 auto;
+    }
+}
+
+
+.writing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+
+    p {
+      margin-bottom: 20px;
+    }
+    
+    .vertical-rl {
+      writing-mode: vertical-rl;
+    }
+    
+    .vertical-lr {
+      writing-mode: vertical-lr;
+    }
+}
