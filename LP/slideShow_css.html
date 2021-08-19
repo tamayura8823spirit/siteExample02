@@ -15,6 +15,7 @@
         position: absolute;
         width: 100%;
         visibility: hidden;
+        // 1回のスライドが5秒で、それが5枚あるので、アニメーション全体の長さが２５秒になる
         animation: anime_slider_fade 25s 0s infinite;
       }
       .slider_fade > img:nth-of-type(2) {
@@ -35,12 +36,14 @@
           visibility: visible;
           opacity: 0;
         }
+        // この数値でフェードインの長さが変わる
         10% {
           opacity: 1;
         }
         20% {
           opacity: 1;
         }
+        // この数値でフェードアウトの長さが変わる
         30% {
           opacity: 0;
         }
