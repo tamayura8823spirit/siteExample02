@@ -18,7 +18,8 @@
       
         // 最初の画像をフェードイン
         $(" img").eq(currentIdx).fadeIn(1000);
-      
+        
+        // setTimeoutを繰り返すための関数
         let iteration = () => {
 
           // 5秒後にiterationを実行
@@ -44,6 +45,7 @@
           }
           dispNextSlide();
         }
+        // 1度目のiteration()を5秒遅らせる
         setTimeout(iteration, 5000);
       });
 
