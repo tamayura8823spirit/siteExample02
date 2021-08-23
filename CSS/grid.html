@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      body {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .container {
+        display: grid; 
+        grid-template-columns: repeat(3, minmax(auto,250px));
+        grid-template-rows: 50px 150px 50px 100px 100px 50px;
+        grid-row-gap: 10px;
+        grid-column-gap: 30px;
+        justify-content: center;
+        align-content: center;
+        margin: 0 auto;
+        height: 100vh;
+      }
+
+      .header {
+        background-color: #333;
+        grid-column: 1/4;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .hero {
+        background-color: #ccc;
+        grid-column: 1/4;
+        line-height: 150px;
+        text-align: center;
+      }
+
+      .nav {
+        background-color: #3687EC;
+        grid-column: 1/4;
+        line-height: 50px;
+        text-align: center;
+      }
+
+      .sideBar {
+        background-color: #005493;
+        grid-row: 4/6;
+        line-height: 200px;
+        text-align: center;
+      }
+
+      .section1 {
+        background-color: #929000;
+        grid-column: 2/4;
+        grid-row: 4/5;
+        line-height: 100px;
+        text-align: center;
+      }
+      
+      .section2 {
+        background-color: #6D6C21;
+        grid-column: 2/4;
+        grid-row: 5/6;
+        line-height: 100px;
+        text-align: center;
+      }
+
+      .footer {
+        background-color: #777;
+        grid-column: 1/4;
+        line-height: 50px;
+        text-align: center;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+
+      <header class="header">
+        <p>ヘッダー</p>
+      </header>
+  
+      <div class="hero">ヒーローイメージ</div>
+  
+      <nav class="nav">ナビゲーション</nav>
+  
+      <div class="sideBar">サイドバー</div>
+  
+      <section class="section1">記事１</section>
+  
+      <section class="section2">記事２</section>
+  
+      <footer class="footer">フッター</footer>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+
+    </script>
+  </body>
+</html>
