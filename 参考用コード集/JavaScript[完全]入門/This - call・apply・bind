@@ -1,0 +1,21 @@
+
+// 関数
+function fnc1(arg1 , arg2 , arg3) {
+  console.log(this , arg1 , arg2 , arg3);
+}
+
+// callとapplyの例
+fnc1.call('ここにthisの値' , 'あ' , 'い' , 'う');
+fnc1.apply('ここにthisの値' , ['あ' , 'い' , 'う']);
+
+// bindの例
+let fnc2 = fnc1.bind('ここにthisの値');
+fnc2('あ' , 'い' , 'う');
+
+
+
+// 結果
+String {'ここにthisの値'} 'あ' 'い' 'う'
+String {'ここにthisの値'} 'あ' 'い' 'う'
+String {'ここにthisの値'} 'あ' 'い' 'う'
+
