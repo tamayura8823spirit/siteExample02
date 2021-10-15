@@ -10,5 +10,8 @@ function myFunc(argObj) {
  // コンソールに出力
  console.log(item);
  
- 『結果　＝  {name: "コーヒー" , price: 0} 』
+ 
+ 
+ // 結果
+{ name: "コーヒー" , price: 0 }
  
