@@ -1,0 +1,39 @@
+
+// オブジェクトを作成
+let obj = {
+  // メソッド
+  method(arg1 , arg2) {
+    return `${arg1}★${arg2}`;
+  },
+
+  // 通常のプロパティ
+  prop: 'プロパティ',
+
+  // getter
+  get prop2() {
+    return this.prop + '!';
+  },
+
+  // setter
+  set prop3(x) {
+    this.prop = x;
+  }
+}
+
+// コンソールに出力
+console.log(obj.method('i' , 'Ris'));
+console.log(obj.prop);
+console.log(obj.prop2);
+
+// 値を設定してコンソールに出力
+obj.prop3 = 'ぷろぱてぃ';
+console.log(obj.prop);
+
+
+
+// 結果
+i★Ris
+プロパティ
+プロパティ!
+ぷろぱてぃ
+
