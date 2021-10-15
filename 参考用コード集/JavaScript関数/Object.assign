@@ -1,0 +1,15 @@
+let user = { firstName: 'John' , lastName: 'Doe' };
+let user_data = { sex: 'female' , age: 18 };
+let user_age = { age: 20 };
+
+let user_clone = Object.assign( user , user_data );
+let user_clone2 = Object.assign( user_data , user_age );
+
+console.log(user_clone);
+console.log(user_clone2);
+
+
+
+// 結果
+{firstName: 'John', lastName: 'Doe', sex: 'female', age: 18}
+{sex: 'female', age: 20}
