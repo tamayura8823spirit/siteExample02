@@ -1,0 +1,14 @@
+// 注文を受ける関数
+function setOrder(firstOrder , ...restOrder) {
+  console.log(firstOrder);
+  console.log(restOrder);
+}
+
+// 関数を実行してコンソールに出力
+setOrder('ホットコーヒー' , 'アイスコーヒー' , '紅茶' , 'ほうじ茶');
+
+
+
+// 結果
+ホットコーヒー
+(3) ["アイスコーヒー" , "紅茶" , "ほうじ茶"]
