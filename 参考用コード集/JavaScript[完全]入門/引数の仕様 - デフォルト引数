@@ -1,1 +1,21 @@
+// 構文
+function 関数名（引数 = デフォルト値) {
+  処理
+  return 戻り値;
+}
 
+// メニューを作る関数
+function formatMenu(food = '未入力' , price = 0) {
+  const res = `${food} : ${price}円`;
+  return res;
+}
+
+// 引数を変えてコンソールに出力
+console.log(formatMenu('ホットコーヒー' , 450));
+console.log(formatMenu());
+
+
+
+// 結果
+ホットコーヒー : 450円
+未入力 : 0円
