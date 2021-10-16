@@ -127,21 +127,34 @@ x();
 var createCounter = function () {
         var cnt = 0;
  
-        return function () {
+        return function child() {
             cnt += 1;
             console.log(cnt);
         };
     };
- 
- 
+
 var counter = createCounter();
 counter(); // 「1」が出力される
 counter(); // 「2」が出力される
 counter(); // 「3」が出力される
-・
-・
-・
 - - - - - - - - - -
+
+createCounter()は、その内部で新たに関数を定義して、その関数を戻り値として返している
+そしてcreateCounter()により作成された関数childが、変数counterに格納されている
+
+普通に考えたら、コードの136行目でcreateCounter()の実行が完了しているので、その内部変数であるcntは破棄されてしまい、
+参照対象としての変数cntが消滅したことにより、child()が変数cntを使えなくなってしまうかのように思える
+
+しかし、結果を見ても明らかに変数cntは保持され続けている
+これは、変数counterに代入されたchild()が、実行時ではなく、定義時のコンテキストを保持した状態で実行されているからである
+
+これにより、親のcreateCounter()の変数である「cnt = 0」を保持しながら、counter()が呼ばれるたびに、関数childの処理だけが実行されることにより、
+「変数cntが初期化されることなく、また変数cntを保持しながら」、処理を実行する、というような現象が起こっている
+
+（小休止）
+
+child()が定義されたときのコンテキストと、変数counterのコンテキスト（グローバルスコープ）は異なっている
+そのような、関数と、その関数が定義されたコンテキストを保持した特殊なオブジェクトを「クロージャ」といい、child()を、変数counterに代入されることにより、作成することができる
 
 
 
