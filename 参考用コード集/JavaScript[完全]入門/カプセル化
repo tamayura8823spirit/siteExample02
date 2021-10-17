@@ -1,0 +1,48 @@
+
+// クロージャによるカプセル化の書き方
+// オブジェクトの定義
+var Hello = function (_name, _major) {
+  // カプセル化されたプロパティ（変数）
+  var name = _name;
+  // 公開されているプロパティ（変数）
+  this.major = _major;
+  // カプセル化されたメソッド
+  var getName = function () {
+      return name;
+  }
+  // 公開されているメソッド
+  this.setName = function (_name) {
+      // 代入前に加工ができる
+      name = 'Mr.' + _name;
+  }
+  // 公開されているメソッド
+  this.getMajor = function () {
+      return this.major;
+  }
+  // 公開されているメソッド
+  this.say = function () {
+      console.log('Hello! ' + getName() + '. I know you are great about ' + this.major + '!');
+  }
+}
+
+
+let ins = new Hello('佐藤ホームズ' , 'プラモデル部')
+ins.say();
+ins.name = 'Tim';   // 反映されない（カプセル化されている。アクセスできない。）
+ins.major = 'Computer Science';
+ins.say();
+ins.setName('Tim');   // 反映される。（セッターメソッドを使用）
+ins.major = 'Marketing'
+ins.say();
+
+
+
+//結果
+Hello! Jobs. I know you are great about Design!
+Hello! Jobs. I know you are great about Computer Science!
+Hello! Mr.Tim. I know you are great about Marketing!
+
+
+
+
+
