@@ -1,0 +1,19 @@
+
+
+var num = "14";
+try {
+    if(num.search(/^[-]?[0-9]+$/) === -1){
+        throw new TypeError('変数numには整数を入れてください')
+    }
+    if(num > 12){
+        throw new RangeError('変数numには12以下の整数を入れてください')
+    }
+    var birthday = "誕生日は" + num + "月です。";
+    console.log( birthday );
+} catch(e) {
+    console.error( e.name, e.message );
+}
+
+
+// 結果
+❌ RangeError 変数numには12以下の整数を入れてください
