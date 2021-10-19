@@ -1,0 +1,36 @@
+
+
+// 入れ子になった関数
+function fnc1(arg) {
+  // 文字列化してコンソールに出力
+  console.log(arg.toString());
+}
+
+// try catch文
+try {
+  // 例外が起きるかもしれない処理
+  console.log('処理１');
+
+  // 引数をnullにして、例外を起こす
+  fnc1(null);
+  console.log('処理２');
+
+} catch(e) {
+  // 例外が起きた時の処理
+  console.log('エラー発生' , e);
+}
+
+
+// 結果
+処理１
+エラー発生 TypeError: Cannot read properties of null (reading 'toString')
+    at fnc1 (main.js:25)
+    at main.js:34
+
+
+// 解説
+fnc1()は、渡ってきた引数を文字列に変換して、コンソールに出力する関数である
+try{}の中で、fnc1()が実行された際には、引数にnullを渡しているのでエラー（例外）が発生している
+それにより20行目の" console.log "は実行されず、即座にcatch{}へと処理が移動して、渡ってきたErrorオブジェクトをコンソールで出力している
+
+
