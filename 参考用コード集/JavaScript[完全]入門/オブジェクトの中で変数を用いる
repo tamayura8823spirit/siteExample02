@@ -1,0 +1,15 @@
+
+
+const order = 'コーヒー';
+const price = 450;
+
+const menu = {order, price};
+
+console.log(menu);
+
+
+
+// 結果
+{order: 'コーヒー', price: 450}
+
+
