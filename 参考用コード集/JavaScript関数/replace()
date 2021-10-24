@@ -1,0 +1,46 @@
+
+
+        ' 以下は、コンソールに表示された文から、「main.js:数字」という文字列を取り除き、その結果を、改行を含めてHTML上に表示するプログラムである '
+
+
+// HTML
+<pre id="editStc"></pre>
+
+
+// JavaScript
+// 変数strに、コンソールに表示された文章を代入する
+var str = `(3) [20, 21, 22]
+main.js:29 push() 4
+main.js:30 push()後の配列 (4) [20, 21, 22, 23]
+main.js:32 unshift() 5
+main.js:33 unshift()後の配列 (5) [19, 20, 21, 22, 23]
+main.js:35 pop() 23
+main.js:36 pop()後の配列 (4) [19, 20, 21, 22]
+main.js:38 shift() 19
+main.js:39 shift()後の配列 (3) [20, 21, 22]`;
+
+// " 2桁の数値 "を表す正規表現を用いて、変数regExpに、取り除きたい文字列を代入する （「g」は、" 条件に合う全ての対象を置換する "の意）
+var regExp = /main.js:[0-9][0-9]/g;
+// 第１変数に取り除きたい文字列を、第２変数に置換したい文字列を指定する
+var ret = str.replace(regExp, "");
+
+// DOM操作で、エレメント要素を取得・変更する
+let edit = document.querySelector('#editStc');
+edit.innerHTML = ret;
+
+
+
+// 結果
+<pre id="editStc">
+ "(3)&nbsp;[20, 21, 22]
+ push() 4
+ push()後の配列 (4)&nbsp;[20, 21, 22, 23]
+ unshift() 5
+ unshift()後の配列 (5)&nbsp;[19, 20, 21, 22, 23]
+ pop() 23
+ pop()後の配列 (4)&nbsp;[19, 20, 21, 22]
+ shift() 19
+ shift()後の配列 (3)&nbsp;[20, 21, 22]"
+</pre>
+
+
