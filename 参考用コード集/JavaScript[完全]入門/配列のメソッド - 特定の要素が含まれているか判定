@@ -1,0 +1,133 @@
+
+
+        ==  includes  ==
+
+
+// 配列を作成
+let arr = [1, 2, 3, 4, 5];
+
+// includes()で判定してコンソールに出力
+console.log(arr.includes(3));
+console.log(arr.includes('3'));
+console.log(arr.includes(3, 3));
+console.log(arr.includes(3, -3));
+
+
+// 結果
+ true
+ false
+ false
+ true
+ 
+ 
+ // 解説
+数値か文字列かは識別される
+第２引数に「 ３ 」が渡されれば、範囲３以降をみて判定する
+第２引数に「 -３ 」が渡されれば、末尾から数えるので、上の例の場合、範囲２以降をみて判定する
+ 
+ 
+ ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+        ==  indexOf , lastIndexOf  ==
+
+
+// indexOfの場合
+let arr = [1, 2, 3, 1];
+
+// indexOf()で探してコンソールに出力
+console.log(arr.indexOf(1));
+console.log(arr.indexOf('1'));
+console.log(arr.indexOf(4));
+console.log(arr.indexOf(1, 2));
+console.log(arr.indexOf(1, -2));
+
+
+// 結果
+ 0
+ -1
+ -1
+ 3
+ 3
+ 
+ 
+  - - - - -
+
+
+// lastIndexOfの場合
+let arr = [1, 2, 3, 1,];
+
+// indexOf()で探してコンソールに出力
+console.log(arr.lastIndexOf(1));
+console.log(arr.lastIndexOf('1'));
+console.log(arr.lastIndexOf(4));
+console.log(arr.lastIndexOf(1, 2));
+console.log(arr.lastIndexOf(1, -2));
+
+
+// 結果
+ 3
+ -1
+ -1
+ 0
+ 0
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+        ==  find , findIndex  ==
+
+
+// 配列を作成
+const arr = [
+  {name: 'コーヒー', price: 450},
+  {name: '紅茶', price: 450},
+  {name: 'ケーキ', price: 500}
+];
+
+// find()で探してコンソールに出力
+console.log(arr.find(x => x.price >= 500));
+console.log(arr.find(x => x.price >= 1000));
+
+// findIndex()で探してコンソールに出力
+console.log(arr.findIndex(x => x.price >= 500));
+console.log(arr.findIndex(x => x.price >= 1000));
+
+
+// 結果
+ {name: 'ケーキ', price: 500}
+ undefined
+ 2
+ -1
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+        ==  every , some  ==
+
+
+// 配列を作成
+const arr = [
+  {name: 'コーヒー', price: 450},
+  {name: '紅茶', price: 450},
+  {name: 'ケーキ', price: 500}
+];
+
+// every()で判定してコンソールに出力
+console.log(arr.every(x => x.price >= 400));
+console.log(arr.every(x => x.price >= 500));
+
+// some()で探してコンソールに出力
+console.log(arr.some(x => x.price >= 500));
+console.log(arr.some(x => x.price >= 600));
+
+
+// 結果
+ true
+ false
+ true
+ false
+
+
