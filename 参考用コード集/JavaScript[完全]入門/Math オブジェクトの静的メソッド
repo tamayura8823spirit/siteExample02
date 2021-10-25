@@ -9,10 +9,10 @@ Math.ceil(n)			|	引数(n)以上の宰相の整数を得る。		|	Math.ceil(34.5
 
 
  - その他
-Math.abs(n)			         		|	引数(n)の絶対値を返す。
+Math.abs(n)			         	 	|	引数(n)の絶対値を返す。
 Math.max( n1 , n2 , … )			|	引数の中で最大の値を返す。
 Math.min( n1 , n2 , … )			|	引数の中で最小の値を返す。
-Math.random()			        	|	０以上１未満の疑似乱数を返す。
+Math.random()			         	|	０以上１未満の疑似乱数を返す。
 Math.sqrt(n)			      		|	引数(n)の平方根を返す。
 Math.cbrt(n)				      	|	引数(n)の立方根を返す。
 Math.sin(n)				          |	引数(n)のサインを返す。
