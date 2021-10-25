@@ -1,0 +1,76 @@
+
+
+        ==  reduce  ==
+
+
+// 配列を作成
+const arr = [10, 20, 30, 40];
+
+// 初期値なしのreduce()
+console.log('- reduce1 -');
+const sum1 = arr.reduce((a, b, i) => {
+  console.log(i, a, b);
+  return a+ b;
+});
+console.log(sum1);
+
+// 初期値ありのreduce()
+console.log('- reduce2 -');
+const sum2 = arr.reduce((a, b, i) => {
+  console.log(i, a, b);
+  return a+ b;
+}, 10000);
+console.log(sum2);
+
+
+// 結果
+ - reduce1 -
+ 1 10 20
+ 2 30 30
+ 3 60 40
+ 100
+ - reduce2 -
+ 0 10000 10
+ 1 10010 20
+ 2 10030 30
+ 3 10060 40
+ 10100
+ 
+ 
+ // 解説
+ 上のコールバック関数の" 引数 "には、それぞれ「累積」「現在」「何番目か」の値が入ってきている
+ １０に２０が足されれば３０となるし、その３０をもとに３０を足されれば６０となる
+ 「リデュース」では、すべての処理を終えた、最後の計算式が" 戻り値 "となって返却されるので、結果は上の通りとなっている
+ 
+ 
+ ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ 
+ 
+        ==  reduceRight   ==
+
+
+// 配列を作成
+const arr = [10, 20, 30, 40];
+
+// reduceRight()を実行
+const sum = arr.reduceRight((a, b, i) => {
+  console.log(i, a, b);
+  return a+ b;
+}, 0 );
+console.log(sum);
+
+
+// 結果
+ 3 0 40
+ 2 40 30
+ 1 70 20
+ 0 90 10
+ 100
+
+
+// 解説
+基本的な処理は、reduce()と同じ
+順番が逆さまになっただけ
+
+
+ 
