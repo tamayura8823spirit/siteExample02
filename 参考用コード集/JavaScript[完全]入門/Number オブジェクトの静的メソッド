@@ -1,0 +1,11 @@
+
+
+Number.isNaN(n)         |	引数(n) が数値かつ NaN なら trueを、そうでないなら false を返す、isNaN() よりも堅牢に判定
+Number.isFinite(n)      |	引数(n) が数値かつ 有限数 なら true を、そうでないなら false を返す、isFinite() よりも堅牢に判定
+Number.isInteger(n)     |	引数(n) が数値かつ 整数 なら true を、そうでないなら false を返す
+Number.isSafeInteger(n) |	引数(n) が数値かつ 安全な整数 なら true を、そうでないなら false を返す
+
+※ 安全な整数とは、誤差の発生しない「-2**53-1」〜「2**53-1」の範囲の整数のこと
+
+
+
