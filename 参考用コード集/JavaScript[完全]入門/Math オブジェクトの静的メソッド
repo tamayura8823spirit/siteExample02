@@ -1,10 +1,10 @@
 
 
  - 小数点以下を捨てて整数を得る方法
-Math.trunc(n)       |	引数(n)の少数部を取り除く。       |	Math.trunc(34.56)は 34
-Math.round(n)       | 引数(n)を四捨五入する。           |	Math.round(34.56)は 35
-Math.floor(n)       |	引数(n)以下の最大の整数を得る。   |	Math.floor(34.56)は 34
-Math.ceil(n)        |	引数(n)以上の宰相の整数を得る。   |	Math.ceil(34.56)は 35
+Math.trunc(n)       | 引数(n)の少数部を取り除く。       |	Math.trunc(34.56)は 34
+Math.round(n)       | 引数(n)を四捨五入する。          |	Math.round(34.56)は 35
+Math.floor(n)       | 引数(n)以下の最大の整数を得る。   |	Math.floor(34.56)は 34
+Math.ceil(n)        | 引数(n)以上の宰相の整数を得る。   |	Math.ceil(34.56)は 35
 
 
  - その他
