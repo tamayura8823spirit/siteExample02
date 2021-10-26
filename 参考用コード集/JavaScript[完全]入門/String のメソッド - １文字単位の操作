@@ -1,0 +1,139 @@
+
+
+＊ JavaScript はWebページを扱うため、文字列を処理するメソッドや仕様が豊富にある
+
+
+        ==  １文字単位の操作  ==
+
+
+①
+文字列[ 数値 ]
+
+// 解説
+文字列のあとに[]角括弧をつけて、数値を書くと、１文字単位の" 配列 "のように文字を得られる
+
+
+②
+文字列.charAt( 数値 )
+
+// 解説
+上と同じ処理を、charAt()でも実装できる
+
+
+③
+[...文字列]
+
+// 解説
+「...」のスプレッド構文を使い、文字列を配列に展開できる
+この方式なら、絵文字の混ざった文字列を配列に格納することもできる
+
+
+ - - - - -
+
+
+[ 例文 ]
+
+
+// 文字列を作成
+const s = 'チョコレートパフェ';
+
+// １文字ずつ得る
+console.log(s[0], s[1], s[2]);
+console.log(s.charAt(3), s.charAt(4), s.charAt(5));
+
+// スプレッド構文で配列に格納
+const arr = [...s];
+console.log(arr);
+
+
+// 結果
+ チ ョ コ
+ レ ー ト
+ (9) ['チ', 'ョ', 'コ', 'レ', 'ー', 'ト', 'パ', 'フ', 'ェ']
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+        ==  文字コードを使って文字を作る  ==
+
+
+* 文字コードとは、コンピューター上で文字を表現するために、文字ごとに割り当てられた数値のこと
+* コードポイントは、Unicode の文字集合内で頭から数えた" 位置 "のこと
+
+
+[ メソッド ]
+
+ - String の静的メソッド
+string.fromCharCode(n1, n2, ...)      |   引数の数値（文字コード）を使い、文字列を作る
+string.fromCodePoint(n1, n2, ...)     |   引数の数値（コードポイント）を使い、文字列を作る
+
+ - String オブジェクトのメソッド
+.CharCodeAt(n)              |   位置(n)の文字の、UTF-16の数値を返す
+.CodePointAt(n)             |   位置(n)の文字の、UTF-16のコードポイントの数値を返す
+
+
+ - - - - -
+ 
+
+[ 例文 ]
+
+
+// 文字列を作成
+const s = 'abあい😀😄'  // アルファベットと日本語と絵文字
+
+// .charCodeAt()で文字コードを得る
+const a1 = s.charCodeAt(0);
+const a2 = s.charCodeAt(2);
+const a3 = s.charCodeAt(4),
+      a4 = s.charCodeAt(5);
+console.log(a1, a2, a3, a4);
+
+// .codePointAt()でコードポイントを得る
+const b1 = s.codePointAt(0);
+const b2 = s.codePointAt(2);
+const b3 = s.codePointAt(4);
+console.log(b1, b2, b3);
+
+// String.fromCharCode()で文字コードから文字を作る
+console.log(
+  String.fromCharCode(a1),
+  String.fromCharCode(a2),
+  String.fromCharCode(a3),
+  String.fromCharCode(a4),
+  String.fromCharCode(a3, a4),    // 文字コードだと２文字分
+  String.fromCharCode(a1, a2, a3, a4)
+);
+
+// String.fromCodePoint()でコードポイントから文字を作る
+console.log(
+  String.fromCodePoint(b1),
+  String.fromCodePoint(b2),
+  String.fromCodePoint(b3),
+  String.fromCodePoint(b1, b2, b3)
+);
+
+// 文字の分割
+console.log(s.split(''));   // 絵文字を２文字にしてしまう
+console.log([...s]);    // 絵文字をきれいに配列にできる
+
+
+
+// 結果
+ 97 12354 55357 56832
+ 97 12354 128512
+ a あ � � 😀 aあ😀
+ a あ 😀 aあ😀
+ (8) ['a', 'b', 'あ', 'い', '�', '�', '�', '�']
+ (6) ['a', 'b', 'あ', 'い', '😀', '😄']
+
+
+
+// 解説
+上を見てわかる通り、
+絵文字を 「文字コード」 にすると "２文字分" になってしまうので、１文字ずつに分割すると文字化けをおこす
+このことから、絵文字を扱うときは 「コードポイント」 を利用した方が便利なのがわかる
+
+また、[...s]スプレッド構文を使うことで、絵文字をきれいに配列にできている
+
+
