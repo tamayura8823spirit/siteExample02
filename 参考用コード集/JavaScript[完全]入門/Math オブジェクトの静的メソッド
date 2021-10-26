@@ -1,0 +1,21 @@
+
+
+ - 小数点以下を捨てて整数を得る方法
+Math.trunc(n)       |	引数(n)の少数部を取り除く。       |	Math.trunc(34.56)は 34
+Math.round(n)       | 引数(n)を四捨五入する。         |	Math.round(34.56)は 35
+Math.floor(n)       |	引数(n)以下の最大の整数を得る。   |	Math.floor(34.56)は 34
+Math.ceil(n)        |	引数(n)以上の宰相の整数を得る。   |	Math.ceil(34.56)は 35
+
+
+ - その他
+Math.abs(n)                 |	引数(n)の絶対値を返す。
+Math.max( n1 , n2 , … )     |	引数の中で最大の値を返す。
+Math.min( n1 , n2 , … )     |	引数の中で最小の値を返す。
+Math.random()               |	０以上１未満の疑似乱数を返す。
+Math.sqrt(n)                |	引数(n)の平方根を返す。
+Math.cbrt(n)                |	引数(n)の立方根を返す。
+Math.sin(n)                 |	引数(n)のサインを返す。
+Math.cos(n)                 |	引数(n)のコサインを返す。
+
+
+
