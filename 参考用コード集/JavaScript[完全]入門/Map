@@ -12,8 +12,6 @@
 
 
 
-
-
 [ Mapのプロパティとメソッド ]
 
 .size           |	データの数
@@ -30,12 +28,9 @@
 
 
 
-
-
 [ 作成方法 ]
 
 ①
-
 const myMap = new Map();									
 myMap.set( 'coffee' , 'コーヒー' );
 myMap.set( 'cake' , 'ケーキ' );
@@ -45,7 +40,6 @@ myMap.set( 'cake' , 'ケーキ' );
 
 
 ②
-
 const myMap = new Map([
 	[ 'coffee' , 'コーヒー' ] ,
 	[ 'cake' , 'ケーキ' ]		]
