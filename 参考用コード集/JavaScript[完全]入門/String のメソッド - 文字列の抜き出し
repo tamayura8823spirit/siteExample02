@@ -1,0 +1,70 @@
+
+
+* 文字列の一部を抜き出して、新しい文字列を作る処理は多い
+* 共通するのは、全てのメソッドで、元の文字列は変化はしない
+
+
+[ 文字列を抜き出すメソッド ]
+
+.substr(a, b)           |    a から開始して、文字数 b 個分の文字を得る    b を省略したときは末尾までのすべて    a が負のときは末尾から開始、 b が負のときは 0 とみなす
+
+.substring(a, b)        |    a から開始して、 b の1つ前までの文字を得る   b を省略したときは末尾までのすべて    a 、 b が負のときは 0 とみなす、 b が a より小さいときは、 a と b を交換する
+
+.slice(a, b)            |    a から開始して、 b の直前までの文字を得る     b を省略したときは末尾までのすべて    a が負のときは末尾から開始、 b が負のときは末尾から数える
+
+
+ - - - - -
+ 
+ 
+[ 例文 ]
+
+
+// 文字列を作成
+const s = '零一二三四五六七八九';
+
+// .substr()の結果をコンソールに出力
+console.log('--- substr ---');
+console.log(s.substr(5));
+console.log(s.substr(5, 2));
+console.log(s.substr(-3, 2));
+
+// .substring()の結果をコンソールに出力
+console.log('--- substring ---');
+console.log(s.substring(5));
+console.log(s.substring(5, 7));
+console.log(s.substring(7, 5));
+console.log(s.substring(-2, 3));
+
+// .slice()の結果をコンソールに出力
+console.log('--- slice ---');
+console.log(s.slice(5));
+console.log(s.slice(5, 7));
+console.log(s.slice(7, 5));
+console.log(s.slice(-3, -1));
+
+
+
+// 結果
+ --- substr ---
+ 五六七八九
+ 五六
+ 七八
+ --- substring ---
+ 五六七八九
+ 五六
+ 五六
+ 零一二
+ --- slice ---
+ 五六七八九
+ 五六
+ 
+ 七八
+
+
+
+// 解説
+似たようなメソッドだが、微妙に使い方が違う
+.substr()が最もシンプルで使いやすい
+
+
+
