@@ -1,0 +1,76 @@
+
+
+* 単純検索は、文字列の中に、特定の文字列が含まれているかを探す系のメソッド
+* 文字列を探す処理はよくするため、そのぶん種類も多い
+
+
+[ 文字列を検索するメソッド ]
+
+.includes(s, n)           |   文字列 s が含まれるなら true、それ以外は false を返す     n は検索開始位置で、省略可能
+.startsWith(s, n)         |   先頭が文字列 s なら true、それ以外は false を返す     n は先頭位置で、省略可能
+.endsWith(s, n)           |   末尾が文字列 s なら true、それ以外は false を返す     n は末尾位置で、省略可能
+.indexOf(s, n)            |   文字列 s の位置を先頭から探して返す   ないなら -1      n は検索開始位置で、省略可能
+.lastIndexOf(s, n)        |   文字列 s の位置を末尾から探して返す   ないなら -1      n は検索開始位置で、省略可能
+
+
+ - - - - -
+ 
+
+[ 例文 ]
+
+
+// 文字列を作成
+const s = '当店のチョコレートパフェは、' + 'チョコをふんだんに使っています。';
+
+// .includes()の結果をコンソールに出力
+console.log('--- includes ---');
+console.log(s.includes('チョコ'));
+console.log(s.includes('バナナ'));
+
+// .startsWith()の結果をコンソールに出力
+console.log('--- startsWith ---');
+console.log(s.startsWith('当店'));
+console.log(s.startsWith('お店'));
+
+// .endsWith()の結果をコンソールに出力
+console.log('--- endsWith ---');
+console.log(s.endsWith('。'));
+console.log(s.endsWith('！'));
+
+// .indexOf()の結果をコンソールに出力
+console.log('--- indexOf ---');
+console.log(s.indexOf('チョコ'));
+console.log(s.indexOf('バナナ'));
+
+// .lastIndexOf()の結果をコンソールに出力
+console.log('--- lastIndexOf ---');
+console.log(s.lastIndexOf('チョコ'));
+console.log(s.lastIndexOf('バナナ'));
+
+
+
+// 結果
+ --- includes ---
+ true
+ false
+ --- startsWith ---
+ true
+ false
+ --- endsWith ---
+ true
+ false
+ --- indexOf ---
+ 3
+ -1
+ --- lastIndexOf ---
+ 14
+ -1
+
+
+
+// 解説
+特に難しいこともなく、メソッドの説明を読めばわかる内容
+共通するのは、文字列から、特定の文字列を検索している
+
+
+
