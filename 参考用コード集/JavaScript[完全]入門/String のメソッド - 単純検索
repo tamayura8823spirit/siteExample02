@@ -6,11 +6,11 @@
 
 [ 文字列を検索するメソッド ]
 
-.includes(s, n)           |   文字列 s が含まれるなら true、それ以外は false を返す     n は検索開始位置で、省略可能
-.startsWith(s, n)         |   先頭が文字列 s なら true、それ以外は false を返す     n は先頭位置で、省略可能
-.endsWith(s, n)           |   末尾が文字列 s なら true、それ以外は false を返す     n は末尾位置で、省略可能
-.indexOf(s, n)            |   文字列 s の位置を先頭から探して返す   ないなら -1      n は検索開始位置で、省略可能
-.lastIndexOf(s, n)        |   文字列 s の位置を末尾から探して返す   ないなら -1      n は検索開始位置で、省略可能
+.includes(s, n)           |     文字列 s が含まれるなら true、それ以外は false を返す     n は検索開始位置で、省略可能
+.startsWith(s, n)         |     先頭が文字列 s なら true、それ以外は false を返す     n は先頭位置で、省略可能
+.endsWith(s, n)           |     末尾が文字列 s なら true、それ以外は false を返す     n は末尾位置で、省略可能
+.indexOf(s, n)            |     文字列 s の位置を先頭から探して返す   ないなら -1      n は検索開始位置で、省略可能
+.lastIndexOf(s, n)        |     文字列 s の位置を末尾から探して返す   ないなら -1      n は検索開始位置で、省略可能
 
 
  - - - - -
