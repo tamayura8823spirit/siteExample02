@@ -1,0 +1,98 @@
+
+
+* 取得は" get "	変更は" set "のついたメソッドでおこなう
+* 注意すべきは、月と曜日		"0" からはじまるので、月の値を利用するときは、 "1" を足して表示する必要がある
+
+
+ - - - - -
+
+
+[ 日時取得のメソッド ]
+.getFulltyear()         |   地方時の年（１９９９など）を返す。
+.getMonth()             |   地方時の月（０〜１１）を返す。
+.getDate()              |   地方時の日（１〜３１）を返す。
+.getDay()               |   地方時の曜日（０〜６）を返す。
+.getHours()             |   地方時の時（０〜２３）を返す。
+.getMinutes()           |   地方時の分（０〜５９）を返す。
+.getSeconds()           |   地方時の秒（０〜５９）を返す。
+.getMilliseconds()      |   地方時のミリ秒（０〜９９９）を返す。
+
+
+[ 日時取得（UTC)のメソッド ]
+.getUTCFulltyear()         |   UTCの年（１９９９など）を返す。
+.getUTCMonth()             |   UTCの月（０〜１１）を返す。
+.getUTCDate()              |   UTCの日（１〜３１）を返す。
+.getUTCDay()               |   UTCの曜日（０〜６）を返す。
+.getUTCHours()             |   UTCの時（０〜２３）を返す。
+.getUTCMinutes()           |   UTCの分（０〜５９）を返す。
+.getUTCSeconds()           |   UTCの秒（０〜５９）を返す。
+.getUTCMilliseconds()      |   UTCのミリ秒（０〜９９９）を返す。
+
+
+[ 日時変更のメソッド ]
+.setFulltyear(n)         |   地方時の年（１９９９など）を数値 n に設定する。
+.setMonth(n)             |   地方時の月（０〜１１）を数値 n に設定する。
+.setDate(n)              |   地方時の日（１〜３１）を数値 n に設定する。
+.setDay(n)               |   地方時の曜日（０〜６）を数値 n に設定する。
+.setHours(n)             |   地方時の時（０〜２３）を数値 n に設定する。
+.setMinutes(n)           |   地方時の分（０〜５９）を数値 n に設定する。
+.setSeconds(n)           |   地方時の秒（０〜５９）を数値 n に設定する。
+.setMilliseconds(n)      |   地方時のミリ秒（０〜９９９）を数値 n に設定する。
+
+
+[ 日時変更（UTC)のメソッド ]
+.setUTCFulltyear()         |   UTCの年（１９９９など）を数値 n に設定する。
+.setUTCMonth()             |   UTCの月（０〜１１）を数値 n に設定する。
+.setUTCDate()              |   UTCの日（１〜３１）を数値 n に設定する。
+.setUTCDay()               |   UTCの曜日（０〜６）を数値 n に設定する。
+.setUTCHours()             |   UTCの時（０〜２３）を数値 n に設定する。
+.setUTCMinutes()           |   UTCの分（０〜５９）を数値 n に設定する。
+.setUTCSeconds()           |   UTCの秒（０〜５９）を数値 n に設定する。
+.setUTCMilliseconds()      |   UTCのミリ秒（０〜９９９）を数値 n に設定する。
+
+
+ - - - - -
+ 
+ 
+[ 例文 ]
+
+
+// Dateオブジェクトを作成
+const d = new Date(2030, 0, 1, 0, 0, 0);
+
+// 年月日時分秒を得て、コンソールに出力
+console.log(
+  d.getFullYear(),
+  d.getMonth() + 1,
+  d.getDate(),
+  d.getHours(),
+  d.getMinutes(),
+  d.getSeconds()
+);
+
+// 年月日時分秒を１ずつ大きくする
+d.setFullYear(d.getFullYear() + 1);
+d.setMonth(d.getMonth() + 1);
+d.setDate(d.getDate() + 1);
+d.setHours(d.getHours() + 1);
+d.setMinutes(d.getMinutes() + 1);
+d.setSeconds(d.getSeconds() + 1);
+
+// 年月日時分秒を得て、コンソールに出力
+console.log(
+  d.getFullYear(),
+  d.getMonth() + 1,
+  d.getDate(),
+  d.getHours(),
+  d.getMinutes(),
+  d.getSeconds()
+);
+
+
+
+// 結果
+ 2030 1 1 0 0 0
+ 2031 2 2 1 1 1
+
+
+
