@@ -1,0 +1,90 @@
+
+
+* Webブラウザで表示されている現在のページの" URL "を見たり、" 履歴 "を操作したりする
+  現在のページの情報は、" location "を使って得られる
+  また、用意されている プロパティ や メソッド をもって、詳細情報を取得する
+
+
+ - - - - -
+
+
+[ location のプロパティ ]
+
+.href         |   URL 全体    値を代入すると、そのURLに移動する
+.protocol     |   URL のプロトコルスキーム
+.hostname     |   URL のホスト
+.pathname     |   URL のパス部分
+.search       |   URL の ？ 以降の値
+.hash         |   URL の ＃ 以降の値
+
+
+
+[ 例文 ]
+
+// https://www.google.com/search?q=a#a でコンソールから実行
+console.log(location.href);
+console.log(location.protocol);
+console.log(location.hostname);
+console.log(location.pathname);
+console.log(location.search);
+console.log(location.hash);
+
+
+// 結果
+ https://www.google.com/search?q=a#a
+ https:
+ www.google.com
+ /search
+ ?q=a
+ #a
+
+
+ - - - - -
+
+
+[ Location のメソッド ]
+
+.assign( s )    |   引数の URL を読み込む
+.reload()       |   現在の URL を再読み込むする    引数に true を指定すると、常にサーバーから読み込む
+.replace()      |   現在のページを、引数の URL で置きかえる    履歴に保存されない
+
+
+
+[ 例文 ]
+
+// URL をいどう
+location.assign('https://www.google.com/search?=a');
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+        " 履歴を利用した操作 "
+
+
+[ history のメソッド ]
+
+.back()                   |   1つ前のページへ移動    [戻る]ボタンをクリックしたのと同じ
+.forward()                |   1つ次のページへ移動    [次へ]ボタンをクリックしたのと同じ
+.go()                     |   相対位置 n ページに移動    -1 は前のページ、 1 は次のページ
+.pushState(o, t, url)     |   履歴スタックに状態を追加    見かけ上、urlに移動して、関連づけたオブジェクト o を登録    t はタイトルだが、多くのブラウザで未実装
+.replaceState(o, t, url)  |   現在の履歴を置き換える   見かけ上、urlに移動して、関連づけたオブジェクト o を登録    t はタイトルだが、多くのブラウザで未実装
+
+*  .pushState()、 .replaceState() は、説明だけ見ても、何をするのかわかりにくい
+   これらは、Web を閲覧するとたまに見る、同一ページでの状態遷移 （Webページの読み込みはしていないのに、URLが変わっていく） を実現できる
+
+
+
+[ 例文 ]
+
+
+
+
+
+
+
+
+
