@@ -1,0 +1,64 @@
+
+
+* プログラムでは、『 指定時間後 』に処理したり、『 定期的 』に処理をしたいときがある
+  " 指定時間後に処理したい "なら setTimeout() をつかう
+  " 定期的に処理したい "なら setInterval() をつかう
+
+* どちらも値に" ID "を返すので、タイマーやインターバルを止めるときに必要になってくる
+
+
+ - - - - -
+ 
+
+[ メソッド ]
+
+setTimeout(f , n)       |   n ミリ秒あとに、関数 f を実行する    n を省略したなら0秒後    timerIDを返す
+setInterval(f , n)      |   n ミリ秒待って、関数 f を実行する処理を繰り返す    n の最小値は 10    intervalIDを返す
+
+clearTimeout( id )      |   timerID を引数にして、setTimeout() をキャンセルする
+clearTinterval( id )    |   intervalID を引数にして、setInterval() をキャンセルする
+
+
+
+ - - - - -
+
+
+[ 例文 ]
+
+
+// 繰り返し処理
+const start = Date.now();
+const intervalID = setInterval(() => {
+  console.log(Date.now() - start, '繰り返し');
+}, 1000);
+
+// 一定時間後に処理
+setTimeout(()=> {
+  // 繰り返し処理を停止
+  clearInterval(intervalID);
+  console.log(Date.now() - start, '停止');
+}, 10000);
+
+
+
+// 結果
+ 1005 '繰り返し'
+ 2005 '繰り返し'
+ 3005 '繰り返し'
+ 4006 '繰り返し'
+ 5002 '繰り返し'
+ 6005 '繰り返し'
+ 7005 '繰り返し'
+ 8003 '繰り返し'
+ 9003 '繰り返し'
+ 10005 '繰り返し'
+ 10006 '停止'
+
+
+
+// 解説
+100ミリ秒ごとに、繰り返し処理をおこない、
+1000ミリ秒経ったら処理を停止している
+
+
+
