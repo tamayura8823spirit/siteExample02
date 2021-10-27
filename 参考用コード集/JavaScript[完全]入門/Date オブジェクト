@@ -4,7 +4,7 @@
 * 引数なしだと、現在の日時のオブジェクトが、引数ありだと、その日時に応じたオブジェクトが作られる
 
 * 引数は、（基準時間からのミリ秒）をかく方法や、（年月日時分秒をカンマ区切り）で書く方法や、（文字列で日時）をかく方法がある
-* （年月日時分秒をカンマ区切り）で書く場合の月は、０　〜　１１　なので注意する
+* （年月日時分秒をカンマ区切り）で書く場合には、月を ０　〜　１１ で表すので注意する
 
 
  - - - - -
@@ -35,29 +35,182 @@ ISO 8601 は、文字列で日時を書くときに用いられる
 YYYY-MM-DDTHH:mm:ss:sssZ  にそれぞれ
 （年＝Y）、（月＝M）、（日＝D）、（時＝H）、（分＝m）、（秒＝ss）、（ミリ秒＝sss）  で書いていく
 
-途中まで書いて、
+途中まで書いて、以降の数値を省略しても大丈夫、
+末尾は（Z＝タイムゾーン）で、" Z "はUTC（世界協定時）を指している
+
+UTCとは、大まかに言うと" 本初子午線 "の時間(イギリスのグリニッジ)をイメージしておくとよい
+日本はこの世界協定時より" 9時間 "進んでいる
+
+静的メソッドの Date.UTC() を使い、年月日時分秒の数値をカンマ区切りで書く方法で、世界協定時の基準時間からのミリ秒を得ることもできる
+
+
+ - - - - -
+ 
+
+[ 日時処理のメソッド ]
+
+.toISOString()            |   ISO 8601 の文字列で得る
+.toJSON()                 |   JSON 用の文字列を得る   得られる文字列は、.toISOString() と同じ
+.toUTCString()            |   UTC タイムゾーンを使用する文字列を得る
+.toString()               |   文字列を得る
+.toLocaleString()         |   その言語の書式で、文字列を得る
+.toDateString()           |   日付部分の文字列を得る
+.toLocaleDateString()     |   その言語の書式で、日付部分の文字列を得る
+.toTimeString()           |   時刻部分の文字列を得る
+.toLocaleTimeString()     |   その言語の書式で、時刻部分の文字列を得る
+
+.valueOf()                |   数値を返す
+.getTime()                |   時間の数値を得る    得られる数値は .valueOf() と同じ
+.getTimezoneOffset()      |   現地の時間帯のオフセットの分数を返す
+
+
+ - - - - -
+
+
+[ 例文① ]
+
+
+// Dateオブジェクトを作成
+const d = new Date(1999, 0, 1);
+
+// 各メソッドの結果をコンソールに出力
+console.log('--- toISOString ---');
+console.log(d.toISOString());
+console.log('--- toUTCString ---');
+console.log(d.toUTCString());
+console.log('--- toString ---');
+console.log(d.toString());
+console.log('--- toDateString ---');
+console.log(d.toDateString());
+console.log('--- toLocaleDateString ---');
+console.log(d.toLocaleDateString());
+console.log('--- toTimeString ---');
+console.log(d.toTimeString());
+console.log('--- toLocaleTimeString ---');
+console.log(d.toLocaleTimeString());
+console.log('--- valueOf ---');
+console.log(d.valueOf());
+console.log('--- getTimezoneOffset ---');
+console.log(d.getTimezoneOffset());
 
 
 
+// 結果
+ --- toISOString ---
+ 1998-12-31T15:00:00.000Z
+ --- toUTCString ---
+ Thu, 31 Dec 1998 15:00:00 GMT
+ --- toString ---
+ Fri Jan 01 1999 00:00:00 GMT+0900 (日本標準時)
+ --- toDateString ---
+ Fri Jan 01 1999
+ --- toLocaleDateString ---
+ 1999/1/1
+ --- toTimeString ---
+ 00:00:00 GMT+0900 (日本標準時)
+ --- toLocaleTimeString ---
+ 0:00:00
+ --- valueOf ---
+ 915116400000
+ --- getTimezoneOffset ---
+ -540
 
 
 
+// 解説
+現地時刻（日本標準時）で、Dateオブジェクトが作成されている
+
+
+ - - - - -
+ 
+
+[ 例文② ]
+
+
+// Dateオブジェクトを作成
+const d = new Date(Date.UTC(1999, 0, 1));
+
+// 各メソッドの結果をコンソールに出力
+console.log('--- toISOString ---');
+console.log(d.toISOString());
+console.log('--- toUTCString ---');
+console.log(d.toUTCString());
+console.log('--- toString ---');
+console.log(d.toString());
+console.log('--- toDateString ---');
+console.log(d.toDateString());
+console.log('--- toLocaleDateString ---');
+console.log(d.toLocaleDateString());
+console.log('--- toTimeString ---');
+console.log(d.toTimeString());
+console.log('--- toLocaleTimeString ---');
+console.log(d.toLocaleTimeString());
+console.log('--- valueOf ---');
+console.log(d.valueOf());
+console.log('--- getTimezoneOffset ---');
+console.log(d.getTimezoneOffset());
 
 
 
+// 結果
+ --- toISOString ---
+ 1999-01-01T00:00:00.000Z
+ --- toUTCString ---
+ Fri, 01 Jan 1999 00:00:00 GMT
+ --- toString ---
+ Fri Jan 01 1999 09:00:00 GMT+0900 (日本標準時)
+ --- toDateString ---
+ Fri Jan 01 1999
+ --- toLocaleDateString ---
+ 1999/1/1
+ --- toTimeString ---
+ 09:00:00 GMT+0900 (日本標準時)
+ --- toLocaleTimeString ---
+ 9:00:00
+ --- valueOf ---
+ 915148800000
+ --- getTimezoneOffset ---
+ -540
 
 
 
+// 解説
+UTC（世界協定時）で、Dateオブジェクトが作成されている
+先程の例と、9時間の時差があるのがわかる
+
+
+ - - - - -
+ 
+
+[ 例文③ ]
+
+
+// ISO 8601で時差を指定
+const d1 = new Date('1999-01-01T00:00:00+09:00');
+console.log(d1.toISOString());
+
+// ISO 8601でUTC
+const d2 = new Date('1999-01-01T00:00:00Z');
+console.log(d2.toISOString());
+
+// 現地時間で指定
+const d3 = new Date(1999, 0, 1, 0, 0, 0);
+console.log(d3.toISOString());
 
 
 
+// 結果
+ 1998-12-31T15:00:00.000Z
+ 1999-01-01T00:00:00.000Z
+ 1998-12-31T15:00:00.000Z
 
 
 
-
-
-
-
+// 解説
+タイムゾーンを指定して、ISO 8601 で時間を書いた例
+日本標準時の時差ありのもの、
+UTC（世界協定時）の時間、
+new Date() を使い、現地時間（日本標準時）で指定したもの、の3つ
 
 
 
