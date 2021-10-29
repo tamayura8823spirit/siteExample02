@@ -1,8 +1,8 @@
 
 
-* Webブラウザで表示されている現在のページの" URL "を見たり、" 履歴 "を操作したりする
+* Webブラウザで表示されている現在のページの "URL" を見たり、 "履歴" を操作する
   現在のページの情報は、" location "を使って得られる
-  また、用意されている プロパティ や メソッド をもって、詳細情報を取得する
+  履歴情報は、" history " を使って得られる
 
 
  - - - - -
@@ -99,41 +99,58 @@ location.assign('https://www.google.com/search?=a');
 
 • 例文
 
-// 戻るボタンのときの処理
-window.addEventListener('popstate' , e => {
-  // 情報を表示
-  view(e.state);
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-// カウンター用変数を作成
-let cnt = 0;
+  <button id="exec" onclick="exec()">移動</button>
+  <div id="output">index.html</div>
 
-// 移動ボタンを押すごとにページを移動
-function exec() {
-  // stateオブジェクトを作る
-  const state = {text: `cnt is ${cnt}.`};
+  <script>
+    // 戻るボタンのときの処理
+    window.addEventListener('popstate' , e => {
+      // 情報を表示
+      view(e.state);
+    });
 
-  // Webページ上に情報を表示
-  view(state);
+    // カウンター用変数を作成
+    let cnt = 0;
 
-  // Stateを追加して、見かけ上移動する
-  history.pushState(state, '', `${cnt}.html`);  // 移動
+    // 移動ボタンを押すごとにページを移動
+    function exec() {
+      // stateオブジェクトを作る
+      const state = {text: `cnt is ${cnt}.`};
 
-  // カウンターを更新する
-  cnt ++;
-}
+      // Webページ上に情報を表示
+      view(state);
 
-// #outputに表示
-function view(state) {
-  // 表示する文字列を作成
-  let t = 'index.html1';
+      // Stateを追加して、見かけ上移動する
+      history.pushState(state, '', `${cnt}.html`);  // 移動
 
-  // stateが有効なら、文字列を取り出す
-  if (state !== null) { t = state.text; }
+      // カウンターを更新する
+      cnt ++;
+    }
 
-  // idがoutputの要素に文字列を設定
-  document.querySelector('#output').innerText = t;
-}
+    // #outputに表示
+    function view(state) {
+      // 表示する文字列を作成
+      let t = 'index.html1';
+
+      // stateが有効なら、文字列を取り出す
+      if (state !== null) { t = state.text; }
+
+      // idがoutputの要素に文字列を設定
+      document.querySelector('#output').innerText = t;
+    }
+  </script>
+</body>
+</html>
 
 
 
