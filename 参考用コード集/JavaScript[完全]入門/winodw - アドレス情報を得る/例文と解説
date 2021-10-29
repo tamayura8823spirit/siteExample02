@@ -19,7 +19,8 @@
 
 
 
-[ 例文 ]
+
+• 例文
 
 // https://www.google.com/search?q=a#a でコンソールから実行
 console.log(location.href);
@@ -50,7 +51,8 @@ console.log(location.hash);
 
 
 
-[ 例文 ]
+
+• 例文
 
 // URL をいどう
 location.assign('https://www.google.com/search?=a');
@@ -70,21 +72,68 @@ location.assign('https://www.google.com/search?=a');
 .back()                   |   1つ前のページへ移動    [戻る]ボタンをクリックしたのと同じ
 .forward()                |   1つ次のページへ移動    [次へ]ボタンをクリックしたのと同じ
 .go()                     |   相対位置 n ページに移動    -1 は前のページ、 1 は次のページ
-.pushState(o, t, url)     |   履歴スタックに状態を追加    見かけ上、urlに移動して、関連づけたオブジェクト o を登録    t はタイトルだが、多くのブラウザで未実装
-.replaceState(o, t, url)  |   現在の履歴を置き換える   見かけ上、urlに移動して、関連づけたオブジェクト o を登録    t はタイトルだが、多くのブラウザで未実装
-
-*  .pushState()、 .replaceState() は、説明だけ見ても、何をするのかわかりにくい
-   これらは、Web を閲覧するとたまに見る、同一ページでの状態遷移 （Webページの読み込みはしていないのに、URLが変わっていく） を実現できる
+.pushState(o, t, url)     |   履歴に指定したURLを追加したあと、見かけ上、そこに移動する    stateオブジェクト o を登録する
+.replaceState(o, t, url)  |   現在の履歴を指定したURLに置き換えたあと、見かけ上、そこに移動する    stateオブジェクト o を登録
 
 
+*  .pushState()、 .replaceState() は、ページに表示されている内容はそのまま、スタックを積む（履歴を追加する）ことが出来るメソッド
+  これにより、同一ページでの状態遷移 （Webページの読み込みはしていないのに、URLが変わっていく） を実現できる
 
-[ 例文 ]
+*  .pushState()、 .replaceState() は、 「第1引数 state」 、 「第2引数 title」 、 「第3引数 URL（省略可能）」 の3つの引数を指定する
+ - state
+    任意のオブジェクトを渡すことができ、そのオブジェクトは "popstate" イベントから参照することができる
+ - title
+    履歴のタイトルを指定できるようだが、現在のところ無視されている
+ - URL
+    アドレスバーのURLの変更後の値を指定する    現在とは異なるURLを指定しても、ページのリロードは発生しない   相対パス、絶対パスのどちらでの指定も可能
+
+
+
+[ popState イベント ]
+ブラウザの「戻る」「進む」ボタンで、ページを遷移した際に発生する
+通常の遷移では発生せず、 .pushState() されたときにだけ発生する
+このイベントが発生したときに渡されるstateプロパティは、 .pushState() の第1引数で渡したオブジェクトが入っているので、その値に応じて処理を行えばよい
 
 
 
 
+• 例文
 
+// 戻るボタンのときの処理
+window.addEventListener('popstate' , e => {
+  // 情報を表示
+  view(e.state);
+});
 
+// カウンター用変数を作成
+let cnt = 0;
+
+// 移動ボタンを押すごとにページを移動
+function exec() {
+  // stateオブジェクトを作る
+  const state = {text: `cnt is ${cnt}.`};
+
+  // Webページ上に情報を表示
+  view(state);
+
+  // Stateを追加して、見かけ上移動する
+  history.pushState(state, '', `${cnt}.html`);  // 移動
+
+  // カウンターを更新する
+  cnt ++;
+}
+
+// #outputに表示
+function view(state) {
+  // 表示する文字列を作成
+  let t = 'index.html1';
+
+  // stateが有効なら、文字列を取り出す
+  if (state !== null) { t = state.text; }
+
+  // idがoutputの要素に文字列を設定
+  document.querySelector('#output').innerText = t;
+}
 
 
 
