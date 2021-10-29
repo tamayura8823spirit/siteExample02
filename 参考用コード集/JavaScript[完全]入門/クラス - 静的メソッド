@@ -1,0 +1,39 @@
+
+
+
+// クラスを作成
+class Menu {
+  // コンストラクター
+  constructor(name , price) {
+    // 初期化をおこなう
+    this.name = name;
+    this.price = price;
+  }
+  // 静的メソッド
+  static calcTax(price, taxPer) {
+    // 税込価格を計算
+    const res = Math.trunc(price * (100 + taxPer) / 100);
+
+    // 戻り値を返す
+    return res ;
+  }
+}
+
+// 税込み価格を計算する
+console.log(Menu.calcTax(440, 10));
+console.log(Menu.calcTax(460, 10));
+
+
+
+// 結果
+ 484
+ 506
+
+
+
+// 解説
+" クラス名.静的メソッド名() "と書くことで利用できる
+上の例では、引数に渡された(価格 , 税率)から、自動的に税込価格を計算して返却する" 静的メソッド "が、作成されている
+
+
+
