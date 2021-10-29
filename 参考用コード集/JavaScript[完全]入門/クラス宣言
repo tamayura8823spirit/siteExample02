@@ -1,0 +1,51 @@
+
+
+* クラスオブジェクトは 「クラス」 、インスタンスオブジェクトは 「オブジェクト」 、インスタンスメソッドは 「メソッド」 と、短く呼ぶことが多い
+  実際に、Menuクラスをもとに、チョコケーキとチーズケーキのオブジェクトを作成してみる (↓)
+
+
+ - - - - -
+ 
+
+• 例文
+
+// クラスを作成
+class Menu {
+  // コンストラクター
+  constructor(name , price) {
+    // 初期化をおこなう
+    this.name = name;
+    this.price = price;
+  }
+  // インスタンスメソッド
+  getInf() {
+    // 文字列を作成
+    const t = `${this.name} : ${this.price}`;
+
+    // 戻り値を返す
+    return t ;
+  }
+}
+
+// クラスを使ってオブジェクトを作る
+const cake1 = new Menu('チョコケーキ' , 460);
+const cake2 = new Menu('チーズケーキ' , 440);
+
+// プロパティを使う
+console.log(cake1.name, cake1.price);
+console.log(cake2.name, cake2.price);
+
+// メソッドを使う
+console.log(cake1.getInf());
+console.log(cake2.getInf());
+
+
+
+// 結果
+ チョコケーキ 460
+ チーズケーキ 440
+ チョコケーキ : 460
+ チーズケーキ : 440
+
+
+
