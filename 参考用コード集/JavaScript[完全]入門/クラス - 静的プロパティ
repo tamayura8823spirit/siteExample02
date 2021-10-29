@@ -1,0 +1,27 @@
+
+
+// クラスを作成
+class Menu {
+  // コンストラクター
+  constructor(name , price) {
+    // 初期化をおこなう
+    this.name = name;
+    this.price = price;
+  }
+}
+
+Menu.MIN_PRICE = 100;
+Menu.MAX_PRICE = 2000;
+
+// 最低価格と最高価格をコンソールに出力
+console.log(Menu.MIN_PRICE);
+console.log(Menu.MAX_PRICE);
+
+
+
+// 結果
+ 100
+ 2000
+
+
+
