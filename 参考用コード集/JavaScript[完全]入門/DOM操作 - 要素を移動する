@@ -1,0 +1,122 @@
+
+
+[ 要素ツリー構造をたどるプロパティ ]
+.parentNode       |   親のノード   親がないなら null
+.parentElement    |   親のElement    親がないか、Element でないなら null
+.childNodes       |   子要素の NodeList
+.firstChild       |   直下の最初の子ノード
+.lastChild        |   直下の最後の子ノード
+.previousSibling  |   ツリー構造で前のノード
+.nextSibling      |   ツリー構造で次のノード
+.nodeName         |   ノードの型をあらわすノード名
+.nodeType         |   ノードの型をあらわす数値    ELEMENT_NODE は 1、 TEXT_NODE　は 3、  COMMENT_NODE は 7 など
+
+
+ - - - - -
+
+
+• まずは親ノード、親要素をたどっていく
+
+  <ul id="menu">
+    <li id="item1">ホットコーヒー</li>
+    <li id="item2">アイスコーヒー</li>
+    <li id="item3">チョコケーキ</li>
+  </ul>
+
+  <script>
+
+    // idが menu の要素を選択
+    const el = document.querySelector('#menu');
+
+    // parentNodeの情報を、コンソールに出力
+    console.log('--- parentNode ---');
+    console.log(`${el.parentNode}`);
+    console.log(`${el.parentNode.parentNode}`);
+    console.log(`${el.parentNode.parentNode.parentNode}`);
+    console.log(`${el.parentNode.parentNode.parentNode.parentNode}`);
+
+    // parentElementの情報を、コンソールに出力
+    console.log('--- parentElement ---');
+    const parent2 = el.parentElement;
+    console.log(`${el.parentElement}`);
+    console.log(`${el.parentElement.parentElement}`);
+    console.log(`${el.parentElement.parentElement.parentElement}`);
+    
+  </script>
+
+
+
+// 結果
+--- parentNode ---
+[object HTMLBodyElement]
+[object HTMLHtmlElement]
+[object HTMLDocument]
+null
+--- parentElement ---
+[object HTMLBodyElement]
+[object HTMLHtmlElement]
+null
+
+
+
+// 解説
+ノードの方が１階層上までたどれる、これはイチバン上の階層が Element オブジェクトではないため
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+• 次は子要素の例を示す
+
+  <ul id="menu">
+    <li id="item1">ホットコーヒー</li>
+    <li id="item2">アイスコーヒー</li>
+    <li id="item3">チョコケーキ</li>
+  </ul>
+
+  <script>
+
+    // idが menu の要素を選択
+    const el = document.querySelector('#menu');
+
+    // parentNodeの情報を、コンソールに出力
+    console.log('--- childNode ---');
+    const child = el.childNodes;
+    console.log(`${child}`);
+    console.log(`${child[0]}`);
+    console.log(`${child[1]}、id="${child[1].id}"`);
+    console.log(`${child[2]}`);
+    console.log(`${child[3]}、id="${child[3].id}"`);
+
+    // 直下の最初、最後の要素の情報を、コンソールに出力
+    console.log('--- firstChild / lastChild ---');
+    console.log(`${el.firstChild}`);
+    console.log(`${el.lastChild}`);
+
+  </script>
+
+
+
+// 結果
+--- childNode ---
+[object NodeList]
+[object Text]
+[object HTMLLIElement]、id="item1"
+[object Text]
+[object HTMLLIElement]、id="item2"
+--- firstChild / lastChild ---
+[object Text]
+[object Text]
+
+
+
+// 解説
+注意すべき点は、<ul> と <li> のあいだに 改行 や スペース が入っていると、" テキストノード "が作成される、ということ
+タグとタグのあいだに隙間をあけないようにすると、" テキストノード "は作成されない
+
+
+
