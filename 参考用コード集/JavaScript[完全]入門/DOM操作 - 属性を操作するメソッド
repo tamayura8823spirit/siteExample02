@@ -1,0 +1,30 @@
+
+
+  <img src="https://picsum.photos/200/300">
+  <img src="https://picsum.photos/200/300">
+  <img src="https://picsum.photos/200/300">
+  
+  <script>
+    // imgの全要素を選択
+    const elImgs = document.querySelectorAll('img');
+
+    // 全てのimgで繰り返す
+    for (let i = 0; i < elImgs.length; i++) {
+      // src属性の値を取得する
+      const url = elImgs[i].getAttribute('src');
+      console.log(url);
+      
+      // height属性をセットする
+      elImgs[i].setAttribute('height', 200);
+    }
+  </script>
+
+
+  
+// 結果
+ https://picsum.photos/200/300
+ https://picsum.photos/200/300
+ https://picsum.photos/200/300
+
+
+
