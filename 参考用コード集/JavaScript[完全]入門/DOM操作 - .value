@@ -1,0 +1,34 @@
+
+
+• 例文
+
+  <textarea id="src">
+    注文はホットコーヒーとチョコパフェとトーストです。
+  </textarea>
+  <textarea id="dst"></textarea>
+
+  <script>
+    // 要素を選択
+    const elSrc = document.querySelector('#src');
+    const elDst = document.querySelector('#dst');
+
+    // 要素内の値を取得して、コンソールに出力
+    console.log(elSrc.value);
+
+    // 要素内の値を書き換え
+    elDst.value = '本日のおすすめはスペシャルフルーツパフェです。';
+
+  </script>
+
+
+
+// 結果
+ 注文はホットコーヒーとチョコパフェとトーストです。
+
+
+
+// 画面
+2つ目のテキストエリアボックスに、'本日のおすすめはスペシャルフルーツパフェです。'という文字列が追加されている
+
+
+
