@@ -1,0 +1,45 @@
+
+
+* 以下に例を示す、document.createElement() で <li> を作り、
+  「チーズケーキおすすめ」 という内部 HTML を設定して、
+  .appendChild() でリストの末尾に追加する
+
+
+ - - - - -
+
+
+• 例文
+
+  <ul id="menu">
+    <li id="item1">ホットコーヒー</li>
+    <li id="item2">アイスコーヒー</li>
+    <li id="item3">チョコケーキ</li>
+  </ul>
+
+  <script>
+
+    // idが menu の要素を選択
+      const elMenu = document.querySelector('#menu');
+
+    // <li>を作成して末尾に追加
+      const elLi = document.createElement('li');
+      elLi.innerHTML = 'チーズケーキ'
+      + '<span style="color: red;">おすすめ</span>';
+      elMenu.appendChild(elLi);
+
+    // <li>を複製して先頭に追加
+      const elLi2 = document.createElement('li');
+      elLi2.innerHTML = '紅茶'
+        + '<span style="color: red;">おすすめ</span>';
+      elMenu.insertBefore(elLi2, elMenu.firstChild);
+      
+  </script>
+
+
+
+// 画面
+ホットコーヒーの前に、" 紅茶 "が、
+チョコケーキの後に、" チーズケーキ "が挿入されている
+
+
+
