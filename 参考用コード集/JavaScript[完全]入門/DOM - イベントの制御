@@ -1,0 +1,54 @@
+
+
+* [リンク] をクリックすると、コンソールにバブリングの要素が表示されるプログラム
+  #inner の時点で、イベントのデフォルトの処理を防ぎ、   （クリックしてもリンク先に飛ばなくさせる）
+  #link の時点で、その後のイベントの伝播を無効にしている    （ #outer の処理が実行されなくする）
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+  <div id="outer">
+    <a href="http://www.google.com/" id="link">
+      <span id="inner">リンク</span>
+    </a>
+  </div>
+
+  <script>
+
+    // #innerをクリックしたときの関数を登録
+    document.querySelector('#inner')
+    .addEventListener('click' , e => {
+      console.log('#inner', e.returnValue, e.cancelBubble)
+      
+      // デフォルトの処理を防ぐ
+      // e.returnValue が false になる
+      e.preventDefault();
+    });
+
+    // #link がクリックされたときの関数を登録
+    document.querySelector('#link')
+    .addEventListener('click' , e => {
+      // 伝播を停止する
+      // e.cancelBubble が true になる
+      e.stopPropagation();
+      
+      console.log('#link', e.returnValue, e.cancelBubble)
+    });
+
+    // #outer がクリックされたときの関数を登録
+    document.querySelector('#outer')
+    .addEventListener('click' , e => {
+      console.log('#outer', e.returnValue, e.cancelBubble)
+    });
+
+  </script>
+
+
+
+// 解説
+#inner true false
+#link false true
+
+
+
