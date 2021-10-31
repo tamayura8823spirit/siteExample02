@@ -1,0 +1,47 @@
+
+
+* btn変数に対して .addEventListener() というメソッドで、" clickイベント "が発火した時に実行する関数を登録していく
+* 第一引数に監視したいイベント（*btnの*clickイベント）、第二引数に実行する関数を渡してあげる。
+* 渡すのは無名関数でもいいが、外出しすることで、別のイベントリスナー内で使い回せたり、リムーブ（解除）するときに必要な記述が減る
+* .removeEventListener() は、第一引数にイベント名、第二引数に解除したい関数を記述する
+*  btn などのイベント対象を関数内で使用したい場合は、 this というオブジェクトを使用することで、登録されたHTMLのDOMを This に格納することができる
+* JavaScriptでは外側のスコープにアクセスできるので、例えば h1 などの外側の要素に変更を加えることもできる
+*  .addEventListener() は複数のイベントが登録できるので、 changBgColor などを追加で登録することもできるし、また片方だけリムーブ（解除）することもできる
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+  <button id="btn">うんこ</button>
+  <h1>うんこー！</h1>
+  
+
+  <script>
+    
+    const btn = document.querySelector( '#btn' ) ;
+    const h1 = document.querySelector( 'h1' ) ;
+
+    function changeColor() {
+      this.style.color = 'red' ;
+      h1.style.color = 'red' ; 
+      console.log(1);
+    }
+    
+    const changeBgColor = function() {
+      h1.style.backgroundColor = 'green' ;
+    }
+    
+    btn.addEventListener( 'click' , changeColor ) ;
+    btn.removeEventListener( 'click' , changeColor ) ;
+    btn.addEventListener( 'click' , changeBgColor ) ;
+
+  </script>
+
+
+
+// 画面   （クリックした）
+changColor() の処理は一度も行われず、
+changeBgColor() だけが実行される
+
+
+
