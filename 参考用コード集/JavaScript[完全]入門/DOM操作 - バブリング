@@ -1,0 +1,55 @@
+
+
+* たとえば、
+  winodw > document > html > body > #outer > #inner
+  という階層になっていて、#inner でイベントが起きたとする
+
+* すると、
+  #innerでイベントが起き、#outerでイベントが起き、bodyでイベントが起き、 ...... 、windowでイベントが起きる
+  このように、クリックされた要素から１つずつ階層が上がっていく
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  
+  
+  // クリックできるボタンを作成
+  <button id="outer">
+    <span id="inner">クリック</span>
+  </button>
+
+
+  <script>
+
+    // inner outer body html をクリックした時の関数を登録
+    document.querySelector('#inner')
+    .addEventListener('click' , e => console.log('#inner'));
+    
+    document.querySelector('#outer')
+    .addEventListener('click' , e => console.log('#outer'));
+    
+    document.querySelector('body')
+    .addEventListener('click' , e => console.log('body'));
+
+    document.querySelector('html')
+    .addEventListener('click' , e => console.log('html'));
+
+    // document をクリックしたときの関数を登録
+    document.addEventListener('click' , e => console.log('document'));
+    
+    // window をクリックしたときの関数を登録
+    window.addEventListener('click' , e => console.log('window'));
+
+  </script>
+
+
+
+// 結果 （ #inner をクリック ）
+#inner
+#outer
+body
+html
+document
+window
+
+
+
