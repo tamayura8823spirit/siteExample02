@@ -1,0 +1,24 @@
+
+
+* <label> の書き方は２通り存在する
+
+
+ - - - - -
+
+①
+
+  <!-- お知らせの受信 -->
+  <div>
+    <label><input type="checkbox" name="dm" value="on" /> お知らせの受信</label>
+  </div>
+
+
+②
+
+  <!-- お知らせの受信 -->
+  <div>
+    <input type="checkbox" id="dm" name="dm" value="on" />
+    <label for="dm">お知らせの受信</label>
+  </div>
+
+
