@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form action="" id="sendForm">
+      <!-- 名前 -->
+      <div></div>
+      <div>
+        名前：
+        <input type="text" id="name" name="name" size="40" value="匿名希望" />
+      </div>
+
+      <!-- 性別 -->
+      <div>
+        性別：
+        <label> <input type="radio" id="sexM" name="sex" value="male" />男 </label>
+        <label> <input type="radio" id="sexF" name="sex" value="female" />女 </label>
+        <label> <input type="radio" id="sex0" name="sex" value="other" checked />その他 </label>
+      </div>
+
+      <!-- 居住国 -->
+      <div>
+        居住国：
+        <select name="country" id="country">
+          <option value="japan" selected="selected">日本</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+
+      <!-- お知らせの受信 -->
+      <div>
+        <label><input type="checkbox" id="dm" name="dm" value="on" /> お知らせの受信</label>
+      </div>
+
+      <!-- ご意見 -->
+      <div>
+        ご意見：<br />
+        <textarea name="" id="message" cols="40" rows="4">特になし</textarea>
+      </div>
+
+      <div>
+        <button type="button" id="btnAuto">自動入力</button>
+        <input type="submit" value="送信" />
+      </div>
+    </form>
+
+    <script>
+      // window に DOMContentLoaded の処理を登録
+      window.addEventListener('DOMContentLoaded', (e) => {
+        // 各フォーム部品を選択
+        const elName = document.querySelector('#name');
+        const elSex = Array.from(document.querySelectorAll('[name="sex"]'));
+        const elCountry = document.querySelector('#country');
+        const elDm = document.querySelector('#dm');
+        const elMessage = document.querySelector('#message');
+
+        const elBtnAuto = document.querySelector('#btnAuto');
+        const elForm = document.querySelector('#sendForm');
+
+        // 自動入力ボタンの処理を登録
+        elBtnAuto.addEventListener('click', (e) => {
+          // 各フォーム部品の値を設定
+          elName.value = 'トクメイキボウ';
+          elSex[0].checked = true;
+          elCountry.value = 'other';
+          elDm.checked = true;
+          elMessage.value = 'トクニナシ';
+        });
+
+        // 送信実行時の処理を登録
+        elForm.addEventListener('submit', (e) => {
+          // 各フォーム部品の値を取得
+          const vName = elName.value;
+          const vSex = elSex.find((x) => x.checked).value;
+          const vCountry = elCountry.value;
+          const vDm = elDm.checked ? elDm.value : null;
+          const vMessage = elMessage.value;
+
+          // コンソールに出力
+          console.log(vName, vSex, vCountry, vDm, vMessage);
+
+          // 送信を停止
+          e.preventDefault();
+        });
+      });
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
