@@ -1,0 +1,27 @@
+#msg {
+  border: solid 2px #ccc;
+  border-radius: 0.3em;
+  padding: 1em;
+}
+
+#msgBtn {
+  border: solid 2px #ccc;
+  border-radius: 0.3em;
+  text-align: center;
+  padding: 0.3em;
+}
+
+#msgBody {
+  overflow: hidden;
+  height: 30px;
+  opacity: 0.2;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.open {
+  overflow-y: scroll !important;
+  height: 200px !important;
+  opacity: 1 !important;
+}
+/*# sourceMappingURL=style.css.map */
