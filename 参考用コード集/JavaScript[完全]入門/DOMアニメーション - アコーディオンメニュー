@@ -1,0 +1,64 @@
+
+
+• HTML
+
+    <div id="msg">
+      <div id="msgBody"></div>
+      <div id="msgBtn">続きを読む</div>
+    </div>
+
+
+- - - - - - 
+
+
+• CSS
+
+// idが msg の要素
+#msg {
+  border: solid 2px #ccc;
+  border-radius: 0.3em;
+  padding: 1em;
+}
+
+// idが msgBtn の要素
+#msgBtn {
+  border: solid 2px #ccc;
+  border-radius: 0.3em;
+  text-align: center;
+  padding: 0.3em;
+}
+
+// idが msgBody の要素
+#msgBody {
+  overflow: hidden; // はみ出した場合
+  height: 30px; // 高さ
+  opacity: 0.2; // 透明度
+  transition: 0.8s; // アニメーション時間は0.8秒
+}
+
+// classが open の要素
+.open {
+  overflow-y: scroll !important; // はみ出した場合
+  height: 200px !important; // 高さ
+  opacity: 1 !important; // 透明度
+}
+
+
+- - - - - - 
+
+
+• JavaScript
+
+
+// ダミーテキストを作成して、idが magBody の要素のに設定
+const tDummy = 'coffee cake '.repeat(1000);
+document.querySelector('#msgBody').innerHTML = tDummy
+
+// idが menu の要素に、クリック時の処理を登録
+document.querySelector('#msgBtn').addEventListener('click', e => {
+  // idが msgBody の要素の処理
+  document.querySelector('#msgBody').classList.toggle('open');
+});
+
+
+
