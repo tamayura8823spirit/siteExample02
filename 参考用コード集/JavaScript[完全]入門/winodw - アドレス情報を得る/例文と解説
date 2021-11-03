@@ -9,7 +9,6 @@
 
 
 [ location のプロパティ ]
-
 .href         |   URL 全体    値を代入すると、そのURLに移動する
 .protocol     |   URL のプロトコルスキーム
 .hostname     |   URL のホスト
@@ -18,6 +17,13 @@
 .hash         |   URL の ＃ 以降の値
 
 
+[ Location のメソッド ]
+.assign( s )    |   引数の URL を読み込む
+.reload()       |   現在の URL を再読み込むする    引数に true を指定すると、常にサーバーから読み込む
+.replace()      |   現在のページを、引数の URL で置きかえる    履歴に保存されない
+
+
+- - - - - - 
 
 
 • 例文
@@ -41,15 +47,6 @@ console.log(location.hash);
 
 
  - - - - -
-
-
-[ Location のメソッド ]
-
-.assign( s )    |   引数の URL を読み込む
-.reload()       |   現在の URL を再読み込むする    引数に true を指定すると、常にサーバーから読み込む
-.replace()      |   現在のページを、引数の URL で置きかえる    履歴に保存されない
-
-
 
 
 • 例文
