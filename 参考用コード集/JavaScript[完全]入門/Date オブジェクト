@@ -7,10 +7,28 @@
   （年月日時分秒をカンマ区切り）で書く場合には、月を ０　〜　１１ で表すので注意する
 
 
+
+[ 日時処理のメソッド ]
+
+.toISOString()            |   ISO 8601 の文字列で得る
+.toJSON()                 |   JSON 用の文字列を得る   得られる文字列は、.toISOString() と同じ
+.toUTCString()            |   UTC タイムゾーンを使用する文字列を得る
+.toString()               |   文字列を得る
+.toLocaleString()         |   その言語の書式で、文字列を得る
+.toDateString()           |   日付部分の文字列を得る
+.toLocaleDateString()     |   その言語の書式で、日付部分の文字列を得る
+.toTimeString()           |   時刻部分の文字列を得る
+.toLocaleTimeString()     |   その言語の書式で、時刻部分の文字列を得る
+
+.valueOf()                |   数値を返す
+.getTime()                |   時間の数値を得る    得られる数値は .valueOf() と同じ
+.getTimezoneOffset()      |   現地の時間帯のオフセットの分数を返す
+
+
  - - - - -
 
 
-    " Dateオブジェクトを作成する "
+    " Dateオブジェクトを作成する方法 "
 
 
 [ 構文① ]
@@ -50,27 +68,7 @@ UTCとは、大まかに言うと" 本初子午線 "の時間(イギリスのグ
  - - - - -
  
 
-[ 日時処理のメソッド ]
-
-.toISOString()            |   ISO 8601 の文字列で得る
-.toJSON()                 |   JSON 用の文字列を得る   得られる文字列は、.toISOString() と同じ
-.toUTCString()            |   UTC タイムゾーンを使用する文字列を得る
-.toString()               |   文字列を得る
-.toLocaleString()         |   その言語の書式で、文字列を得る
-.toDateString()           |   日付部分の文字列を得る
-.toLocaleDateString()     |   その言語の書式で、日付部分の文字列を得る
-.toTimeString()           |   時刻部分の文字列を得る
-.toLocaleTimeString()     |   その言語の書式で、時刻部分の文字列を得る
-
-.valueOf()                |   数値を返す
-.getTime()                |   時間の数値を得る    得られる数値は .valueOf() と同じ
-.getTimezoneOffset()      |   現地の時間帯のオフセットの分数を返す
-
-
- - - - - -
-
-
-[ 例文① ]
+[ 例文① * 現地時刻（日本標準時）でDateオブジェクトを作成する ]
 
 
 // Dateオブジェクトを作成
@@ -97,7 +95,6 @@ console.log('--- getTimezoneOffset ---');
 console.log(d.getTimezoneOffset());
 
 
-
 // 結果
  --- toISOString ---
  1998-12-31T15:00:00.000Z
@@ -119,15 +116,10 @@ console.log(d.getTimezoneOffset());
  -540
 
 
-
-// 解説
-現地時刻（日本標準時）で、Dateオブジェクトが作成されている
-
-
  - - - - -
  
 
-[ 例文② ]
+[ 例文② * UTC（世界協定時）でDateオブジェクトを作成する ]
 
 
 // Dateオブジェクトを作成
@@ -154,7 +146,6 @@ console.log('--- getTimezoneOffset ---');
 console.log(d.getTimezoneOffset());
 
 
-
 // 結果
  --- toISOString ---
  1999-01-01T00:00:00.000Z
@@ -176,16 +167,14 @@ console.log(d.getTimezoneOffset());
  -540
 
 
-
 // 解説
-UTC（世界協定時）で、Dateオブジェクトが作成されている
 先程の例と、9時間の時差があるのがわかる
 
 
  - - - - -
  
 
-[ 例文③ ]
+[ 例文③ * タイムゾーンを指定して、ISO 8601 で時間を書いた例 ]
 
 
 // ISO 8601で時差を指定
@@ -210,10 +199,10 @@ console.log(d3.toISOString());
 
 
 // 解説
-タイムゾーンを指定して、ISO 8601 で時間を書いた例
-日本標準時の時差ありのもの、
-UTC（世界協定時）の時間、
-new Date() を使い、現地時間（日本標準時）で指定したもの、の3つ
+① 日本標準時の時差ありのもの
+② UTC（世界協定時）の時間
+③ new Date() を使い、現地時間（日本標準時）で指定したもの
+の3つ
 
 
 
