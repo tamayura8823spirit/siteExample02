@@ -1,0 +1,205 @@
+
+
+* いままでの Promise の使い方は、１つずつ順番におこなう "直列" 処理であった
+  ここであつかうのは、まとめて実行する "並列" 処理である
+
+
+- - - - - - 
+
+
+[ all ]
+すべて解決したら、その結果の配列を受け取って先に進む
+拒否が発生したときは、そこで処理を打ち切って、その結果を受け取って先に進む
+
+
+[ any ]
+１つでも解決したら、そこで処理を打ち切って、その結果を受け取って先に進む
+全て拒否だったときは、　AggregateError を受け取る  （allとは真反対）
+
+
+[ allSettled ]
+解決、拒否にかかわらず全て実行が終了するのを待つ
+そして、すべての結果を配列で受け取る
+
+
+[ race ]
+最初の1つの結果が出た時点で、処理を打ち切る
+その1つが、解決のときは、その結果を受け取り、対応する処理に進む
+        　拒否のときも、その結果を受け取り、対応する処理に進む
+
+
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+
+
+[ 共通コード ]
+
+function p(tm, isResolve = true) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(tm, isResolve ? 'resolve' : 'reject');
+      if (isResolve) {
+        resolve(`${tm}:ok`);
+      } else {
+        reject(`${tm}:err`);
+      }
+    }, tm);
+  });
+};
+
+
+- - - - - -
+
+
+• all
+
+
+// すべて成功
+setTimeout(() => {
+  console.log('--- Promise.all() その１---');
+  const arr = [p(1, true), p(2, true), p(3, true)];
+  Promise.all(arr).then(data => {
+    console.log('--> then :', data);
+  }).catch(data => {
+    console.log('--> catch :', data);
+  })
+}, 0);
+
+// 1つ失敗
+setTimeout(() => {
+  console.log('--- Promise.all() その2---');
+  const arr = [p(1, true), p(2, false), p(3, true)];
+  Promise.all(arr).then(data => {
+    console.log('--> then :', data);
+  }).catch(data => {
+    console.log('--> catch :', data);
+  })
+}, 100);
+
+
+
+// 結果
+--- Promise.all() その１---
+1 'resolve'
+2 'resolve'
+3 'resolve'
+--> then : (3) ['1:ok', '2:ok', '3:ok']
+--- Promise.all() その2---
+1 'resolve'
+2 'reject'
+--> catch : 2:err
+3 'resolve'
+
+
+- - - - - - 
+
+
+• any
+
+
+// 1つ成功
+setTimeout(() => {
+  console.log('--- Promise.any() その１---');
+  const arr = [p(1, false), p(2, true), p(3, false)];
+  Promise.any(arr).then(data => {
+    console.log('--> then :', data);
+  }).catch(data => {
+    console.log('--> catch :', data);
+  })
+}, 0);
+
+// すべて失敗
+setTimeout(() => {
+  console.log('--- Promise.any() その2---');
+  const arr = [p(1, false), p(2, false), p(3, false)];
+  Promise.any(arr).then(data => {
+    console.log('--> then :', data);
+  }).catch(data => {
+    console.log('--> catch :', data);
+  })
+}, 100);
+
+
+
+// 結果
+--- Promise.any() その１---
+1 'reject'
+2 'resolve'
+--> then : 2:ok
+3 'reject'
+--- Promise.any() その2---
+1 'reject'
+2 'reject'
+3 'reject'
+--> catch : AggregateError: All promises were rejected
+
+
+- - - - - -
+
+
+• allSettled
+
+
+const arr = [p(1, false), p(2, true), p(3, false)];
+Promise.allSettled(arr).then(data => {
+  console.log('--> then :', data);
+});
+
+
+
+// 結果
+1 'reject'
+2 'resolve'
+3 'reject'
+--> then : 
+(3) [{…}, {…}, {…}]
+0: {status: 'rejected', reason: '1:err'}
+1: {status: 'fulfilled', value: '2:ok'}
+2: {status: 'rejected', reason: '3:err'}
+length: 3
+[[Prototype]]: Array(0)
+
+
+- - - - - - 
+
+
+• race
+
+
+setTimeout(() => {
+  console.log('--- Promise.race() その１---');
+  const arr = [p(1, true), p(2, false), p(3, true)];
+  Promise.race(arr).then(data => {
+    console.log('--> then :', data);
+  }).catch(data => {
+    console.log('--> catch :', data);
+  })
+}, 0);
+
+setTimeout(() => {
+  console.log('--- Promise.race() その2---');
+  const arr = [p(1, false), p(2, true), p(3, false)];
+  Promise.race(arr).then(data => {
+    console.log('--> then :', data);
+  }).catch(data => {
+    console.log('--> catch :', data);
+  })
+}, 100);
+
+
+
+// 結果
+--- Promise.race() その１---
+1 'resolve'
+--> then : 1:ok
+2 'reject'
+3 'resolve'
+--- Promise.race() その2---
+1 'reject'
+--> catch : 1:err
+2 'resolve'
+3 'reject'
+
+
+
