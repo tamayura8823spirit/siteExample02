@@ -1,0 +1,74 @@
+
+
+*  "async function" と書くことで、その関数は非同期処理をあつかう関数になる
+  また、この関数は、暗黙的に Promise オブジェクトを返す
+
+*  "async function" 内では、非同期の関数の前に await をつけることで
+   Promise の処理を待ってからプログラムを進める
+   await をつけた関数の戻り値は resolve() の引数になる
+
+
+- - - - - -
+
+
+[ 構文 ]
+async function 関数名（引数） {
+  処理
+  await 非同期の関数()
+  変数 = await 非同期の関数（）
+    // 非同期の関数内で resolve( v ) を実行したなら、 v が変数に入る
+  処理
+}
+
+
+- - - - - - 
+
+
+• 処理を待ちつつ進んでいく処理
+
+
+function wait(msg, isResolve = true) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (isResolve) {
+        resolve(msg);
+      } else {
+        reject(`error (${msg}) `);
+      }
+    }, 100);
+  });
+};
+
+async function exec() {
+  console.log('--- 処理開始 ---');
+
+  console.log(await wait('処理A'));
+  console.log(await wait('処理B'));
+
+  console.log('処理途中');
+
+  const c = await wait('処理C');
+  const d = await wait('処理D');
+  console.log(c);
+  console.log(d);
+
+  console.log('--- 処理終了 ---');
+};
+
+
+
+// 結果
+--> 処理１
+--- 処理開始 ---
+--> exec() Promise {<pending>}
+--> 処理２
+
+処理A
+処理B
+処理途中
+処理C
+処理D
+--- 処理終了 ---
+
+
+
