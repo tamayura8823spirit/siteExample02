@@ -58,4 +58,51 @@ cache   |   キャッシュモード     reload 、 force-cache など、いく�
 .json() |    Promise オブジェクトを返す、 JSON オブジェクトを引数に resolve() する
 
 
+- - - - - -
+
+
+• 通信処理で読み込むファイル
+
+
+{"menu": ["ホットコーヒー", "アイスコーヒー"]}
+
+
+• fetch()を利用した通信処理
+
+
+const url = 'data.json';
+
+fetch(url)
+.then(response => {
+  console.log(response.url);
+  console.log(response.status);
+  console.log(response.ok);
+  console.log(response.statusText);
+
+  return response.json()
+})
+.then(result => {
+  // 成功時 result は JSON をパースしたオブジェクト
+  const txt = JSON.stringify(result, null, '  ');
+  console.log(txt);
+})
+.catch(error => {
+  console.error(error);
+});
+
+
+
+// 結果
+http://127.0.0.1:5500/test/data.json
+200
+true
+OK
+{
+  "menu": [
+    "ホットコーヒー",
+    "アイスコーヒー"
+  ]
+}
+
+
 
