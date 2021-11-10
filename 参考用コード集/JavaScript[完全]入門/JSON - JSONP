@@ -1,0 +1,64 @@
+
+
+[ 説明 ]
+ JSON は、 JavaScript で読み取るには便利な形式だが、サーバー側で特殊な設定をしない限り、同じドメインからしか読み込めない
+クロスオリジンの制約あるため、これを回避するには、たとえばサーバー側で、レスポンスヘッダに " access-control-allow-origin: * " という値をつけるといった対応が必要
+Web API （ URLを指定してデータを取れるサービス）の中には、こうした設定をおこなうことで、 JSON を JavaScript から読み込み可能にしている
+
+こうしたサーバー側の設定以外にも、 JSON のテキストデータを、 JavaScript から読み込む方法があり、それは JavaScript のプログラムとして読み込む方法である
+ JavaScript のプログラムは、別ドメインからも読み込める、 " JSONP " はそうした仕掛けを施した JSON である
+
+ JSONP は" JSON with padding "の略で、 padding は付け足しという意味
+ JSON を、 JavaScript の関数ではさみ、 JSON を引数として実行する
+この関数部分は padding で、以下(↓) では前後の 「resFnc(」「)」 が付け足し部分
+
+
+- - - - - - 
+
+
+[ 書き方 ]
+resFnc({"menu": ["ホットコーヒー", "アイスコーヒー"]})
+   - 通常、この関数名は、 Web API の callback の値として指定する
+
+https://example.com/api?q=abc&callback=resFnc
+   - このようなURLのとき、 resFnc を関数名として付け足す
+
+* Webページ側のプログラムで、 resFnc という関数を良いしておけば、 JSON を受け取ることができる
+
+
+- - - - - -
+
+
+• 読み込む JSONP 形式のファイル
+
+
+back({"menu": ["ホットコーヒー", "アイスコーヒー"]})
+
+
+
+• Webページ側のプログラム
+
+window.addEventListener('DOMContentLoaded', e => {
+  // body要素に script 要素を加える
+  const el = document.createElement('script');
+  el.setAttribute('src', 'jsonp.js');
+  document.body.appendChild(el);
+});
+
+// JSONP が呼ぶ関数
+function back(json) {
+  console.log(JSON.stringify(json, null, '  '));
+}
+
+
+
+// 結果
+{
+  "menu": [
+    "ホットコーヒー",
+    "アイスコーヒー"
+  ]
+}
+
+
+
