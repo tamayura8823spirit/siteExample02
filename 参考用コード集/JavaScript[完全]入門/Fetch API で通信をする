@@ -1,0 +1,61 @@
+
+
+[ 説明 ]
+ JavaScript には通信機能があり、インターネット上にあるリソースをダウンロードしたり、アップロードしたりできる
+ fetch() を使うと、第１引数にURLを書くことで、インターネット上のリソースにアクセスできる
+
+ fetch() は、 Promise オブジェクトを返し、後続の .then() では、 Response オブジェクトを受け取ることができる
+通信後にデータを取り出したりする処理は、この Response オブジェクトを使っておこなう
+
+
+- - - - - -
+
+
+[ 書き方 ]
+
+fetch( URLの文字列 )
+.then( response => {
+  Response オブジェクトを使った処理
+})
+
+
+* 第２引数にオブジェクトを渡すと、通信を制御する細かな設定を指定できる
+
+
+fetch( URLの文字列 , {
+  method: 'POST' ,  // GET や POST を指定
+  body: ''  // 送信するデータ
+})
+.then( response => {
+  Response オブジェクトを使った処理
+})
+
+
+- - - - - -
+
+
+[ 第２引数に渡せるプロパティ (設定項目) ]
+method  |    GET や POST の文字列
+headers |    Headers オブジェクト
+body    |    POST のときに送るデータ   文字列など、いくつかのデータ形式を送れる
+cache   |   キャッシュモード     reload 、 force-cache など、いくつかの設定あり
+
+
+*  Headers オブジェクトは、 new Headers() でインスタンスを作り、 .append(キー,値) でデータを追加する
+
+
+[ fetch()で得られるResponseオブジェクトのプロパティ ]
+.headers    |   ヘッダー
+.ok         |   レスポンスが成功したかの真偽値
+.status     |    HTTP ステータスコード、 200（成功） など
+.statusText |    HTTP ステータスコードに応じたメッセージ、OKなど
+.url        |   レスポンスのURL
+.body       |   レスポンスのボディ
+
+
+[ Responseオブジェクトのメソッド ]
+.text() |    Promise オブジェクトを返す、文字列を引数に resolve() する
+.json() |    Promise オブジェクトを返す、 JSON オブジェクトを引数に resolve() する
+
+
+
