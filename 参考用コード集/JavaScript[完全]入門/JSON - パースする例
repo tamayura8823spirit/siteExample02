@@ -1,0 +1,36 @@
+
+
+* パースとは、 「 JSON 形式のデータから必要なデータを取り出して、JavaScript で利用出来るようにすること」 である
+
+
+- - - - - -
+
+
+• 例文
+
+const text = '{"menu":[{"name":"ホットコーヒー","price":450},{"name":"アイスコーヒー","price":450},{"name":"チョコケーキ","price":500},{"name":"チーズケーキ","price":500}],"order":null,"open":true}';
+
+// オブジェクトのパース
+let res = null;
+try {
+  res = JSON.parse(text);
+} catch(e) {
+}
+console.log(res);
+
+
+
+// 結果
+{
+  menu: [
+    {name: 'ホットコーヒー', 'price': 450},
+    {name: 'アイスコーヒー', 'price': 450},
+    {name: 'チョコケーキ', 'price': 500},
+    {name: 'チーズケーキ', 'price': 500}
+  ],
+  order: null,
+  open: true
+}
+
+
+
