@@ -1,0 +1,89 @@
+
+
+*  XMLHttpRequest は、 fetch() が登場する前からある古い通信方式
+  これを利用してもネットワーク通信が可能
+  
+* ファイル読み込み後の処理では、
+   load イベントに登録した関数の this か、 XMLHttpRequest オブジェクトのインスタンスを利用して、
+  各種の値やデータを取り出せる
+
+
+- - - - - - 
+
+
+[ 書き方 ]
+
+変数 = new XMLHttpRequest()
+変数.addEventListener('load' , function() {
+  ファイル読み込み後の処理
+});
+変数.open('GET' , URL);
+変数.send();
+
+
+- - - - - -
+
+
+[ XMLHttpRequestオブジェクトのプロパティ ]
+.status       |    HTTP ステータスコード、 200 など
+.statusText   |    HTTP ステータスコードに王したメッセージ、OKなど
+.responseURL  |   レスポンスのURL
+.response     |   レスポンス
+.responseText |   レスポンスの文字列
+
+
+- - - - - -
+
+
+[ 通信処理で読み込むファイル ]
+
+{"menu": ["ホットコーヒー", "アイスコーヒー"]}
+
+
+
+[ XMLHttpRequestを利用した通信処理 ]
+
+
+const url = 'data.json';
+
+let req = new XMLHttpRequest();
+
+req.addEventListener('load', function() {
+  console.log('--- this ---')
+  console.log(this.status)
+  console.log(this.statusText)
+  console.log(this.responseURL)
+  console.log(this.response)
+  console.log(this.responseText)
+  console.log('--- req ---')
+  console.log(req.status);
+  console.log(req.statusText);
+  console.log(req.responseURL);
+  console.log(req.response);
+  console.log(req.responseText);
+})
+
+req.open('GET', url);
+req.send();
+
+
+
+// 結果
+--- this ---
+200
+OK
+http://127.0.0.1:5500/test/data.json
+{"menu": ["ホットコーヒー", "アイスコーヒー"]}
+
+{"menu": ["ホットコーヒー", "アイスコーヒー"]}
+
+--- req ---
+200
+OK
+http://127.0.0.1:5500/test/data.json
+{"menu": ["ホットコーヒー", "アイスコーヒー"]}
+
+{"menu": ["ホットコーヒー", "アイスコーヒー"]}
+
+
+
