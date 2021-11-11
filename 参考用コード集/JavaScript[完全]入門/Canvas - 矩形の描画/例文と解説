@@ -1,0 +1,25 @@
+
+
+*  Canvas の描画の基本は、パスを作って塗りつぶす、あるいは線描画をする、である
+  ただし、よく使う" 矩形 "については、パスを作らず、直接描画するメソッドが用意されている
+
+*  " context.clearRect( 0, 0, canvas.width, canvas.height ) "とすれば、中身を全て削除できる
+   " context.fillRect( 0, 0, canvas.width, canvas.height ) "とすれば、全体を塗り潰せる
+
+
+- - - - - - 
+
+
+[ 矩形の描画に関わるメソッド ]
+.fillRect( x, y, w, h )     |   座標x,y、 横幅w、 高さh で矩形を塗りつぶす
+.strokeRect( x, y, w, h )   |   座標x,y、 横幅w、 高さh で矩形の線を描く
+.clearRect( x, y, w, h )    |   座標x,y、 横幅w、 高さh で矩形の領域を削除する
+
+
+- - - - - - 
+
+
+[ 例文 ]
+
+• 
+
