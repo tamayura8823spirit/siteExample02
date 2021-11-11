@@ -1,0 +1,78 @@
+
+
+*  Web Worker の一種で、複数開いているWebブラウザのタブやウィンドウで、情報を共有できる Worker 
+  タブやウィンドウ毎に Worker を走らせるのではなく、単一の共通 Worker を走らせて、まとめて処理をおこなう
+
+*  Shared Worker は、 Worker とは少し違い、 port 経由でメッセージの送受信をする
+
+
+- - - - - -
+
+
+[ 書き方 ]
+
+worker = new SharedWorker( 外部JavaScriptのURL )
+
+worker.port.postMessage( 送信するデータ );
+
+worker.port.onmessage = function( event ) {
+   event.data が受信するデータ
+}
+
+
+*  Worker 側では、以下のように書く
+
+
+onconnect = function( event ) {
+  port = event.ports[ 0 ];
+  port.onmessage = function( event ) {
+     event.data が受信するデータ
+     port.postMessage( 送信するデータ )
+  }
+}
+
+
+- - - - - -
+
+
+•  Worker として動作するファイル (worker)
+
+
+let cnt = 0;
+
+onconnect = function(event) {
+  const port = event.ports[0];
+
+  port.onmessage = function(event) {
+    console.log('@worker', event.data);
+    
+    port.postMessage(`返信！${++ cnt}`);
+  }
+}
+
+
+
+•  SharedWorker を使った処理  (html)
+
+
+const worker = new SharedWorker('web-worker.js');
+
+worker.port.postMessage('送信！');
+
+worker.port.onmessage = function(event) {
+  console.log('@html', event.data);
+}
+
+
+
+// 結果 （1つ目のタブ）
+@html 返信！1
+
+// 結果 （２つ目のタブ）
+@html 返信！2
+
+// 結果 （３つ目のタブ）
+@html 返信！3
+
+
+
