@@ -1,0 +1,79 @@
+
+
+[ 説明 ]
+ JavaScript は、基本的にはシングルスレッドだが、バックグラウンドのスレッドで処理する方法も用意されている
+ new Worker() で Worker オブジェクトを作成し、 Worker にメッセージを送ったり、逆にメッセージを受け取ったりすることで、別のスレッドとやりとりをする
+
+ Woker の処理は別スレッドで実行するので、通常のスレッドを止めることなく、 Web ページのUIの処理を止めることもない
+ Woker のスレッドと、 JavaScript のメインスレッドは、文字列やオブジェクトといったデータを送り合うことができる
+しかし、メモリーを共有はできないので、送信時や受診時は、データを一旦シリアライズする
+
+  （シリアライズは日本語で" 直列可 "と訳され、文字列やバイト列のように、階層構造を持たないデータ構造に変換すること）
+
+つまり、データの複製を作って送ることになるので、関数にオブジェクトを渡すときのような "参照" を使うわけではなく、 Woker に送ったデータを書き換えても、元のデータは変化しない
+
+ Woker は、 JavaScript のメインスレッドとは別に、バックグラウンドのスレッドで処理をおこなうので、時間がかかる重い計算をおこなうのに適している
+画像処理や解析処理など、数秒かかってしまう処理は、 Worker を使ってユーザーの操作を妨げないようにすると良い
+
+
+- - - - - -
+
+
+[ 書き方 ]
+
+worker = new Woker( 外部JavaScriptのURL )
+worker.postMessage( 送信するデータ )
+worker.onmessage = function( event ) {
+   event.data が受信するデータ
+}
+
+
+*  Woker 側では、 onmessage を利用してデータを受け取り、また、データを戻すときは postMessage() を使う
+
+
+onmessage = function( event ) {
+   event.data が受信するデータ
+   postMessage( 送信するデータ )
+}
+
+
+- - - - - - 
+
+
+•  Woker として動作するファイル
+
+
+onmessage = function(event) {
+  console.log('@worker', JSON.stringify(event.data));
+
+  // 返信するデータを作成
+  const data = {msg: '返信！', arr: [4, 5, 6]};
+
+  postMessage(data);
+};
+
+
+
+•  Woker を使った処理
+
+
+// Worker を作成
+const worker = new Worker('web-worker.js');
+
+// 送信するデータを作成
+const data = {msg: '送信！', arr: [1, 2, 3]};
+
+worker.postMessage(data);
+
+worker.onmessage = function(event) {
+  console.log('@html', JSON.stringify(event.data));
+};
+
+
+
+// 結果
+@worker {"msg":"送信！","arr":[1,2,3]}
+@html {"msg":"返信！","arr":[4,5,6]}
+
+
+
