@@ -21,5 +21,34 @@
 
 [ 例文 ]
 
-• 
+• HTML
+
+  <canvas id="canvas" width="400" height="300"></canvas>
+
+
+• JavaScript
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+
+// 背景を作る
+context.fillStyle = '#ccffcc';
+context.fillRect(0,0,canvas.width,canvas.height);
+
+// 設定を指定
+context.fillStyle = '#8888ff';
+context.strokeStyle = 'rgba(255, 32, 32, 0.66)';
+context.lineWidth = 16;
+
+context.fillRect(50, 50, 300, 200); // 塗りつぶし
+context.strokeRect(50, 50, 300, 200); // 線描画
+context.clearRect(100, 100, 200, 100);  // 消去
+
+
+
+// 画面
+キャンバス全体を覆う背景、四角が一つ、太い線がひとつ、真ん中をくり抜いた図形が出来上がる
+
+
 
