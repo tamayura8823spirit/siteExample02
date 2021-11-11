@@ -1,0 +1,79 @@
+
+
+[ 説明 ]
+ Canvas はその名の通り、描画のためのキャンバスになる要素であり、 JavaScript のプログラムから図を書いたり、グラフを描画したりできる
+また、" Data URL "という形式で画像を取り出すこともできる、取り出した画像は、 img 要素を使って表示したり、ファイルとしてダウンローでできる
+
+ Canvas には" 2D "と" 3D "の描画が用意されており、 width や height などの属性に指定した画素数で、描画領域が作成される
+ここで注意しなければならないのは、 CSS にも width や height のスタイル設定は存在するが、そちらで見た目の高さなどを変更しても、描画領域の画素数は変化しないということ
+
+たとえば、
+ canvas の属性に、 「 width="300" height="200" 」 と書いたとする
+スタイルで 「 width:600px; height:400px; 」 と書いたとき、" 縦横２倍 "に引き伸ばされて表示され、若干ぼやけた感じになる
+
+作成した Canvas への描画は、コンテクストという描画の文脈を取り出しておこなう
+２次元の描画をおこなうための" 2Dコンテクスト "と呼ばれるものや、" WebGL "を利用して3Dをあつかうコンテクストなどがある
+  （ ３Dをあつかう場合はプログラムが複雑なため、 three.js などのライブラリで間接的に操作した方がよい ）
+
+以下は(↓)、 2Dコンテクスト を取り出す書き方である
+
+
+- - - - - -
+
+
+[ 書き方 ]
+
+  <canvas width="横幅ピクセル数" height="高さピクセル数"></canvas>
+
+
+* コンテクストの取り出しは、 canvas の .getContext() でおこなう
+
+
+  canvas = document.queryselector('#canvas')
+  context = canvas.getContext('2d')
+  
+
+* 描画領域の横幅と高さは、 canvas の width 、 height プロパティで得られる
+   （ 作成直後の描画領域の画素は全て透明 ）
+   
+   
+  canvas.width
+  canvas.height
+
+
+- - - - - -
+
+
+[ 例文 ]
+
+
+• HTML
+
+<canvas id="canvas" width="400" height="300"></canvas>
+
+
+
+• JavaScript
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+
+// canvas と２次元コンテクストを文字列にして出力
+console.log(`${canvas}`);
+console.log(`${context}`);
+
+// 横幅と高さを出力
+console.log(canvas.width)
+console.log(canvas.height)
+
+
+
+// 結果
+[object HTMLCanvasElement]
+[object CanvasRenderingContext2D]
+400
+300
+
+
+
