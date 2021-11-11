@@ -1,0 +1,70 @@
+
+
+* もう少し複雑にして、それぞれ別のスレッドで動いている様子を確認していく
+
+*  html 側では、 setInterval を使った定期的な出力を 100 ms毎におこなう
+   Worker 側では重い処理をして、その途中で何度かコンソールに経過を出力する
+   
+* それぞれの出力が混ざって表示され、別の処理として同時に動いている様子がわかる
+
+
+- - - - - -
+
+
+• 重い処理とその経過の出力  （worker）
+
+
+onmessage = function(event) {
+  console.log('@worker', event.data);
+
+  // 時間のかかる処理
+  for (let i = 0; i < 5000; i++) {
+    const str = [...'@'.repeat(5000)].join();
+    
+    // 1000毎にコンソールに経過を出力
+    if(i % 1000 === 0) {
+      console.log('@worker', i);
+    }
+  }
+  postMessage('返信！');
+};
+
+
+
+• 思い処理を待つ間に定期的に出力 （html）
+
+
+const worker = new Worker('web-worker.js');
+
+worker.postMessage('送信！');
+
+// Worker の値を受け取り次第、実行される処理
+worker.onmessage = function(event) {
+  console.log('@html', event.data);
+
+  clearInterval(intervalID);
+};
+
+// 待機処理
+let cnt = 0;
+const intervalID = setInterval(() => {
+  console.log('@html', 'wait...', cnt++);
+}, 100);
+
+
+
+// 結果
+@worker 送信！
+web-worker.js:10 @worker 0
+@html wait... 0
+web-worker.js:10 @worker 1000
+web-worker.js:10 @worker 2000
+@html wait... 1
+web-worker.js:10 @worker 3000
+@html wait... 2
+web-worker.js:10 @worker 4000
+@html wait... 3
+@html 返信！
+
+
+
