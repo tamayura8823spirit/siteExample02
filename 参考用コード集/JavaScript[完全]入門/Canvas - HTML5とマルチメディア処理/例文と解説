@@ -1,0 +1,76 @@
+
+
+* HTML5には、さまざまなマルチメディア機能があり、画像や動画、音声ファイルなどを読み込み、Webページ上で表示したり操作できる
+   canvas タグで作成した領域は、 JavaScript から描画可能であり、動画は video タグ、音声は audio タグを使う
+
+* これらのほとんどは、Webページにタグを書くか、DOMに要素を追加して、その要素をあつかう API を使い、 JavaScript から操作する
+
+
+- - - - - -
+
+
+[ video要素のプロパティ ]
+video.duration    |   全体の時間
+video.currentTime |   現在の時間
+
+
+- - - - - -
+
+
+•  video を操作する例
+
+
+[ HTML ]
+
+
+<video id="video" width="400" height="300">
+  <source src="HAPPY XMAS.mp4" />
+</video>
+<div>
+  <button id="play">再生</button>
+  <button id="pause">一時停止</button>
+</div>
+<div>現在/全体 秒 : <span id="time"></span></div>
+<div id="status"></div>
+
+
+
+[ JavaScript ]
+
+
+window.addEventListener('DOMContentLoaded', e => {
+  const elVideo = document.querySelector('#video');
+  const elTm = document.querySelector('#time');
+  const elStatus = document.querySelector('#status');
+
+  document.querySelector('#play')
+  .addEventListener('click', e => {
+    elVideo.play();
+    elStatus.innerText = '再生中'
+  });
+
+  document.querySelector('#pause')
+  .addEventListener('click', e => {
+    elVideo.pause();
+    elStatus.innerText = '一時停止';
+  });
+
+  // 現在/全体時間の表示
+  elVideo.addEventListener('timeupdate', e => {
+    elTm.innerText = Math.trunc(elVideo.currentTime) + '/' + Math.trunc(elVideo.duration);
+  });
+
+  // 再生完了
+  elVideo.addEventListener('ended', e => {
+    elStatus.innerText = '再生終了';
+  });
+});
+
+
+
+// 画面
+ [再生]　ボタンをクリックすると動画を再生し、 [一時停止] ボタンをクリックすると動画を一時停止させる
+動画の進行に合わせて、再生時間と全体時間が表示され、動画が終わったら、終了のメッセージが出現する
+
+
+
