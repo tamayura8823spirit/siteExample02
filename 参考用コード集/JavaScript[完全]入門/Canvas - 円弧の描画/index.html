@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <canvas id="canvas" width="400" height="300"></canvas>
+
+    <pre>
+      最初に左の円弧、次に上の円弧、最後に右下の円弧を描いている
+      右端から回転ははじまり（0度）、時計回りにパスが生成されていき、指定された終了角度で止まる
+
+      反時計回りの設定を true にすると、逆向きに回転する
+        （その際には、終了角度は反転されない）
+
+      上の例では、わかりやすいように0度の場所に矩形を描いて、基準の場所が見えるようにしている
+    </pre>
+    <script src="main.js"></script>
+  </body>
+</html>
