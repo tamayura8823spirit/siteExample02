@@ -1,0 +1,61 @@
+
+
+* ベジェ曲線は、" 制御点 "によって描く曲線のこと
+  2Dコンテクストでは、　「制御点が1つの２次ベジェ曲線」 と、 「制御点が2つの3次ベジェ曲線」 のパスが作れる
+
+
+- - - - - - 
+
+
+[ ベジェ曲線を描画するメソッド ]
+.quadraticCurveTo( cx, cy, x, y )             |   制御点 cx,cy 、次の座標が x,y の、2次ベジェ曲線のパスを作る
+.bezierCurveTo( cx1, cy1, cx2, cy2, x, y )    |   制御点 cx1,cy1 、 制御点 cx2, y2 、次の座標が x,y の、3次ベジェ曲線のパスを作る
+
+
+- - - - - - 
+
+
+[ 例文 ]
+
+• HTML
+
+  <canvas id="canvas" width="400" height="300"></canvas>
+
+
+• JavaScript
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+
+// 座標
+const x0 = 50, y0 = 25;
+const cx = 350, cy = 150;
+const x = 50, y = 275;
+
+// --------------------------
+context.fillStyle = '#a00';
+context.strokeStyle = '#44f';
+context.lineWidth = 8;
+
+
+context.beginPath();
+context.moveTo(x0, y0);
+context.quadraticCurveTo(cx, cy, x, y);
+context.stroke();
+// --------------------------
+
+context.lineWidth = 2;
+
+context.beginPath();
+context.moveTo(x0, y0);
+context.lineTo(cx, cy);
+context.lineTo(x, y);
+context.stroke();
+
+context.fillRect(x0 - 10, y0 - 10, 20, 20);
+context.fillRect(cx - 10, cy - 10, 20, 20);
+context.fillRect(x - 10, y - 10, 20, 20);
+
+
+
