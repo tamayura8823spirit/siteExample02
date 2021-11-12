@@ -1,8 +1,86 @@
 
 
 [ 説明 ]
+
 画像の描画の方式には、大きく分けて２種類ある
 1つ目は、１ドットずつに RGB(赤緑青) の色を指定していく方式で、これを" ラスター形式 "とよぶ
 ２つめは、点をいくつか定めて、その間の線を引く方式で、この場合、 "補助点" を定めて曲線を作ることもある、こうした方式を" ベクター形式 "とよぶ
+
+パスの描画は、 "ベクター方式" である
+2Dコンテクストのパスは、 .beginPath() でリセットしてから指定を開始する
+そして、 .moveTo() で視点を設定して" サブパス "の作成を開始する
+  （サブパスは複数作ることができ、まとめて塗りつぶしができる）
+
+描画はなるべく一度にしたほうが、処理速度がはやい、
+細かく .fillStyle や .strokeStyle などの設定を変更して描画すると、かなり時間がかかるので、
+なるべく設定を変更しないようにして、一気に描画するとよい、ゲームなどで高速処理が求められるときに、この知識は役に立つ
+
+視点を設定したあとは、 .lineTo() で点を追加する、パスを閉じたいときは .clearPath() を実行すると、始点と最終座標を結んでパスを閉じる
+閉じなかったときは開いたままになる
+
+
+- - - - - -
+
+
+[ パスを作るメソッド ]
+
+.beginPath()      |   現在のパスをリセットして、パスの指定を開始
+.moveTo( x, y )   |   座標 x,y に始点を移動、サブパスの作成を開始
+.linetTo( x, y )  |   座標 x,y にパスの座標を追加
+.closePath()      |   始点と最終座標を結んでパスを閉じる
+
+
+[ パスを作成後に塗りつぶしや線描画をするメソッド]
+
+.fill()   |   パスの内側を塗りつぶす
+.stroke() |   パスに沿って線描画
+.clip()   |   画像を描画可能な、クリップ領域を作る
+
+
+- - - - - -
+
+
+[ 例文 ]
+
+
+• HTML
+
+  <canvas id="canvas" width="400" height="300"></canvas>
+
+
+• JavaScript
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+
+// 設定
+context.fillStyle = '#faa';
+context.strokeStyle = '44f';
+context.lineWidth = 8;
+context.lineCap = 'round';
+context.lineJoin = 'roung';
+
+context.beginPath();
+
+// 左上に三角
+context.moveTo(100, 50);
+context.lineTo(10, 250);
+context.lineTo(190, 250);
+
+// 右上に三角
+context.moveTo(300, 50);
+context.lineTo(210, 250);
+context.lineTo(390, 250);
+context.closePath()
+
+context.fill();
+context.stroke();
+
+
+
+// 画面
+三角形が2つ
+
 
 
