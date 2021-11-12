@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <canvas id="canvas" width="400" height="300"></canvas>
+
+    <pre>
+      クリップ領域は、 .save() 、 .restore() の対象となる
+      事前に .save() で保存しておけば、 .clip() で作成したあと、 .restore() で復帰すれば、クリップ領域を消せる
+
+      上の例は、クリップを使った例が示されている
+      2Dコンテクストの状態を、 .save() で保存して、三角形のクリップ領域を作る
+      そして左側に矩形をかくと、クリップされる
+
+      続いて、2Dコンテクストの状態を .restore() で復帰して、右側に矩形を描く
+      すると、クリップされずに描画される
+    </pre>
+    <script src="main.js"></script>
+  </body>
+</html>
