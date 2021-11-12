@@ -11,7 +11,7 @@ const x2 = 350, y2 = 100;
 // --------------------------
 // 設定
 context.fillStyle = '#a00';
-context.strokeStyle = '44f';
+context.strokeStyle = '#44f';
 context.lineWidth = 8;
 
 context.beginPath();
