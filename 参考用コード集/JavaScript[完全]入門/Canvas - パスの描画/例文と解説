@@ -59,7 +59,7 @@ context.fillStyle = '#faa';
 context.strokeStyle = '44f';
 context.lineWidth = 8;
 context.lineCap = 'round';
-context.lineJoin = 'roung';
+context.lineJoin = 'round';
 
 context.beginPath();
 
