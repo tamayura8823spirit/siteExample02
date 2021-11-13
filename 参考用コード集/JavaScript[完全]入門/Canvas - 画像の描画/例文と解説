@@ -1,0 +1,54 @@
+
+
+* 画像の読み込みは非同期処理なので、画像が読み込まれるのを待ってから描画が始まる
+
+*  JavaScript のプログラム内で読み込むには、 image オブジェクトを使う
+   new Image() でオブジェクトを作ったあと、 src属性 にURLを代入すると読み込みが始まる
+  " onload属性 "に関数を登録するか、 addEventListener() で "load" イベントに関数を登録すると、読み込み後に処理を開始できる
+
+
+- - - - - -
+
+
+[ 画像描画のメソッド ]
+.drawImage( i, dx, dy )                           |   画像 i を、座標 dx,dy に描画
+.drawImage( i, dx, dy, dw, dh )                   |   画像 i を、座標 dx,dy に、横幅 dw 、高さ dh で描画
+.drawImage( i, sx, sy, sw, sh, dx, dy, dw, dh )   |   画像 i の座標 sx,sy 、横幅 sw 、高さ sh の領域を、座標 dx,dy に、横幅 dw 、高さ dh で描画
+
+
+- - - - - -
+
+[ 書き方 ]
+
+変数 = new Image()
+変数.onload = 関数
+変数.src = URLの文字列
+
+
+- - - - - - 
+
+
+[ 例文 ]
+
+• HTML
+
+  <canvas id="canvas" width="700" height="500"></canvas>
+
+
+• JavaScipt
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+
+const img = new Image();
+
+img.onload = function() {
+  context.drawImage(img,
+    850, 1250, 700, 500, 0, 0, 700, 500)
+};
+
+img.src = 'https://images.metmuseum.org/CRDImages/ep/original/DT1502_cropped2.jpg';
+
+
+
