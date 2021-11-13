@@ -1,0 +1,83 @@
+
+
+[ 説明 ]
+ Canvas を使えば、画素を取り出して１ドットずつRGBAの値を得たり、書き換えたりできる
+また、" DATA URL "という方法で、画像を PING や JPEG として取り出して、 img タグに表示したり、画像としてダウンロードしたりできる
+
+ただし、同じローカルにある画像を読み込んで Canvas に描画していると、クロスオリジンの制約により、画素の取り出しや画像の取り出しはエラーになる
+なのでここでは、ローカル画像を貼り付けない例を示しながら説明する
+
+2Dコンテクストからは、 ImageData オブジェクトを取り出せる
+それを使えば、画素単位での処理ができる
+
+ .data プロパティは、各要素の RGBA の値が順番に、０から２５５の値で入っている
+そして、参照する座標は左上からはじまり、左から右へ、そして端まで来ると次の行に移動する
+
+
+- - - - - -
+
+
+[ ImageDataオブジェクトのプロパティ ]
+.width    |   横幅
+.height   |   高さ
+.data     |   RGBAのデータが入った配列
+
+
+[ ImagaDataオブジェクトをあつかうメソッド ]
+.getImageData( sx, sy, sw, sh )             |   座標 sx,sy 、横幅 sw 、 高さ sh の領域を、 ImageData として取り出す
+.putImageData( i, dx, dy )                  |    ImageData オブジェクト i を、座標 dx,dy に描画
+.putImageData( i, dx, dy, sx, sy, sw, sh )  |    ImageData オブジェクト i の、座標 sx,sy 、横幅 sw 、 高さ sh の領域を、座標 dx,dy に描画
+
+
+- - - - - - 
+
+
+[ 例文 ]
+
+• HTML
+
+  <canvas id="canvas" width="400" height="300"></canvas>
+
+
+• JavaScript
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+const w = canvas.width;
+const h = canvas.height;
+
+// 図形を描く
+for (let i = 0; i < h; i++) {
+  // 設定
+  const gradation = Math.trunc(255 * i / h);
+  const r = gradation;
+  const g = 255 - gradation;
+  const b = 255;
+  context.fillStyle = `rgba(${r},${g},${b})`;
+
+  // 横１ラインずつ塗りつぶし
+  context.fillRect( i / 8, i, w - h / 8, 1 );
+}
+
+const imgDt = context.getImageData(50, 100, 300, 100);
+const data = imgDt.data;
+
+// 画素に対して処理
+for (let i = 0; i < data.length; i += 4) {
+  // RGBAを取り出す
+  const r = data[i + 0];
+  const g = data[i + 1];
+  const b = data[i + 2];
+  const a = data[i + 3];
+
+  // RGBAを入れ替える
+  data[i + 0] = b;
+  data[i + 1] = r;
+  data[i + 2] = g;
+}
+
+context.putImageData(imgDt, 50, 100);
+
+
+
