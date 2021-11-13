@@ -1,0 +1,58 @@
+
+
+*  Data URLは、" URLとしても使える文字列形式のデータ "のこと
+  この値を img タグの src属性 に設定すると、画像のように表示できる
+  また、ダウンロードさせると、通常のバイナリ形式の画像としてローカルに保存できる
+
+*  .toDataURL() で画像の種類を jpeg にしたいときは、第１引数を 'image/jpeg' と書く   （デフォルト値は 'image/png' ）
+   'image/jpeg' を指定したとき、エンコードオプションとして、 0 から 1 の値を設定するとエンコードの質を調整できる   （デフォルト値は 0.92 ）
+
+
+- - - - - - 
+
+
+[ DataURLを取り出すメソッド ]
+.toDataURL( t, e )    ・・・   画像の種類 t 、エンコードオプション e で、 "Data URL" を得る
+                           　引数を指定しないときは png 形式
+
+- - - - - - 
+
+
+[ 例文 ]
+
+• HTML
+
+  <canvas id="canvas" width="400" height="180"></canvas>
+
+
+• JavaScript
+
+
+const canvas = document.querySelector('#canvas');
+const context = canvas.getContext('2d');
+const w = canvas.width;
+const h = canvas.height;
+
+// 図形を描く
+for (let i = 0; i < h; i++) {
+  // 設定
+  const gradation = Math.trunc(255 * i / h);
+  const r = gradation;
+  const g = 255 - gradation;
+  const b = 255;
+  context.fillStyle = `rgba(${r},${g},${b})`;
+
+  // 横１ラインずつ塗りつぶし
+  context.fillRect( i / 2, i, w - h / 2, 1 );
+}
+
+const dtUrl = canvas.toDataURL();
+console.log(dtUrl);
+
+// 画像としてWebページに追加
+const elImg = document.createElement('img');
+elImg.setAttribute('src', dtUrl);
+document.querySelector('body').appendChild(elImg);
+
+
+
