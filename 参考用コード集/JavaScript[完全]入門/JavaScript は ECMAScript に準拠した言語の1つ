@@ -1,0 +1,15 @@
+
+
+[ 概要 ]
+ JavaScript は最初、旧" Netscape社 "（1998年に AOL が買収）のブラウザで動く言語として誕生したが、
+その後さまざまなブラウザが登場して独自に JavaScript を拡張したため、ブラウザ間の互換性の低さが問題視されていた
+
+そこで国際標準化団体の" ECMA "が JavaScript のコアな仕様を 「ECMAScript (エクマスクリプト) 」 という名称で標準化し、今に至る
+
+ ECMAScript に準拠した言語には、マイクロソフト製品上で動く" JScript "や、Adobe製品上で動く" ExtendScript "、
+ Googleのサービス上で動く" App Script"など、 JavaScript の 「方言版」 とも言える言語がある
+ 
+ベースである JavaScript に慣れておくと、これらを習得しやすくなる
+
+
+
