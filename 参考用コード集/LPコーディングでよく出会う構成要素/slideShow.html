@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    $(function() {
+
+        // スライド（画像）の数を取得
+        var $slides = $('').find('img'),
+            slideNum = $slides.length,
+            currentIdx = 0; // 何番目か
+      
+        // 最初の画像をフェードイン
+        $(" img").eq(currentIdx).fadeIn(1000);
+        
+        // setTimeoutを繰り返すための関数
+        let iteration = () => {
+
+          // 5秒後にiterationを実行
+          setTimeout(iteration, 5000);
+        
+          // 次のスライドを表示するメソッド
+          function dispNextSlide() {
+            var nextIdx = currentIdx + 1;
+        
+            // 最後のスライドの場合ははじめに戻る
+            if (nextIdx > (slideNum - 1)) {
+              nextIdx = 0
+            }
+        
+            // 現在のスライドをフェードアウト
+            $(" img").eq(currentIdx).fadeOut(1000);
+        
+            // 次のスライドをフェードイン
+            $(" img").eq(nextIdx).fadeIn(1000);
+        
+            // インデックスを更新
+            currentIdx = nextIdx;
+          }
+          dispNextSlide();
+        }
+        // 1度目のiteration()を5秒遅らせる
+        setTimeout(iteration, 5000);
+      });
+
+  </script>
+</body>
+</html>
