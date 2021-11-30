@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .slider_fade {
+        position: relative;
+      }
+
+      .slider_fade > img {
+        position: absolute;
+        width: 100%;
+        visibility: hidden;
+        // 1回のスライドが5秒で、それが5枚あるので、アニメーション全体の長さが２５秒になる
+        animation: anime_slider_fade 25s 0s infinite;
+      }
+      .slider_fade > img:nth-of-type(2) {
+        animation-delay: 5s;
+      }
+      .slider_fade > img:nth-of-type(3) {
+        animation-delay: 10s;
+      }
+      .slider_fade > img:nth-of-type(4) {
+        animation-delay: 15s;
+      }
+      .slider_fade > img:nth-of-type(5) {
+        animation-delay: 20s;
+      }
+
+      @keyframes anime_slider_fade {
+        0% {
+          visibility: visible;
+          opacity: 0;
+        }
+        // この数値でフェードインの長さが変わる
+        10% {
+          opacity: 1;
+        }
+        20% {
+          opacity: 1;
+        }
+        // この数値でフェードアウトの長さが変わる
+        30% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+
+  <body>
+    <div class="slider_fade">
+      <img src="img/main_visual_13-0x0.jpg" />
+      <img src="img/main_visual_2-0x0.jpg" />
+      <img src="img/main_visual_6-0x0.jpg" />
+      <img src="img/main_visual_111-0x0.jpg" />
+      <img src="img/main_visual_7-0x0.jpg" />
+    </div>
+  </body>
+
+
+</html>
