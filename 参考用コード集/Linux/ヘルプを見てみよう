@@ -1,0 +1,47 @@
+
+
+*  date コマンドのヘルプを表示してみる ↓
+* すると、簡潔とはいいがたい量のヘルプが表示される
+
+- - - - - -
+cal: illegal option -- -
+Usage: cal [general options] [-hjy] [[month] year]
+       cal [general options] [-hj] [-m month] [year]
+       ncal [general options] [-hJjpwy] [-s country_code] [[month] year]
+       ncal [general options] [-hJeo] [year]
+General options: [-NC3] [-A months] [-B months]
+For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]
+saitoshu@SaitonoMacBook-Air ~ % date --help
+date: illegal option -- -
+usage: date [-jnRu] [-d dst] [-r seconds] [-t west] [-v[+|-]val[ymwdHMS]] ... 
+            [-f fmt date | [[[mm]dd]HH]MM[[cc]yy][.ss]] [+format]
+- - - - - -
+
+
+
+*  cal コマンドではどうだろうか ↓
+* 実は、 cal コマンドには --help オプションが用意されておらず、 「無効なオプション」 と表示されてしまう
+* そのかわり、多くのコマンドでは、コマンドの使い方を間違えると、使い方を示した簡潔なメッセージが出力されるようになっている
+
+- - - - - -
+cal: illegal option -- -
+Usage: cal [general options] [-hjy] [[month] year]
+       cal [general options] [-hj] [-m month] [year]
+       ncal [general options] [-hJjpwy] [-s country_code] [[month] year]
+       ncal [general options] [-hJeo] [year]
+General options: [-NC3] [-A months] [-B months]
+For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]
+- - - - - -
+
+
+
+
+* もっと詳しく使い方を知りたい場合は、オンラインマニュアルを 「man」 コマンドで表示することができる
+- - - - - -
+$ man cal
+- - - - - -
+* すると、１ページ目が表示されて、スペースキーで次のページが表示できる
+* 終了するには 「Q」 キーを押す
+
+
+
