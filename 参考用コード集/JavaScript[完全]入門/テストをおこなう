@@ -5,15 +5,16 @@
   また、関数の中身を書き換えるときも、バグがないかすぐに確認できる
 
 
+
 [ 簡易的なテスト ]
 テストは、簡易的な方法から本格的な方法まであり、簡易的な方法では、 console.assert() を使う方法がある
 第１引数に条件式を書き、その条件式が false と見做せるときに、" エラーレベル（赤色の文字） "で第２引数のオブジェクトを出力する
-
 - - - - - - - - - -
 
 console.assert( 条件式 , オブジェクト ）
 
 - - - - - - - - - -
+
 
 
 * 下記は、簡単な関数を作り、 console.assert() を使ったテストを書いてみた例である
@@ -22,9 +23,6 @@ console.assert( 条件式 , オブジェクト ）
    testEqual() 関数では、2つの引数が同じかを判定して、 false の時に2つの値を出力する
 
 * 式の結果、2つの引数の値とともに、ファイル名と桁数も出力されるので、すぐに場所確認できる
-
-
-• 例文
 
 - - - - - - - - - -
 
@@ -86,16 +84,86 @@ Assertion failed: {a: '3456789', b: '5678901'}
 • Jest
 • Mocha
 
-*
+
+
+*  Jest をインストールして、簡単なプログラムのテストを実行してみる
 
 
 
+①
+ CUI で適当な実行環境を開き、 「package.json」 を生成したあと、 jest をインストールする ↓
+- - - - - -
+
+npm init -y
+npm install --save-dev jest
+
+- - - - - -
 
 
+②
+公式ドキュメントの通り、 「sum.js」 ファイルを作って中身を書く
+また、 「sum.test.js」 を作る
+- - - - - -                                       (sum.js)
+
+// 足し算の関数
+function sum(a, b) {
+  return a + b;
+}
+
+// モジュールとして外部にエクスポート
+module.exports = sum;
+
+- - - - - - 
+- - - - - -                                       (sum.test.js)
+
+// sumの読み込み
+const sum = require('./sum');
+
+// テストの実行
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+
+- - - - - -
 
 
+③
+ 「package.json」 に以下の設定を追加する （ scripts.test の内容を jest に変える）
+- - - - - -
+
+{
+  "scripts": {
+      "test": "jest"
+  }
+}
+
+- - - - - -
 
 
+④
+以下のコマンドを実行する
+- - - - - -
+
+npm test
+
+- - - - - -
+
+
+⑤
+結果が出力される
+- - - - - -
+> Jest@1.0.0 test /Users/saitoshu/Documents/vscode/JS完全入門/test/Jest
+> jest
+
+ PASS  ./sum.test.js
+  ✓ adds 1 + 2 to equal 3 (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.252 s
+Ran all test suites.
+- - - - - -
 
 
 
