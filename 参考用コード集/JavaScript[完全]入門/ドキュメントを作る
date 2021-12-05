@@ -22,8 +22,7 @@
 
 
 ①
- CUI で適当な実行環境を開いて、 「package.json」 を生成したあと、 jsdoc をインストールする
-
+ CUI で適当な実行環境を開いて、 「package.json」 を生成したあと、 jsdoc をインストールする ↓
 - - - - - -
 
 npm init -y
@@ -39,7 +38,6 @@ npm install --save-dev jsdoc
 
 ③
  JSDoc を実行する ↓ 、すると 「out」 フォルダにファイルが出力される
-
 - - - - - -
 
 node_modules/.bin/jsdoc index.js
