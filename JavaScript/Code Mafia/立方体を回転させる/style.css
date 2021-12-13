@@ -16,10 +16,6 @@
   cursor: pointer;
 }
 
-.try .btn.cubic {
-  /** スタイルをここに追加。*/
-}
-
 .try .btn.cubic:hover .hovering {
   -webkit-transform: none;
           transform: none;
