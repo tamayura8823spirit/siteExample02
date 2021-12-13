@@ -1,0 +1,56 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+.try {
+  .btn {
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &.cubic {
+      /** スタイルをここに追加。*/
+      &:hover {
+        .hovering {
+          transform: none;
+        }
+        .default {
+          transform: rotateX(-90deg);
+        }
+      }
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid $cBlack;
+        line-height: 48px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .hovering {
+        color: $cWhite;
+        background-color: $cBlack;
+        transform: rotateX(90deg);
+        transform-origin: center center -25px;
+      }
+
+      .default {
+        color: $cBlack;
+        background-color: $cWhite;
+        transform: rotateX(0deg);
+        transform-origin: center center -25px;
+      }
+    }
+  }
+}
