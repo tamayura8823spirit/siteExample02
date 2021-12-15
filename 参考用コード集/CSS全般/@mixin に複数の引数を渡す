@@ -2,17 +2,17 @@
  - - - - -
  
 @mixin  animation (
-  $name,                      • • • ①
+	$name,							• • • ①
 	$duration
-)  {
-	animation:  {
-		name:  $name ;            •　　• • ②
+) {
+  animation:  {				• • • ②
+		name:  $name ;
 		duration: $duration ;
   }
 }
 
-@include  animation (
-	$name:  sk-boucedelay,      • • • ③
+  @include  animation (
+	$name:  sk-boucedelay,			• • • ③
 	$duration:  1.4s
 )
 
