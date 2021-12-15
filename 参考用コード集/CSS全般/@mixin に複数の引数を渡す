@@ -1,0 +1,27 @@
+
+ - - - - -
+ 
+@mixin  animation (
+  $name,                      • • • ①
+	$duration
+)  {
+	animation:  {
+		name:  $name ;            •　　• • ②
+		duration: $duration ;
+  }
+}
+
+@include  animation (
+	$name:  sk-boucedelay,      • • • ③
+	$duration:  1.4s
+)
+
+ - - - - -
+ 
+① 複数の引数を渡すなら、カンマ 「,」 で区切る
+②  Sass では「 - 」がつくプロパティを波括弧でまとめることもできる
+③ 呼び出すとき、引数が多いなら、属性値を指定して呼び出すと間違えにくい 
+
+ 
+ 
+ 
