@@ -7,6 +7,8 @@ body {
   width: 100px;
   height: 100px;
   background-color: black;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-animation-name: sk-bouncedelay;
           animation-name: sk-bouncedelay;
   -webkit-animation-duration: 1s;
@@ -15,10 +17,10 @@ body {
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
