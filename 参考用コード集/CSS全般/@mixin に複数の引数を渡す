@@ -2,7 +2,7 @@
  - - - - -
  
 @mixin  animation (
-	$name,							• • • ①
+	$name,								• • • ①
 	$duration
 ) {
   animation:  {				• • • ②
