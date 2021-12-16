@@ -1,0 +1,44 @@
+
+
+ - - - - -
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const ta = new TextAnimation('.animate-title');
+    const ta2 = new TextAnimation('.animate-title-2');
+    const btn = document.querySelector('#toggle-inview');
+
+    ta.animate();
+    ta2.animate();
+});
+
+
+class TextAnimation {
+    constructor(el) {
+        this.el = document.querySelector(el);
+        this.chars = this.el.innerHTML.trim().split("");
+        this.el.innerHTML = this._splitText();
+    }
+    _splitText() {
+        return this.chars.reduce((acc, curr) => {
+            curr = curr.replace(/\s+/, '&nbsp;');
+            return `${acc}<span class="char">${curr}</span>`;
+        }, "");
+    }
+    animate() {
+        this.el.classList.toggle('inview');
+    }
+}
+
+ - - - - -
+
+上で行われているのは、HTMLのDOM要素にアクセスして取得した文字列を、
+分割して再代入する、という動きをクラス化して、いろんな場所で使えるようにしよう、といったプログラムである
+
+つまり
+ 「メソッドの使い方」  =   "文字がアニメーションする" であり、
+ 「引数の渡し方」  =   "アニメーションさせたい文字列のクラスを渡す" である
+その２つさえ覚えて （教えて） おけば、内部の構造を理解する必要はない、というわけである
+
+
+
