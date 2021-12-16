@@ -1,0 +1,48 @@
+
+
+ • HTML
+ - - - - -
+ 
+ <div class="animate-title">
+    ANIMATION
+ </div>
+ 
+ - - - - -
+
+
+
+ • JavaScript
+ - - - - -
+
+const char = document.querySelector('.animate-title').innerHTML.trim().split('');
+
+const chars = char.reduce((accu, curr) => {
+  return `${accu}<span class="char">${curr}</span>`
+}, '');
+
+document.querySelector('.animate-title').innerHTML = chars;
+
+ - - - - -
+
+
+
+ • HTMLの結果
+
+ - - - - -
+ 
+ <div class="animate-title">
+    <span class="char">A</span>
+    <span class="char">N</span>
+    <span class="char">I</span>
+    <span class="char">M</span>
+    <span class="char">A</span>
+    <span class="char">T</span>
+    <span class="char">I</span>
+    <span class="char">O</span>
+    <span class="char">N</span>
+ </div>
+
+ - - - - -
+
+
+
