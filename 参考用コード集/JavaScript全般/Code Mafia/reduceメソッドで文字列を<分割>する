@@ -22,8 +22,6 @@
    return `${accu}<span class="char">${curr}</span>`
  }, '');
 
- console.log(el.innerHTML)
-
  - - - - -
 
 ポイントとしては、
