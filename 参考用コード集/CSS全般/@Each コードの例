@@ -1,15 +1,15 @@
 
 
  - - - - -
-$pattern: (
-  "up": translateY(6px),
+$pattern: (              • • • ①
+  "up": translateY(6px),    • • • ②
   "down": translateY(-6px),
   "left": translateX(40px),
   "right": translateX(-40px)
 );
 
-@each $key, $value in $pattern {
-  .appear.#{$key} {
+@each $key, $value in $pattern {    • • • ③
+  .appear.#{$key} {                 • • • ④
     & .item {
       transform: $value;
     }
@@ -17,6 +17,13 @@ $pattern: (
 }
  - - - - -
  
+ ①  「＄」 マークをつけた形でマップを作成する
+ 
+ ② キー情報と、それに連動したバリュー値を設定する
+ 
+ ③  「＄」 マークのついた形で、キー情報、バリュー値、マップ名を記入する
+ 
+ ④ セレクターに変数を用いる場合は、 "インターポレーション" を使用する
  
  
  
