@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="container">
+    <div class="cover-slide">
+      <img class="img-zoom" src="images/image-1.jpg" alt="">
+    </div>
+    <!-- <div class="cover-slide hover-darken inview">
+        <div class="bg-img-zoom img-bg50"></div>
+      </div> -->
+  </div>
+  <pre>
+    ①   画像が 「ガクッ」 となっている部分を、 vertical-align プロパティで解消している
+
+
+
+    ②   初めに背景が白い部分を、
+        50 %の段階で 「opacity: 0;」
+        50.1 % の段階で 「opacity: 1;」            にすることで表現している
+
+
+
+    ③   画像にマウスホバーしていると、アニメーションが完了したタイミングで 「ガクッ」 となる問題を、
+        「変形前」  →   「変形」  →   「変形前」ではなく、
+        記述なし  →   「変形」  →   記述なし    とすることで解決している
+        <span style="color: rgb(0, 162, 255);">(つまり、変形後の形をあえて定義しないことで、マウスホバーでの変化に瞬時に適応できるようにしている)</span>
+
+  </pre>
+</body>
+
+</html>
