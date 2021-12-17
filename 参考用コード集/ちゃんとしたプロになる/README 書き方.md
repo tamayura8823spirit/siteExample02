@@ -2,7 +2,7 @@
 
 [【公式サイト】](https://gist.github.com/LambdaNote/0d33b7d8284a3c99cffd1a5aa83c115f)
 
-[【リファレンス】(https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)]
+[【リファレンス】](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 
 ---
 
