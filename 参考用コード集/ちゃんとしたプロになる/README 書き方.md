@@ -59,9 +59,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       * 箇条書き３
       * 箇条書き３
 
-1. うんこ
-2. しっこ
-3. しっこ２
+* 箇条書き
+      * 箇条書き
+            * 箇条書き
+
+1. 連番
+2. 連番
+3. 連番
 
 
 
