@@ -59,13 +59,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
       * 箇条書き３
       * 箇条書き３
 
-* 箇条書き
-      * 箇条書き
-            * 箇条書き
-
 1. 連番
 2. 連番
-3. 連番
+   3. 連番２
+   4. 連番２
+      5. 連番３
+      6. 連番３
+
 
 
 
