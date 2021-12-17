@@ -67,6 +67,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > 
 > > 引用文のネスト
 
+<br>
+
 ここは本文です[^anchor]。
 文末に脚注を挿入する場合は、この例のように、句読点の前にアンカーを設置してください。
 
