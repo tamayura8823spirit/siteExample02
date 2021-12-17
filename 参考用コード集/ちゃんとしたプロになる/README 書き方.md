@@ -26,11 +26,6 @@ __同じく強調__
 | 123456 | 〇       | ABC   |
 | 00     | ✔       | あいう |
 
-|エモい| きもい|くさい|
-| -: | :- | :-: |
-|あ|え|か|
-|a|e|ka|
-
 ```{}
 def greeting():
    print ("Hello World!")
@@ -41,21 +36,32 @@ def greeting():
    print ("Hello World!")
 ```
 
+```
+$ python greeting ⏎
+Hello World! sk
+Hello Morning! console
+```
+
 ```{break="allow"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
-```
-sh もしくは console は入力画面であるとみなし、次のような特別な表示上の扱いを受けます。
-
-出力の背景色と文字色を反転させます（通常は白地に黒文字であるものが黒地に白文字になる）
-末尾が ⏎
-```
-
 > 引用文
-> 引用文
+> 
+> 引用文なのである
 
 ★ コメントで〜〜〜す。
+
+* 箇条書き
+* 箇条書き
+   * 箇条書き２
+   * 箇条書き２
+      * 箇条書き３
+      * 箇条書き３
+
+1. うんこ
+2. しっこ
+3. しっこ２
 
 
 
