@@ -38,7 +38,7 @@ def greeting():
    print ("Hello World!")
 ```
 
-```rb:hello.rb
+```rb
 def greeting():
    print ("Hello World!")
 ```
@@ -53,24 +53,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > 引用文
 > 
 > > 引用文のネスト
-
-ここは通常の段落。
-
-> node
->
-> Noteの本文は、行頭に「>」を付けた段落として執筆してください。
-> 箇条書きやコード片なども挿入できます。
->
-> Noteの終わりには、空行＋インデントしていない行が必要です。
-
-ここは通常の段落。
-
-> aside{...}
->
-> コラムの本文は、行頭に「>」を付けた段落として執筆してください。
-> コラム内にも箇条書きや図表、コードなどを挿入できます。
->
-> コラムの終わりには、空行＋インデントしていない行が必要です。
 
 ここは本文です[^anchor]。
 文末に脚注を挿入する場合は、この例のように、句読点の前にアンカーを設置してください。
