@@ -1,0 +1,32 @@
+
+
+ - - - - -
+ class TextAnimation {
+    constructor(el) {
+        this.el = document.querySelector(el);
+        this.chars = this.el.innerHTML.trim().split("");
+        this.el.innerHTML = this._splitText();
+    }
+    _splitText() {
+        return this.chars.reduce((acc, curr) => {
+            curr = curr.replace(/\s+/, '&nbsp;');
+            return `${acc}<span class="char">${curr}</span>`;
+        }, "");
+    }
+    animate() {
+        const _that = this;                   • • • • • • ①
+        
+        setTimeout( function() {
+            _that.el.classList.toggle('inview');        • • • • • • ②
+        });
+    }
+ }
+ - - - - -
+ 
+ ① Thisの値を、あらかじめ別の変数に定義しておく  (_that)
+ ② その _that を、コールバック関数内で呼び出すことで、固定したThisを参照することができる
+
+自分にとってわかりやすい方、もしくはチームの実装方針によって、使い分けていくと良い
+
+
+ 
