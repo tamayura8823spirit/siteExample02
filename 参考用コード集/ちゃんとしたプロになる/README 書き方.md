@@ -50,7 +50,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ここは通常の段落。
 
-> note
+> node
 >
 > Noteの本文は、行頭に「>」を付けた段落として執筆してください。
 > 箇条書きやコード片なども挿入できます。
@@ -59,7 +59,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ここは通常の段落。
 
-> aside{コラム見出し}
+> aside{...}
 >
 > コラムの本文は、行頭に「>」を付けた段落として執筆してください。
 > コラム内にも箇条書きや図表、コードなどを挿入できます。
@@ -90,7 +90,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Br 改行である
 
 ★ コメントである
-
-
-
-
