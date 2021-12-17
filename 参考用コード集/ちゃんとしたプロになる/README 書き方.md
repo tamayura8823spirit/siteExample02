@@ -6,6 +6,8 @@
 
 [【リファレンス２】](https://github.com/Techpit-Market/host-guide/blob/master/4/markdown.md)
 
+<br>
+<br>
 
 # 見出し１
 ## 見出し２
@@ -13,6 +15,8 @@
 #### 見出し４
 ##### 見出し５
 ###### 見出し６
+
+<br>
 
 *斜体*
 
@@ -25,6 +29,8 @@ __同じく強調__
 ***斜体と強調***
 
 ___同じく斜体と強調___
+
+<br><br>
 
 ![サンプル画像](images/film-reel-147631_640.png)
 
