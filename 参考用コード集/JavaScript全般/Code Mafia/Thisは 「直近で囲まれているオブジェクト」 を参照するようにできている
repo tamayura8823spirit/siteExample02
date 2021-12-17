@@ -1,0 +1,34 @@
+
+
+ - - - - -
+ class TextAnimation {
+    constructor(el) {
+        this.el = document.querySelector(el);           • • • • • • ②
+        this.chars = this.el.innerHTML.trim().split("");
+        this.el.innerHTML = this._splitText();
+    }
+    _splitText() {
+        return this.chars.reduce((acc, curr) => {
+            curr = curr.replace(/\s+/, '&nbsp;');
+            return `${acc}<span class="char">${curr}</span>`;
+        }, "");
+    }
+    animate() {
+        setTimeout( function() {
+            this.el.classList.toggle('inview');         • • • • • • ①
+        });
+    }
+ }
+ - - - - -
+
+上は取得した HTML の文字列を分割し、再度返却するためのクラスオブジェクトだが、
+ ① で使われている 「This」 は、 ② で定義されている変数ではなく、
+" windowオブジェクト "を指すことになる
+これは setTimeout メソッドが格納されている window オブジェクトを参照しているからである
+
+Thisは 「直近で囲まれているオブジェクト」 を参照するようにできている
+なので、コンストラクター内のThisは、クラスオブジェクトを参照するが、
+ setTimeout 内のThisは、 window オブジェクトを参照することになる
+
+
+
