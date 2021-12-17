@@ -39,8 +39,27 @@ def greeting():
 以下は実行結果。
 
 ```{}
- $ python greeting
+$ python greeting
 Hello World!
 ```
+
+``
+本文
+
+> 引用文
+> 引用文
+
+本文
+`
+
+* コメントで〜〜す。
+
+$$
+\hoge
+$$
+
+$TeX書式$
+
+
 
 
