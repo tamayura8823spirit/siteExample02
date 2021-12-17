@@ -2,12 +2,18 @@
 
 [【公式サイト】](https://gist.github.com/LambdaNote/0d33b7d8284a3c99cffd1a5aa83c115f)
 
+[【リファレンス】(https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)]
+
+---
+
 # 見出し１
 ## 見出し２
 ### 見出し３
 #### 見出し４
 ##### 見出し５
 ###### 見出し６
+
+---
 
 *斜体*
 
@@ -16,6 +22,12 @@ _同じく斜体_
 **強調**
 
 __同じく強調__
+
+***斜体と強調***
+
+___同じく斜体と強調___
+
+---
 
 [【本書のコーディングガイドライン】](https://github.com/nori44/coding-guidelines)
 
@@ -29,28 +41,16 @@ __同じく強調__
 ```
 def greeting():
    print ("Hello World!")
-   print ("Hello World!")
-   print ("Hello World!")
-```
-
-```{number="no"}
-def greeting():
-   print ("Hello World!")
 ```
 
 ```{break="allow"}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
-$ python greeting ⏎
-
-Hello World! sk
-
-Hello Morning! console
-
+> 引用文
 > 引用文
 > 
-> 引用文なのである
+> > 引用文なのである
 
 ★ コメントで〜〜〜す。
 
@@ -65,7 +65,12 @@ Hello Morning! console
 2. 連番
 3. 連番
 
+***
 
+これは`インラインコード`である
+
+これは  
+Br 改行である
 
 
 
