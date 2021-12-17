@@ -1,6 +1,6 @@
 
 
-[公式サイト](https://gist.github.com/LambdaNote/0d33b7d8284a3c99cffd1a5aa83c115f)
+[【公式サイト】](https://gist.github.com/LambdaNote/0d33b7d8284a3c99cffd1a5aa83c115f)
 
 # 見出し１
 ## 見出し２
@@ -21,12 +21,10 @@ __同じく強調__
 
 ![サンプル画像](images/film-reel-147631_640.png)
 
-| 右寄せ | 中央寄せ | 左寄せ |
+|      右寄せ | 中央寄せ | 左寄せ |
 | -----: | :------: | :----  |
 | 123456 | 〇       | ABC   |
 | 00     | ✔       | あいう |
-
-Table: タイトル{#tbl:id}
 
 ```{#lst:id python caption="あいさつ"}
 def greeting():
