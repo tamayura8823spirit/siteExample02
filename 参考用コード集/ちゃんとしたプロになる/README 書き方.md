@@ -43,7 +43,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ```
 
 $ python greeting ⏎
+
 Hello World! sk
+
 Hello Morning! console
 
 > 引用文
