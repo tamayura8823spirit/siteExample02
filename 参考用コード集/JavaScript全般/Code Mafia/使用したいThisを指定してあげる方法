@@ -1,0 +1,31 @@
+
+
+ - - - - -
+ class TextAnimation {
+    constructor(el) {
+        this.el = document.querySelector(el);             • • • • • • ③
+        this.chars = this.el.innerHTML.trim().split("");
+        this.el.innerHTML = this._splitText();
+    }
+    _splitText() {
+        return this.chars.reduce((acc, curr) => {
+            curr = curr.replace(/\s+/, '&nbsp;');
+            return `${acc}<span class="char">${curr}</span>`;
+        }, "");
+    }
+    animate() {
+        setTimeout( function() {
+            this.el.classList.toggle('inview');     • • • • • • ②
+        }.bind(this) );                   • • • • • • ①
+    }
+ }
+ - - - - -
+
+ ①  「.bind」 というメソッドを、関数のあとに続けて記載することで、Thisの値を束縛することができる
+これにより ② のThisは、 ③ で定義された変数を指定するようになる
+
+これは、 「.bind」 がThisを固定して新しい関数オブジェクトを作るメソッドであり、
+ .bind に渡したThis （このThisはクラスオブジェクトを参照している） を固定した新しいオブジェクト内で、Thisが参照されているからである
+
+
+
