@@ -2,8 +2,6 @@
 
 [【公式サイト】](https://gist.github.com/LambdaNote/0d33b7d8284a3c99cffd1a5aa83c115f)
 
-……。[-@lst:code1]に〇〇の例を示す。
-
 # 見出し１
 ## 見出し２
 ### 見出し３
@@ -28,14 +26,18 @@ __同じく強調__
 | 123456 | 〇       | ABC   |
 | 00     | ✔       | あいう |
 
-```{#lst:code1 python caption="あいさつ"}
+|エモい| きもい|くさい|
+| -: | :- | :-: |
+|あいう|えお|かきく|
+
+```{}
 def greeting():
    print ("Hello World!")
 ```
 
 以下は実行結果。
 
-```{#lst:code2 sh caption="実行結果"}
+```{}
  $ python greeting
 Hello World!
 ```
