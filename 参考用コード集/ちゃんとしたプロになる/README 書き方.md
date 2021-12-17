@@ -4,6 +4,7 @@
 
 [【リファレンス】](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 
+[【リファレンス２】](https://github.com/Techpit-Market/host-guide/blob/master/4/markdown.md)
 
 
 # 見出し１
@@ -33,6 +34,11 @@ ___同じく斜体と強調___
 | 00     | ✔       | あいう |
 
 ```
+def greeting():
+   print ("Hello World!")
+```
+
+```rb:hello.rb
 def greeting():
    print ("Hello World!")
 ```
