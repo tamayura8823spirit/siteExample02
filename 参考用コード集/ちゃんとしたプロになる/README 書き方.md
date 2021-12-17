@@ -29,8 +29,6 @@ ___同じく斜体と強調___
 
 ---
 
-[【本書のコーディングガイドライン】](https://github.com/nori44/coding-guidelines)
-
 ![サンプル画像](images/film-reel-147631_640.png)
 
 | 右寄せ | 中央寄せ | 左寄せ |
