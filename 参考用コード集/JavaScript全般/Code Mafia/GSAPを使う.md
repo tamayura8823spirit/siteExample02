@@ -6,8 +6,8 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
 「**GSAP**」はかつての**TweenMax**（高機能トゥイーンライブラリ）や**TweenLite**（機能をシンプルにした軽量版）  
 を統合したJSライブラリであり、古い記事では「TweenMax」で紹介されていることがあるが、同じJSライブラリとなっている。  
 
-  #### CDN
-  `<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>`
+### CDN
+`<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>`
 
 <br><br>
 
