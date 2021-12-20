@@ -8,7 +8,7 @@ require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
-```asl
+```apex
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
@@ -19,7 +19,7 @@ require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
-```rb
+```Apollo Guidance Computer
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
