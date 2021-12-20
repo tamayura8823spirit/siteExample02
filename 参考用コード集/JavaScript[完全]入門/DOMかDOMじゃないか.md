@@ -3,9 +3,9 @@
 
 <div id="dom">うんこ</div>
 
-```sh
+```rb
 const DOM = {
-    el: document.querySelector('#dom'), ⏎ 
+    el: document.querySelector('#dom'),
 };
 
 console.log(DOM.el.innerHTML);
