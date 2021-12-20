@@ -3,7 +3,7 @@
 
 <div id="dom">うんこ</div>
 
-```rb
+```bl
 const DOM = {
     el: document.querySelector('#dom'),
 };
