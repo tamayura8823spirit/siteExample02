@@ -6,6 +6,8 @@
 
 [【リファレンス２】](https://github.com/Techpit-Market/host-guide/blob/master/4/markdown.md)
 
+[【コードブロックでシンタックスハイライト可能な言語一覧】](https://dev.classmethod.jp/articles/syntax-highlight-language-list/)
+
 ---
 
 <br>
