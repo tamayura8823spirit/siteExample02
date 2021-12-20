@@ -3,7 +3,7 @@
 
 <div id="dom">うんこ</div>
 
-```{sh}
+```console
 const DOM = {
     el: document.querySelector('#dom'),
 };
