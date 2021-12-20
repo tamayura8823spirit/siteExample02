@@ -19,7 +19,12 @@ require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
-```Apollo Guidance Computer
+```AppleScript
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+```19
 require 'redcarpet'
 markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
