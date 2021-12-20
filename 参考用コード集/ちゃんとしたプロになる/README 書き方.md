@@ -8,6 +8,8 @@
 
 [【コードブロックでシンタックスハイライト可能な言語一覧】](https://dev.classmethod.jp/articles/syntax-highlight-language-list/)
 
+[【Github公式の設定ファイル】](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
+
 ---
 
 <br>
