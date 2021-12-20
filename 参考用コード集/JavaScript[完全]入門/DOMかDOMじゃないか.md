@@ -5,7 +5,7 @@
 
 ```sh
 const DOM = {
-    el: document.querySelector('#dom'),⏎
+    el: document.querySelector('#dom'), ⏎ 
 };
 
 console.log(DOM.el.innerHTML);
