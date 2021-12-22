@@ -11,8 +11,10 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
 ```
 
+<br>
+
 ### 公式サイト
-[リンク](https://greensock.com/get-started/)
+[【https://greensock.com/get-started/】](https://greensock.com/get-started/)
 
 <br><br>
 
