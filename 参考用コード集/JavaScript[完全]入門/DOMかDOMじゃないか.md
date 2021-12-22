@@ -1,31 +1,22 @@
 
 
+## DOMかDOMじゃないか
+" DOMは必ずDOMオブジェクトの中に入れる "というルールを明確に作っておけば、後からコードを追いやすくなる  
 
-<div id="dom">うんこ</div>
-
-```apl
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-```apex
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+```rb
+class TextAnimation {
+    constructor(el) {
+        this.DOM = {};        ・・・①
+        this.DOM.el = document.querySelector(el);       ・・・②
+        this.chars = this.DOM.el.innerHTML.trim().split("");
+        this.DOM.el.innerHTML = this._splitText();
+    }
+}
 ```
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-```AppleScript
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-```objc
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+このようにすれば、一見不便の思えるかもしれないが、
+
+chars  =  DOM.el.innerHTML.trim().split("");  などは逆に、DOM要素をトリム・分割して配列として置き換えたものなので、DOMではないことを判別できるようにする
+
+
+
