@@ -16,7 +16,7 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
 ## .toメソッド
 第一引数に" 対象となるDOM "、第二引数に" アニメーションの間隔 "、第三引数に" アニメーションの詳細 "を記述する。  
 
-```yaml
+```rb
 class TweenTextAnimation extends TextAnimation {
     constructor(el) {
         super(el);
@@ -40,6 +40,8 @@ class TweenTextAnimation extends TextAnimation {
 
 ②　`startAt`は**アニメーションが始まる状態**を定義できる。  
 「TweenMax」では、`x`と`y`で上下左右の設定を行うので、`y: '-50%'`は`translateY: -50%`と同じだと思って良い。  
+なので上の記述では、`上に50%移動していて、opacityは0の状態`で始まることを意味している。  
+
 
 forEachのコールバック関数には、第一引数にDOM、第二引数にインデックスが渡ってくる。
                     - *startAtはアニメーションが始まる状態を定義するプロパティで、TweenMaxでは “x” と “y” で左右上下の設定を行う。
