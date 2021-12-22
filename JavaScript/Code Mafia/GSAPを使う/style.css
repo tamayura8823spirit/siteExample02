@@ -1,0 +1,36 @@
+html {
+  font-family: 'Teko', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+#container {
+  position: relative;
+  height: 100vh;
+  background-color: teal;
+}
+
+.animate-title,
+.tween-animate-title {
+  color: white;
+  opacity: 0;
+  font-size: 2em;
+}
+
+.animate-title.inview,
+.tween-animate-title.inview {
+  opacity: 1;
+}
+
+.animate-title.inview .char,
+.tween-animate-title.inview .char {
+  display: inline-block;
+}
+
+.animate-title .char,
+.tween-animate-title .char {
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */
