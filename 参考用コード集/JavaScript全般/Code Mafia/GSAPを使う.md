@@ -20,7 +20,7 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
 class TweenTextAnimation extends TextAnimation {
     constructor(el) {
         super(el);
-        this.DOM.chars = this.DOM.el.querySelector('.char');
+        this.DOM.chars = this.DOM.el.querySelectorAll('.char');
     }
     animate() {
         this.DOM.chars.forEach((c, i) => {
@@ -42,7 +42,7 @@ class TweenTextAnimation extends TextAnimation {
 「TweenMax」では、`x`と`y`で上下左右の設定を行うので、`y: '-50%'`は`translateY: -50%`と同じだと思って良い。  
 なので上の記述では、`"上に50%移動していて、opacityは0の状態"`で始まることを意味している。  
 
-③　別に　"y"　や　"opacity"　を記述することで終了時の状態を設定する。  
+③　別に`y`や`opacity`を記述することで終了時の状態を設定する。  
 
 
 
