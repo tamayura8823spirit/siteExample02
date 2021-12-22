@@ -16,7 +16,7 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
 ## .toメソッド
 第一引数に" 対象となるDOM "、第二引数に" アニメーションの間隔 "、第三引数に" アニメーションの詳細 "を記述する。  
 
-```
+```yaml
 class TweenTextAnimation extends TextAnimation {
     constructor(el) {
         super(el);
