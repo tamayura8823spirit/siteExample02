@@ -55,16 +55,6 @@ class TweenTextAnimation extends TextAnimation {
 
 ---
 
-参考：
-[【公式サイト】](https://greensock.com/get-started/)
-[【リファレンス】](https://ics.media/entry/7162/)
-
-
-
-
-
-
-
-
-
+参考：  
+[【リファレンス】](https://ics.media/entry/7162/)  
 
