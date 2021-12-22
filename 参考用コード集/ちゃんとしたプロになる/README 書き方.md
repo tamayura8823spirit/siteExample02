@@ -10,6 +10,8 @@
 
 [【Github公式の設定ファイル】](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 
+[【Markdown記法の書き方】](https://notepm.jp/help/how-to-markdown)
+
 ---
 
 <br>
