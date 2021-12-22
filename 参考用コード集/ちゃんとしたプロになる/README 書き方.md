@@ -100,7 +100,4 @@ Br 改行である
 
 ★ コメントである
 
-<span style="color: red; ">赤文字</span>
-
-
 
