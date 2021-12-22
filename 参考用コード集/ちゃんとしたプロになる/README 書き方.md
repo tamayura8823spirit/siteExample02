@@ -2,9 +2,9 @@
 
 [【公式サイト】](https://gist.github.com/LambdaNote/0d33b7d8284a3c99cffd1a5aa83c115f)
 
-[【リファレンス】](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
+[【Markdown記法 チートシート】](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)
 
-[【リファレンス２】](https://github.com/Techpit-Market/host-guide/blob/master/4/markdown.md)
+[【見やすい文章を書くためのマークダウンの書き方】](https://github.com/Techpit-Market/host-guide/blob/master/4/markdown.md)
 
 [【コードブロックでシンタックスハイライト可能な言語一覧】](https://dev.classmethod.jp/articles/syntax-highlight-language-list/)
 
@@ -99,3 +99,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Br 改行である
 
 ★ コメントである
+
+<span style="color: red; ">赤文字</span>
+
+
+
