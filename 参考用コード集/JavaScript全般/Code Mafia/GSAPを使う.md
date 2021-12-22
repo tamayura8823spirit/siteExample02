@@ -12,6 +12,39 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
 <br><br>
 
 ## .toメソッド
+３つの引数を取り、第一引数に" 対象となるDOM "、第二引数に" アニメーションの間隔 "、第三引数に" アニメーションの詳細 "を記述する。  
+
+```
+class TweenTextAnimation extends TextAnimation {
+    constructor(el) {
+        super(el);
+        this.DOM.chars = this.DOM.el.querySelector('.char');
+    }
+    animate() {
+        this.DOM.chars.forEach((c, i) => {
+            TweenMax.to(c, .6, {
+                ease: Back.easeOut ,                    ・・・・・・ ①
+                delay: i * .05 ,
+                startAt: { y: '-50%' , opacity: 0 } ,   ・・・・・・ ②
+                y: '0%' ,
+                opacity: 1
+            });
+        });
+    }
+}
+```
+
+①　`Back`は「TweenMax」に格納されているオブジェクトで、**タイミングファンクションを取得するとき**にこのような記述を取る。  
+②　`startAt`は**アニメーションが始まる状態**を定義できて、「TweenMax」は`x`と`y`で上下左右の設定を行うので、  
+`y: '-50%'`は`translate`プロパティと同じだと思っていくと良い。  
+
+forEachのコールバック関数には、第一引数にDOM、第二引数にインデックスが渡ってくる。
+                    - *startAtはアニメーションが始まる状態を定義するプロパティで、TweenMaxでは “x” と “y” で左右上下の設定を行う。
+                    - 別に “y” や “opacity” を記述することで終了時の状態を設定する。
+
+
+
+<br><br>
 
 ---
 
