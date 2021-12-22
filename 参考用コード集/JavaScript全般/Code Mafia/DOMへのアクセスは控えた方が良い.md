@@ -1,6 +1,6 @@
 
 
-```
+```objc
  for(let c of str) {
     el.innerHTML = `<span>${c}</span>`;
  }
