@@ -56,5 +56,5 @@ class TweenTextAnimation extends TextAnimation {
 ---
 
 参考：  
-[【リファレンス】](https://ics.media/entry/7162/)  
+[【GSAPを使ったタイムリマップ表現】](https://ics.media/entry/7162/)  
 
