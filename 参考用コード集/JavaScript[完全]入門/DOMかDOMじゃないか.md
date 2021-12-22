@@ -3,7 +3,7 @@
 ## DOMかDOMじゃないか
 " DOMは必ずDOMオブジェクトの中に入れる "というルールを明確に作っておけば、後からコードを追いやすくなる  
 
-```rb
+```apex
 class TextAnimation {
     constructor(el) {
         this.DOM = {};        ・・・①
