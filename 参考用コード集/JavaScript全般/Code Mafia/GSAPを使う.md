@@ -7,7 +7,7 @@ JavaScriptでアニメーションを行うために、大変よく使われる�
     を統合したJSライブラリであり、古い記事では 「TweenMax」 で紹介されていることがあるが、同じJSライブラリとなっている  
 
 ### CDN
-`<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>`
+`<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>`rb
 
 <br><br>
 
