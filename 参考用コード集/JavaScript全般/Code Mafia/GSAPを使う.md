@@ -28,7 +28,7 @@ class TweenTextAnimation extends TextAnimation {
                 ease: Back.easeOut ,                    ・・・・・・ ①
                 delay: i * .05 ,
                 startAt: { y: '-50%' , opacity: 0 } ,   ・・・・・・ ②
-                y: '0%' ,
+                y: '0%' ,                               ・・・・・・ ③
                 opacity: 1
             });
         });
@@ -42,10 +42,7 @@ class TweenTextAnimation extends TextAnimation {
 「TweenMax」では、`x`と`y`で上下左右の設定を行うので、`y: '-50%'`は`translateY: -50%`と同じだと思って良い。  
 なので上の記述では、`"上に50%移動していて、opacityは0の状態"`で始まることを意味している。  
 
-
-forEachのコールバック関数には、第一引数にDOM、第二引数にインデックスが渡ってくる。
-                    - *startAtはアニメーションが始まる状態を定義するプロパティで、TweenMaxでは “x” と “y” で左右上下の設定を行う。
-                    - 別に “y” や “opacity” を記述することで終了時の状態を設定する。
+③　別に　"y"　や　"opacity"　を記述することで終了時の状態を設定する。  
 
 
 
