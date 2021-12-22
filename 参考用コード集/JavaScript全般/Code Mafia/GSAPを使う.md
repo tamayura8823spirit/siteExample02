@@ -37,8 +37,9 @@ class TweenTextAnimation extends TextAnimation {
 ```
 
 ①　`Back`は「TweenMax」に格納されているオブジェクトで、**タイミングファンクションを取得するとき**にこのような記述を取る。  
+
 ②　`startAt`は**アニメーションが始まる状態**を定義できる。  
-「TweenMax」では、`x`と`y`で上下左右の設定を行うので、`y: '-50%'`は`translate`プロパティと同じだと思っておくと良い。  
+「TweenMax」では、`x`と`y`で上下左右の設定を行うので、`y: '-50%'`は`translateY: -50%`と同じだと思って良い。  
 
 forEachのコールバック関数には、第一引数にDOM、第二引数にインデックスが渡ってくる。
                     - *startAtはアニメーションが始まる状態を定義するプロパティで、TweenMaxでは “x” と “y” で左右上下の設定を行う。
