@@ -2,7 +2,7 @@
 
 ## thisとコールバック関数
 
-```
+```4D
  
  document.addEventListener('DOMContentLoaded', function () {
 
