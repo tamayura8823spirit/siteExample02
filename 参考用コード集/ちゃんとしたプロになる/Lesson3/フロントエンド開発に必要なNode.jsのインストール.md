@@ -168,6 +168,8 @@ $ npm install -g sass
 > **Gulp** であれば `node_modules/gulp/bin/gulp.js` と入力する必要があったが、  
 > **npx** コマンドを使えば実態ファイルの指定を省略して実行できる
 
+<br>
+
 #### Sassのローカルインストールとグローバルインストールでのコマンド使用例
 ```4D
 // グローバルインストールしたパッケージの利用
@@ -229,6 +231,8 @@ $ npm install jquery -S
   }
 }
 ```
+
+<br>
 
 #### devDepenciesにGulpをインストールする
 ```4D
