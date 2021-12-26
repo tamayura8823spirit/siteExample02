@@ -242,15 +242,14 @@ $ npx gulp
 
 <br>
 
-SCSSファイルの変換を実行するために「style.scss」を編集して保存する。  
-すると、`css.Transpile` タスクが実行される。  
+SCSSファイルの変換を実行するために「style.scss」を編集して保存すると、  
+`css.Transpile` タスクが実行され、「style.css」が自動生成される。  
+```rb
+[08:34:03] Starting 'cssTranspile'...
+[08:34:03] Finished 'cssTranspile' after 28 ms
 ```
 
-```
-
-<br>
-
-gulp の監視を終了する場合は「Ctrl + C」を押す。  
+（gulp の監視を終了する場合は「Ctrl + C」を押す。）  
 
 <br>
 
@@ -259,9 +258,45 @@ gulp の監視を終了する場合は「Ctrl + C」を押す。
 ディレクトリ設計や設定ファイルの作成など、初期設定に時間がかかるものの、  
 一度作ってしまえばさまざまなプロジェクトで汎用的に利用できる。  
 
+<br>
+<br>
 
+## [**【こんなクソみたいな間違った解説よりも、死ぬほど解りやすく正しいリファレンス】**](https://ics.media/entry/3290/)
 
+```
+// gulpプラグインを読み込みます
+const { src, dest, watch } = require("gulp");
+// Sassをコンパイルするプラグインを読み込みます
+const sass = require("gulp-sass")(require("sass"));
 
+/**
+ * Sassをコンパイルするタスクです
+ */
+const compileSass = () =>
+  // style.scssファイルを取得
+  src("src/scss/**/*.scss")
+    // Sassのコンパイルを実行
+    .pipe(
+      // コンパイル後のCSSを展開
+      sass({
+        outputStyle: "expanded"
+      })
+    )
+    // cssフォルダー以下に保存
+    .pipe(dest("src/scss"));
 
+/**
+ * Sassファイルを監視し、変更があったらSassを変換します
+ */
+const watchSassFiles = () => watch("src/scss/**/*.scss", compileSass);
+
+// npx gulpというコマンドを実行した時、watchSassFilesが実行されるようにします
+exports.default = watchSassFiles;
+```
+**最強**はコレ ↑ 
+
+<br>
+
+[ **【 gulp-sass 公式サイト】** ](https://www.npmjs.com/package/gulp-sass)
 
 
