@@ -2,6 +2,8 @@
     Gulp にはさまざまなプラグインを追加できる。  
     普段から手動で行っている作業も Gulp を使って自動化することで、Webサイト制作の効率化や品質向上につながる。  
 
+[【 **本章で記述した「gulpfile.js」のコード** 】](https://github.com/tamayura8823spirit/siteExample02/blob/main/%E5%8F%82%E8%80%83%E7%94%A8%E3%82%B3%E3%83%BC%E3%83%88%E3%82%99%E9%9B%86/%E3%81%A1%E3%82%83%E3%82%93%E3%81%A8%E3%81%97%E3%81%9F%E3%83%97%E3%83%AD%E3%81%AB%E3%81%AA%E3%82%8B/Lesson3/gulpfileJs.md)
+
 <br>
 
 ## Gulpを実行するディレクトリの準備
