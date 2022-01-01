@@ -70,16 +70,14 @@ Sourcetree では、次の方法でリポジトリの作成と追加ができる
 
 <br>
 
-![ripo](images/27d2e68b-c825-47cd-b3f9-1acfd5b01fba-0.jpg)
-
-<img src="images/ea445d28-3d4a-409d-9b4a-2f77508c6de0-0.jpg" width="800">
+<img src="images/27d2e68b-c825-47cd-b3f9-1acfd5b01fba-0.jpg" width="800">
 
 リモートリポジトリに関しては Github などのホスティングサービス上で作成するため、  
 基本的には「**URLからクローン**」もしくは「**ローカルリポジトリを作成**」を使用する。  
 
-![url](images/859f8b06-c2d7-448a-83b5-08044742f084-0.jpg)
+<img src="images/859f8b06-c2d7-448a-83b5-08044742f084-0.jpg" width="800">
 
-![local](images/ea445d28-3d4a-409d-9b4a-2f77508c6de0-0.jpg)
+<img src="images/ea445d28-3d4a-409d-9b4a-2f77508c6de0-0.jpg" width="800">
 
 「URLからクローン」で設定するURLは、
 
