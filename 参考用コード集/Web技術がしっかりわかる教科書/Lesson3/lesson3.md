@@ -90,7 +90,7 @@ $ telnet サーバーのアドレス サービスポート番号
 
 #### ● リクエストURL
 リクエストするリソースの**位置情報**を指定する。  
-たとえば「**http://www.example.jp**」の「**index.html**」をリクエストする場合、「**http://www.example.jp/index.html**」となる。  
+たとえば「 **http://www.example.jp** 」の「 **index.html** 」をリクエストする場合、「 **http://www.example.jp/index.html** 」となる。  
 
 ただし、**「HTTP/1.1」ではスキーム（http:）やオーソリティ（//www.example.jp）を省略するのが一般的**。  
 また、**オーソリティで示されるホスト名やポート番号**は、ヘッダー内の「**Host：**」ヘッダーで指定する。  
