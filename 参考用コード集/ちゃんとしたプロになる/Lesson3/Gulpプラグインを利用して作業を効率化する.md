@@ -8,6 +8,10 @@
 
 <br>
 
+[【 **ちなみに「package.json」の中身はこんな感じ** 】](https://github.com/tamayura8823spirit/siteExample02/blob/main/%E5%8F%82%E8%80%83%E7%94%A8%E3%82%B3%E3%83%BC%E3%83%88%E3%82%99%E9%9B%86/%E3%81%A1%E3%82%83%E3%82%93%E3%81%A8%E3%81%97%E3%81%9F%E3%83%97%E3%83%AD%E3%81%AB%E3%81%AA%E3%82%8B/Lesson3/packageJs.md)
+
+<br>
+
 ## Gulpを実行するディレクトリの準備
 本節では、下記の Gulp のタスク設定をおこなっていく。  
 
