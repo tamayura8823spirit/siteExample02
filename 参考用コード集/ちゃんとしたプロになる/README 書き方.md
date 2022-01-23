@@ -6,7 +6,7 @@
 
 [【見やすい文章を書くためのマークダウンの書き方】](https://github.com/Techpit-Market/host-guide/blob/master/4/markdown.md)
 
-[【コードブロックでシンタックスハイライト可能な言語一覧】](https://dev.classmethod.jp/articles/syntax-highlight-language-list/)
+[【コードブロックでシンタックスハイライト可能な言語一覧】](https://blog.katsubemakito.net/articles/github-markdown-syntaxhighlighting)
 
 [【Github公式の設定ファイル】](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 
