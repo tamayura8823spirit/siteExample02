@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.container {
+  max-width: 1440px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.card {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.card img {
+  max-width: none;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.card p {
+  margin: 20px;
+}
+
+.cardList {
+  display: -ms-grid;
+  display: grid;
+  /*girdレイアウトにする*/
+  gap: 20px;
+  /*隣接するアイテム間余白を20pxに設定*/
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+.cardList__item {
+  list-style: none;
+}
+/*# sourceMappingURL=style.css.map */
