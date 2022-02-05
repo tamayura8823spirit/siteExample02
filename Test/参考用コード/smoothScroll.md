@@ -1,6 +1,6 @@
 
 
-```JSONLD
+```Jest Snapshot
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
@@ -31,7 +31,7 @@
         });
 ```
 
-```JSONiq
+```JavaScript+ERB
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
