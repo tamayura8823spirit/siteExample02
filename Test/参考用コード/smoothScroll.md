@@ -1,6 +1,6 @@
 
 
-```JSON
+```JSONLD
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
@@ -31,7 +31,7 @@
         });
 ```
 
-```JSON with Comments
+```JSONiq
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
@@ -92,7 +92,8 @@
             }
         });
 ```
-```Ecere Projects
+
+```JavaScript
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
