@@ -1,6 +1,6 @@
 
 
-```Jest Snapshot
+```TypeScript
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
