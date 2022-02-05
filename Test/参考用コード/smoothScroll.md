@@ -31,7 +31,7 @@
         });
 ```
 
-```JavaScript+ERB
+```Jupyter Notebook
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
@@ -62,7 +62,7 @@
         });
 ```
 
-```JSON5
+```Max
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
@@ -93,7 +93,7 @@
         });
 ```
 
-```JavaScript
+```Qt Script
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
@@ -125,7 +125,7 @@
 ```
 
 
-```Cycript
+```PEG.js
 // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
