@@ -15,12 +15,12 @@
 
         // DOM要素を変数に代入
         const _header = $('#header');
+        const _air = $('.air');
         const _window = $(window)
         
         _window.on('scroll', function(){
             // 画像があると、jQueryが読み込まれてすぐは正常な高さが取得できないので、スクロール時に基準点の高さを代入する
-            const airHeight = $('.air').height();
-            const headerExtend = airHeight - 90;
+            const headerExtend = _air.height() - 90;
             if( _window.scrollTop() > headerExtend ) {
                 _header.addClass('transform');
             } else {
