@@ -1,6 +1,8 @@
 
 <br>
 
+## JavaScript
+
 ```JavaScript
         // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
