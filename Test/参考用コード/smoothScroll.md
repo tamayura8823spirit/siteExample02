@@ -1,6 +1,6 @@
 
 ```JavaScript
-// 各セクションへのスムーススクロール
+        // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
             // 「クリックされたaタグ」 の id を取得
             const elmHash = $(this).attr('href');
