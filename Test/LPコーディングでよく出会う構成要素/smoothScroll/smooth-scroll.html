@@ -73,24 +73,22 @@
             $('html, body').animate({scrollTop:section});
         });
 
-        // トップへ戻るスムーススクロール
-
-
-        // スクロールでヘッダーのサイズを変更
+        // DOM要素を変数に代入
         const _header = $('#header');
-        // ヘッダーの高さを代入
-        let headerHeight = $('#header').height();
-        // 「airHeight」 は、ヘッダーが変わる地点までの仮の空白サイズのこと
-        const airHeight = $('.air').height();
-        let headerExtend = airHeight - headerHeight;
-        $(window).on('scroll', function(){
-            if($(this).scrollTop() > headerExtend ) {
+        const _window = $(window)
+        
+        _window.on('scroll', function(){
+            // 画像があると、jQueryが読み込まれてすぐは正常な高さが取得できないので、スクロール時に基準点の高さを代入する
+            const airHeight = $('.air').height();
+            const headerExtend = airHeight - 90;
+            if( _window.scrollTop() > headerExtend ) {
                 _header.addClass('transform');
             } else {
                 _header.removeClass('transform');
             }
         });
 
+        _window.trigger('scroll');
 
 
 

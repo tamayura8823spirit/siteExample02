@@ -13,25 +13,22 @@
             $('html, body').animate({scrollTop:section});
         });
 
-        // トップへ戻るスムーススクロール
-
-
-        // スクロールでヘッダーのサイズを変更
+        // DOM要素を変数に代入
         const _header = $('#header');
-        let headerHeight = $('#header').height();
-        const airHeight = $('.air').height();
-        let headerExtend = airHeight - headerHeight;
-        // let headerShrink = airHeight - 60;
-        $(window).on('scroll', function(){
-            if($(this).scrollTop() > headerExtend ) {
-                // _header.addClass('transform');
-                _header.css('height', '60px');
-                // let headerExtend = airHeight - headerHeight;
+        const _window = $(window)
+        
+        _window.on('scroll', function(){
+            // 画像があると、jQueryが読み込まれてすぐは正常な高さが取得できないので、スクロール時に基準点の高さを代入する
+            const airHeight = $('.air').height();
+            const headerExtend = airHeight - 90;
+            if( _window.scrollTop() > headerExtend ) {
+                _header.addClass('transform');
             } else {
-                _header.css('height', '90px');
-                let headerExtend = airHeight - headerHeight;
+                _header.removeClass('transform');
             }
         });
+
+        _window.trigger('scroll');
 ```
 
 <br>
