@@ -59,12 +59,10 @@
     </div>
 
 
-    
-    <script src="node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
         
-      jQuery(function($){
+    $(function(){
         
         // 各セクションへのスムーススクロール
         $('a[href*="#"]').click(function() {
@@ -82,7 +80,6 @@
 
         // 変数startPos を宣言
         let startPos;
-
         
         _window.on('scroll', function(){
           const winScrollTop = _window.scrollTop();
@@ -99,35 +96,24 @@
         });
 
         _window.trigger('scroll');
-      });
-
-
-        // 各セクションへのスムーススクロール
-        // var scroll = new SmoothScroll('a[href*="#section1"]' , {speed: 100, header: 60 } );
-        // var scroll = new SmoothScroll('a[href*="#section2"]' , {speed: 100, header: 60 } );
-        // var scroll = new SmoothScroll('a[href*="#section3"]' , {speed: 100, header: 60 } );
-        // var scroll = new SmoothScroll('a[href*="#section4"]' , {speed: 100, header: 60 } );
-        // var scroll = new SmoothScroll('a[href*="#section5"]' , {speed: 100, header: 60 } );
+        
         
         // トップへ戻るスムーススクロール
-        // var scroll = new SmoothScroll('a[href*="#"]' , {speed: 100 } );
-        
-        // スクロールでヘッダーのサイズを変更
-        // スクロールでトップへ戻るボタンを表示
-        
-        // $(window).on('scroll',function(){
-        //     if( $(this).scrollTop() > heroBottom ){
-        //         _header.addClass('transform');
-        //     } else {
-        //         _header.removeClass('transform');
-        //     }
-        //     if($(this).scrollTop() > 100) {
-        //         $('.floating').show();
-        //     } else {
-        //         $('.floating').hide();
-        //     }
-        // });
+        $(".floating").click(function(){
+            $('body, html').animate( {scrollTop: 0 } ); /* 一番上まで移動 */
+            return false;
+        });
 
+        // スクロールでトップへ戻るボタンを表示
+        _window.on('scroll',function(){
+            if(_window.scrollTop() > 600) {
+                $('.floating').fadeIn("fast");
+            } else {
+                $('.floating').fadeOut("fast");
+            }
+        });
+        
+    });
 
     </script>
 
