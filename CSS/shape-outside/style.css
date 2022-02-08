@@ -1,0 +1,39 @@
+body {
+    background: #eee;
+    margin-bottom: 100px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .container__item {
+    margin-top: 100px;
+  }
+  
+  .shape-out {
+    background: #edd;
+  }
+  
+  .shape-out__thumb {
+    shape-outside: circle(50% at 50% 50%);
+    padding: 20px;
+    max-width: 300px;
+    float: left;
+  }
+  
+  .shape-out__thumb img {
+    -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+    width: 100%;
+    aspect-ratio: 4/4;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  .shape-out__thumb::after {
+    content: "";
+    clear: both;
+  }
+  /*# sourceMappingURL=style.css.map */
