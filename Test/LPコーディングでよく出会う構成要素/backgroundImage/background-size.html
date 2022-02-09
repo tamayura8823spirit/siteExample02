@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 確実に覆われる「cover」 -->
+    <div class="bg-cover">
+        <div class="bg-content">cover</div>
+    </div>
+    
+    <!-- 縦横比は維持されるけど隙間が生まれやすい「contain」 -->
+    <div class="bg-contain">
+        <div class="bg-content">contain</div>
+    </div>
+    
+    <!-- 大きさが全く変わらない「auto」 -->
+    <div class="bg-auto">
+        <div class="bg-content">auto</div>
+    </div>
+
+    <!-- 縦横比はめちゃくちゃになるけど覆われる「100%」 -->
+    <div class="bg-100per">
+        <div class="bg-content">100%</div>
+    </div>
+
+    <!-- ヒーローイメージは100vh -->
+    <div class="bg-hero">
+        <div class="bg-content">100vh</div>
+    </div>
+
+    <!-- padding-top: で縦横比を維持 -->
+    <div class="bg-padding">
+        <div class="bg-content">padding-top</div>
+    </div>
+
+    <!-- aspect-ratio: で縦横比を維持 -->
+    <div class="bg-aspect">
+        <div class="bg-content">aspect-ratio</div>
+    </div>
+    
+
+</body>
+</html>
