@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+}
+
+.menubtn {
+  position: relative;
+  background: #57a2c7;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 999;
+}
+
+.menubtn li {
+  list-style: none;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  width: 45%;
+}
+
+.menubtn li:nth-of-type(1) {
+  top: 15px;
+}
+
+.menubtn li:nth-of-type(2) {
+  top: 23px;
+}
+
+.menubtn li:nth-of-type(3) {
+  top: 31px;
+}
+
+nav {
+  background-color: #ccc;
+  position: fixed;
+  height: 800px;
+  width: 30%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+#nav-input:checked ~ label li:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  -webkit-transform: translateY(6px) rotate(-45deg);
+          transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+#nav-input:checked ~ label li:nth-of-type(2) {
+  opacity: 0;
+}
+
+#nav-input:checked ~ label li:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  -webkit-transform: translateY(-6px) rotate(45deg);
+          transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+#nav-input:checked ~ nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.nav-hidden {
+  display: none;
+}
+
+.content {
+  padding-top: 80px;
+}
+/*# sourceMappingURL=style.css.map */
