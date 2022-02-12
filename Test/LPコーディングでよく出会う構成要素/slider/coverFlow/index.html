@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="../../images/books.jpg" alt="Swiper01" /></div>
+        <div class="swiper-slide"><img src="../../images/elephant.jpg" alt="Swiper02" /></div>
+        <div class="swiper-slide"><img src="../../images/drops.jpg" alt="Swiper03" /></div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    <div class="swiper-pagination"></div>
+
+
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // 次へボタンと戻るボタンを指定
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // カバーフローを設定
+      effect: "coverflow",
+      // カーソルが掴むマークに
+      grabCursor: true,
+      // 必ずアクティブのスライドが正面に
+      centeredSlides: true,
+      slidesPerView: "2",
+
+      coverflowEffect: {
+        // スライド時に回転する角度
+        rotate: 50,
+        stretch: 0,
+        //オフセットの深さ
+        depth: 100,
+        // 角度
+        modifier: 1,
+        // スライドの影
+        slideShadows: true
+      },
+    });
+
+  </script>
+</body>
+
+</html>

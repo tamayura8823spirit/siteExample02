@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../../images/books.jpg" alt="Swiper01" /></div>
+        <div class="swiper-slide"><img src="../../images/elephant.jpg" alt="Swiper02" /></div>
+        <div class="swiper-slide"><img src="../../images/drops.jpg" alt="Swiper03" /></div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <!-- サムネイル用のスワイパーを別途追加 -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../../images/books.jpg" alt="Swiper01" /></div>
+        <div class="swiper-slide"><img src="../../images/elephant.jpg" alt="Swiper02" /></div>
+        <div class="swiper-slide"><img src="../../images/drops.jpg" alt="Swiper03" /></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      // スライド間の余白
+      spaceBetween: 10,
+      // サムネイルの枚数
+      slidesPerView: 3
+    });
+
+    const swiper2 = new Swiper('.mySwiper2', {
+      // サムネイル画像との紐付け
+      thumbs: {
+        swiper: swiper
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+  </script>
+</body>
+
+</html>
