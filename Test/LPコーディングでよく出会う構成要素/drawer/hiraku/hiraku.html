@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+    <link rel="stylesheet" type="text/css" href="hiraku.css">
+
+    <style>
+    #header {
+		background: #666;
+		height: 62px;
+		position: fixed;
+        top: 0;
+        left: 0;
+		width: 100%;
+		padding: 8px;
+	}
+	.hiraku-open-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+    .container {
+        margin-top: 60px;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- ドロワーを開くボタン -->
+    <header id="header">
+        <button class="hiraku-open-btn" id="offcanvas-btn-left" data-toggle-offcanvas="#js-hiraku-offcanvas-1">
+            <span class="hiraku-open-btn-line"></span>
+        </button>
+    </header>
+
+    <!-- ドロワーの中身 -->
+    <div class="offcanvas-left">
+        <ul><li>hogehoge</li></ul>
+    </div>
+
+    <!-- 画面 -->
+    <div class="container">
+        <h1>拝啓人類は</h1>
+        <h2>感情なんか無くして</h2>
+        <h3>平静は裁定です</h3>
+        <h4>環状物のような毎日で</h4>
+        <h1>衛星都市に行こう</h1>
+        <h2>あなたは言った</h2>
+        <h3>1.5リットルの</h3>
+        <h4>現実逃避行計画さ</h4>
+        <h1>週末僕らは月の裏側で</h1>
+        <h2>何にもないねなんて</h2>
+        <h3>馬鹿らしくて</h3>
+        <h4>笑い合ったね</h4>
+        <h1>そしたら僕は世界を廻るよ</h1>
+        <h2>二人でジャンプしたら</h2>
+        <h3>やかましくて</h3>
+        <h4>ワラーイヤーラレー</h4>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="hiraku.js"></script>
+    <script>
+
+        $(".offcanvas-left").hiraku({
+            btn:"#offcanvas-btn-left",
+            direction:"left"
+        });
+
+    </script>
+</body>
+</html>
