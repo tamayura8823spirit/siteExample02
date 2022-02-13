@@ -59,8 +59,7 @@
           $(".container").append('<div id="modal-overlay"></div>');
 
           //「オーバーレイ」 と 「モーダルコンテンツ」をフェードインさせる
-          $("#modal-overlay").fadeIn("fast");
-          $(modal).fadeIn("slow");
+          $("#modal-overlay").add(modal).fadeIn("slow");
 
           // 「オーバーレイ」 か 「閉じるボタン」がクリックされたら起こる処理
           $("#modal-overlay, .modal-close").unbind().click(function () {
