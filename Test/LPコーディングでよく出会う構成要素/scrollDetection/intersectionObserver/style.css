@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.section0 {
+  background: #44b;
+}
+
+.section1 {
+  background: #008080;
+}
+
+.section2 {
+  background: #C71585;
+}
+
+.section3 {
+  background: #FFA500;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (200px)[2];
+      grid-template-columns: repeat(2, 200px);
+  -ms-grid-rows: (150px)[2];
+      grid-template-rows: repeat(2, 150px);
+  gap: 130px 220px;
+}
+
+.grid__item {
+  background: #ebb;
+  text-align: center;
+  line-height: 150px;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.one {
+  -webkit-transform: translateX(-90px);
+          transform: translateX(-90px);
+}
+
+.one.inview {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.two {
+  -webkit-transform: translateY(-90px);
+          transform: translateY(-90px);
+}
+
+.two.inview {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.three {
+  -webkit-transform: translateX(90px);
+          transform: translateX(90px);
+}
+
+.three.inview {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.four {
+  -webkit-transform: translateY(90px);
+          transform: translateY(90px);
+}
+
+.four.inview {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+/*# sourceMappingURL=style.css.map */
