@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="../../../images/film.png" alt="" class="film">
+    <img src="../../../images/controller.png" alt="" class="controller">
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+  <script>
+
+
+    let film = new Rellax('.film', {
+      speed: 5,
+      // center: true,
+      // wrapper: null,
+      // round: true,
+      // vertical: true,
+      // horizontal: true
+    });
+
+    let controller = new Rellax('.controller', {
+      speed: -5,
+      // center: true,
+      // wrapper: null,
+      // round: true,
+      // vertical: true,
+      // horizontal: false
+    });
+
+
+  </script>
+
+</body>
+
+</html>

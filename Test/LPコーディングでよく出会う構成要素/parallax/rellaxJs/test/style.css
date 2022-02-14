@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 60vh auto;
+  width: 800px;
+  height: 4000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.film {
+  position: relative;
+  top: 100px;
+  height: 150px;
+}
+
+.controller {
+  height: 150px;
+}
+/*# sourceMappingURL=style.css.map */
