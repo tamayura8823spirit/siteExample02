@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="accordion.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <ul class="accordion-area">
+      <li>
+        <!--li ~ /li までが一つのアコーディオン-->
+        <section>
+          <h3 class="title">タイトル</h3>
+          <div class="box">
+            <p>内容が入ります。</p>
+          </div>
+        </section>
+      </li>
+
+      <li>
+        <section>
+          <h3 class="title">タイトル</h3>
+          <div class="box">
+            <p>内容が入ります。</p>
+          </div>
+        </section>
+      </li>
+    </ul>
+
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+
+    //アコーディオンをクリックした時の動作
+    $('.title').on('click', function () {//タイトル要素をクリックしたら
+      var findElm = $(this).next(".box");//直後のアコーディオンを行うエリアを取得し
+      $(findElm).slideToggle();//アコーディオンを開閉する
+
+      if ($(this).hasClass('close')) {// .close を持っていれば
+        $(this).removeClass('close');// それを除去し
+      } else {
+        $(this).addClass('close');// 持っていなければ .close を付与
+      }
+    });
+
+    //Webページを訪れた時点であらかじめ開いておく動作 ※不必要なら全て削除
+    $(window).on('load', function () {
+      $('.accordion-area li:first-of-type section').addClass("open"); //accordion-areaのはじめのliにあるsectionにopenクラスを追加
+      $(".open").each(function (index, element) {	//openクラスを持ったすべての要素の
+        var Title = $(element).children('.title');	// タイトルに .close （開いている状態） を付与しておいて
+        $(Title).addClass('close');
+        var Box = $(element).children('.box');	// アコーディオンメニューも開いておく
+        $(Box).slideDown(500);
+      });
+    });
+
+  </script>
+</body>
+
+</html>
