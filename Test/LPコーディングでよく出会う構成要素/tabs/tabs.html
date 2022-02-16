@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <ul class="tab">
+      <li><a href="#lunch">ランチ</a></li>
+      <li><a href="#drink">ドリンク</a></li>
+      <li><a href="#dinner">ディナー</a></li>
+    </ul>
+
+    <div id="lunch" class="area">
+      <h2>ランチ</h2>
+      <ul>
+        <li>ガパオライス</li>
+        <li>ミートソーススパゲティ―</li>
+        <li>ハンバーグ定食</li>
+      </ul>
+      <!--/area-->
+    </div>
+    <div id="drink" class="area">
+      <h2>ドリンク</h2>
+      <ul>
+        <li>ウーロン茶</li>
+        <li>オレンジジュース</li>
+        <li>ジンジャーエール</li>
+      </ul>
+      <!--/area-->
+    </div>
+    <div id="dinner" class="area">
+      <h2>ディナー</h2>
+      <ul>
+        <li>カレーライス</li>
+        <li>ドリア</li>
+        <li>グラタン</li>
+      </ul>
+      <!--/area-->
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+
+    //タブリンクと、表示エリアを連携するための設定
+    function GethashID(hashIDName) {
+      if (hashIDName) {
+        $('.tab li').find('a').each(function () { //タブ内で見つかった aタグ すべてに対して
+          var idName = $(this).attr('href'); //その aタグ のhref属性を取得し、	
+          if (idName == hashIDName) { //もし渡された引数と、それが同じであれば、
+            var parentElm = $(this).parent(); // aタグ の親要素（li）を取得する
+            $('.tab li').removeClass("active"); //その後、 <li> についている activeクラス を取り除き、
+            $(parentElm).addClass("active"); //スコープが当たっている aタグ の、親の <li> に activeクラス を追加する
+            $(".area").removeClass("is-active"); //そして、元々ついている is-activeクラス を取り除き、
+            $(hashIDName).addClass("is-active"); //対象のエリアに is-activeクラス を追加し、表示する
+          }
+        });
+      }
+    }
+
+    //タブをクリックした時の処理
+    $('.tab a').on('click', function () {
+      var idName = $(this).attr('href'); //クリックされた aタグ のhref属性を取得し、	
+      GethashID(idName);//それを引数にして、メソッドを実行
+      return false;//aタグを無効にする （URLに#マークが付かなくする）
+    });
+
+
+    // ページが読み込まれたらする処理
+    $(window).on('load', function () {
+      $('.tab li:first-of-type').addClass("active"); //最初のliにactiveクラスを追加
+      $('.area:first-of-type').addClass("is-active"); //最初の.areaにis-activeクラスを追加
+      var hashName = location.hash; //リンク元の指定されたURLのハッシュタグを取得
+      GethashID(hashName);//設定したタブの読み込み
+    });
+
+  </script>
+
+</body>
+
+</html>
