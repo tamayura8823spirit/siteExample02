@@ -1,0 +1,27 @@
+.container {
+  margin: 0 auto;
+  width: 800px;
+  background: #eee;
+
+  &:first-child {
+    margin-top: 30px;
+  }
+}
+
+.swiper {
+  &-wrapper {
+    background: blue;
+  }
+
+  &-slide {
+    background: red;
+    height: 500px;
+    
+    img {
+      background: yellow;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+  margin: 0 auto;
+  width: 800px;
+  background: #eee;
+}
+
+.container:first-child {
+  margin-top: 30px;
+}
+
+.swiper-wrapper {
+  background: blue;
+}
+
+.swiper-slide {
+  background: red;
+  height: 500px;
+}
+
+.swiper-slide img {
+  background: yellow;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=style.css.map */
