@@ -210,11 +210,12 @@ package.json の `dependencies` に追加される。
 `devDependencies` に追加される。  
 
 <br>
+<br>
 
- `npm list` によってパッケージのインストール先の確認をすることができる。  
+ `npm list` によって**パッケージのインストール先**の確認をすることができる。  
 
 #### ローカルインストールの場合
-```rb
+```4D
 // グローバルインストール先の確認
 $ npm list -g | head -1
 
@@ -222,7 +223,7 @@ $ npm list -g | head -1
 $ npm list -g --depth=0
 ```
 #### グローバルインストールの場合
-```rb
+```4D
 // グローバルインストール先の確認
 $ npm list -g | head -1
 
