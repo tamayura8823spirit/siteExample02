@@ -211,6 +211,31 @@ package.json の `dependencies` に追加される。
 
 <br>
 
+## npm list
+ `npm list` によってパッケージのインストール先の確認をすることができる。  
+
+#### ローカルインストールの場合
+```rb
+// グローバルインストール先の確認
+$ npm list -g | head -1
+
+// グローバルインストールされたパッケージの確認
+$ npm list -g --depth=0
+```
+
+<br>
+
+#### グローバルインストールの場合
+```rb
+// グローバルインストール先の確認
+$ npm list -g | head -1
+
+// グローバルインストールされたパッケージの確認
+$ npm list -g --depth=0
+```
+
+<br>
+
 #### dependenciesにjQueryをインストールする
 ```4D
 // --save
