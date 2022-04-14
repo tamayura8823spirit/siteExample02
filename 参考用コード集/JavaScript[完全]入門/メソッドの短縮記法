@@ -1,5 +1,5 @@
 const person = {
-  getFullName() { console.log(this.name[0] + this.name[1]) }
+  getFullName() { console.log( 'Hello, World!' ) }
 }
 
 person.getFullName();
