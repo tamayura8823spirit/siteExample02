@@ -1,5 +1,5 @@
 const person = {
-  getFullName() {console.log(this.name[0] + this.name[1])}
+  getFullName() { console.log(this.name[0] + this.name[1]) }
 }
 
 person.getFullName();
@@ -11,3 +11,4 @@ CodeMafia
 
 【解説】
 getFullName()を定義するときに、functionを使わない短縮記法が使われている
+
