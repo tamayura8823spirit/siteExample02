@@ -1,5 +1,4 @@
 const person = {
-  name: ['Code','Mafia'],
   getFullName() {console.log(this.name[0] + this.name[1])}
 }
 
@@ -10,5 +9,5 @@ CodeMafia
 
 
 
-// 解説
+【解説】
 getFullName()を定義するときに、functionを使わない短縮記法が使われている
