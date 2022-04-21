@@ -14,10 +14,19 @@ class Canvas2DUtility {
 
 
 util = new Canvas2DUtility(document.body.querySelector('#main_canvas'));
-canvas = util.canvas;
-ctx = util.context;
+canvas = util.canvas;       // 括弧がついていない
+ctx = util.context;         // 括弧がついていない
 
  - - - - -
 
-注目すべきは最後、 getter である canvas() を呼び出すときに、括弧がついていない点である。
+注目すべきは最後、 getter である canvas() を呼び出すときに、括弧がついていない点
+
+上の例文の場合、 
+ - - - - -
+canvas = util.canvasElement;
+ - - - - -
+としてしまってもまったく問題ないが、本書では長すぎる名前や紛らわしい名前ではなく、
+よりシンプルな名前でプロパティにアクセスできるようにするための用途で使っている
+
+
 
