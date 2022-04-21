@@ -1,0 +1,23 @@
+
+
+ - - - - -
+
+class Canvas2DUtility {
+    constructor(canvas){
+        this.canvasElement = canvas;
+        this.context2d = canvas.getContext('2d');
+    }
+
+    get canvas(){return this.canvasElement;}
+    get context(){return this.context2d;}
+}
+
+
+util = new Canvas2DUtility(document.body.querySelector('#main_canvas'));
+canvas = util.canvas;
+ctx = util.context;
+
+ - - - - -
+
+注目すべきは最後、 getter である canvas() を呼び出すときに、括弧がついていない点である。
+
