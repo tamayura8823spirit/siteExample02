@@ -1,0 +1,18 @@
+
+
+class Book {
+    constructor() {
+        this.bookCount = '0冊';
+    }
+
+    set count(number) {
+        this.bookCount = number + '冊';
+    }
+}
+
+let b = new Book();
+b.count = 10;
+console.log(b.bookCount);       // 10冊
+
+
+
