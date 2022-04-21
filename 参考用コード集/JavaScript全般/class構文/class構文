@@ -1,0 +1,19 @@
+
+
+
+class  Robot  {
+    constructor(){
+        this.size  =  100;
+        this.weight  =  10;
+    }
+    walk() {
+        console.log('walking!');
+    }
+}
+
+let  myRobot  =  new  Robot();
+console.log(myRobot.size);      // 100
+myRobot.walk();     // walking
+
+
+
