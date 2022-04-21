@@ -1,6 +1,5 @@
 
 
- - - - - -
 
 let  Robot  =  function(){};        // 関数オブジェクトを最初に作る
 
@@ -18,4 +17,4 @@ let  myRobot  =  new  Robot();
 console.log(myRobot.size);      // 100
 myRobot.walk();     // walking
 
- - - - - -
+
