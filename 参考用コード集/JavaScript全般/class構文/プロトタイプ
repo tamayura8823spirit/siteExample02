@@ -18,3 +18,4 @@ console.log(myRobot.size);      // 100
 myRobot.walk();     // walking
 
 
+
