@@ -2,6 +2,20 @@
 
  - - - - -
 
+let  Robot  =  function(){};        // 関数オブジェクトを最初に作る
 
-let  Robot  =  
+// プロトタイプとしてプロパティを与える
+Robot.prototype.size  =  100;
+Robot.prototype.weight  =  10;
+
+// プロトタイプとしてメソッドを与える
+Robot.prototype.walk  =  function(){
+    console.log('walking!');
+}
+
+// Robot オブジェクトのプロトタイプを持つ新しいインスタンスを作る
+let  myRobot  =  new  Robot();
+console.log(myRobot.size);      // 100
+myRobot.walk();     // walking
+
  - - - - -
