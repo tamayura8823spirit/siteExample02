@@ -12,8 +12,9 @@
         if ($(".js_glovalNav_item").hasClass('js_fadeUp') == false) {
           // フェードアップさせる
           $(".js_glovalNav_item").addClass('js_fadeUp');
-          // ループ文で ".js_delayTime" に "transition-delay" を設定
+          // ナビゲーションアイテムの数だけループ文で "transition-delay" を設定
           for (i = 0; i < 9; i++) {
+            // 0.05秒刻みでずらす
             d = .1 + (i / 20);
             $(".js_delayTime" + (i + 1)).css('transition-delay', d + 's');
           }
