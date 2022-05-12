@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <div class="bl_hamburger js_hamburger"><span></span><span></span><span></span></div>
+  <nav class="bl_glovalNav js_glovalNav">
+    <ul class="bl_glovalNav_list">
+      <!-- 遅延を設定するための ".js_delayTime" をつける -->
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime1">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime2">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime3">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime4">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime5">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime6">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime7">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime8">順番に表示 ふわっ</li>
+      <li class="bl_glovalNav_item js_glovalNav_item js_delayTime9">順番に表示 ふわっ</li>
+    </ul>
+  </nav>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+
+    $(function () {
+
+      $(".js_hamburger").click(function () {
+        $(".js_hamburger, .js_glovalNav").toggleClass('show');
+        // 特定のクラスを持っていない場合の処理
+        if ($(".js_glovalNav_item").hasClass('js_fadeUp') == false) {
+          // フェードアップさせる
+          $(".js_glovalNav_item").addClass('js_fadeUp');
+          // ループ文で ".js_delayTime" に "transition-delay" を設定
+          for (i = 0; i < 9; i++) {
+            d = .1 + (i / 20);
+            $(".js_delayTime" + (i + 1)).css('transition-delay', d + 's');
+          }
+          // 特定のクラスを持っている場合の処理
+        } else if ($(".js_glovalNav_item").hasClass('js_fadeUp')) {
+          $(".js_glovalNav_item").removeClass('js_fadeUp');
+          for (i = 0; i < 9; i++) {
+            d = .1 + (i / 20);
+            $(".js_delayTime" + (9 - i)).css('transition-delay', d + 's');
+          }
+        }
+      });
+
+    });
+
+  </script>
+</body>
+
+
+</html>
