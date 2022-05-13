@@ -5,13 +5,15 @@
 
 ```JavaScript
     $(function () {
+      // JSが使えない環境のための処理
+      $(".js_glovalNav_item").css({'opacity':'0', 'transform':'translateY(20px)'});
 
       $(".js_hamburger").click(function () {
         $(".js_hamburger, .js_glovalNav").toggleClass('show');
         // 特定のクラスを持っていない場合の処理
-        if ($(".js_glovalNav_item").hasClass('js_fadeUp') == false) {
+        if ($(".js_glovalNav_item").hasClass('is_fadeUp') == false) {
           // フェードアップさせる
-          $(".js_glovalNav_item").addClass('js_fadeUp');
+          $(".js_glovalNav_item").addClass('is_fadeUp');
           // ナビゲーションアイテムの数だけループ文で "transition-delay" を設定
           for (i = 0; i < 9; i++) {
             // 0.05秒刻みでずらす
@@ -19,8 +21,8 @@
             $(".js_delayTime" + (i + 1)).css('transition-delay', d + 's');
           }
           // 特定のクラスを持っている場合の処理
-        } else if ($(".js_glovalNav_item").hasClass('js_fadeUp')) {
-          $(".js_glovalNav_item").removeClass('js_fadeUp');
+        } else if ($(".js_glovalNav_item").hasClass('is_fadeUp')) {
+          $(".js_glovalNav_item").removeClass('is_fadeUp');
           for (i = 0; i < 9; i++) {
             d = .1 + (i / 20);
             $(".js_delayTime" + (9 - i)).css('transition-delay', d + 's');
@@ -131,18 +133,18 @@
 
 // フェードアップさせるナビゲーションアイテム
 .bl_glovalNav_item {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: transform .25s ease-out, opacity .25s ease-out; /*遷移の設定*/
   
-  &.js_fadeUp {
-    opacity: 1;
-    transform: translateY(0);
+  &.is_fadeUp {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
   }
   
-  &.js_fadeDown {
-    opacity: 0;
-    transform: translateY(20px);
+  &.is_fadeDown {
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
   }
 }
 
