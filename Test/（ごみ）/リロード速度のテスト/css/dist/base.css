@@ -1,0 +1,161 @@
+@charset "UTF-8";
+body {
+  position: relative;
+  background-color: #ccc;
+}
+
+.box {
+  margin: 150px auto;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+  background-color: red;
+}
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999999;
+  text-align: center;
+  color: #fff;
+}
+#splash-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-12%, -50%);
+  display: flex;
+  align-items: center;
+  transition: transform 0.8s ease-in-out, opacity 1s;
+  transition-delay: 0.5s;
+}
+#splash-logo-mark {
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+  transform: translateY(20%);
+}
+#splash-logo-title {
+  opacity: 0;
+  transition: 1.7s;
+  transition-delay: 1.5s;
+}
+#splash-logo.fade-in {
+  transform: translate(-50%, -50%);
+}
+#splash-logo.fade-in #splash-logo-mark {
+  opacity: 1;
+  transform: translateY(0);
+}
+#splash-logo.fade-in #splash-logo-title {
+  opacity: 1;
+}
+#splash-logo.slide-up {
+  opacity: 0;
+  transform: translate(-50%, -80%);
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+/*画面遷移アニメーション*/
+.splashbg {
+  display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg {
+  display: block;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+  background-color: #ccc; /*伸びる背景色の設定*/
+  -webkit-animation-name: PageAnime;
+          animation-name: PageAnime;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes PageAnime {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  50.001% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes PageAnime {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  50.001% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+/*画面遷移の後現れるコンテンツ設定*/
+#container {
+  opacity: 0; /*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container {
+  -webkit-animation-name: PageAnimeAppear;
+          animation-name: PageAnimeAppear;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=base.css.map */
