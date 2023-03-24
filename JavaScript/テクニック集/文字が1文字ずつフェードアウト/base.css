@@ -1,0 +1,89 @@
+.box {
+    margin: 150px auto 1000px;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    background-color: red;
+  }
+  .box p {
+    font-size: 70px;
+  }
+  
+  .box {
+    margin: 200px auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #animation-container span {
+    font-size: 3.7em;
+  }
+  #animation-container.inview span {
+    -webkit-animation-name: test;
+            animation-name: test;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-timing-function: cubic-bezier(0.57, -0.1, 0.25, 1);
+            animation-timing-function: cubic-bezier(0.57, -0.1, 0.25, 1);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    display: inline-block;
+  }
+  #animation-container.inview span:nth-child(1) {
+    -webkit-animation-delay: 0.06s;
+            animation-delay: 0.06s;
+  }
+  #animation-container.inview span:nth-child(2) {
+    -webkit-animation-delay: 0.12s;
+            animation-delay: 0.12s;
+  }
+  #animation-container.inview span:nth-child(3) {
+    -webkit-animation-delay: 0.18s;
+            animation-delay: 0.18s;
+  }
+  #animation-container.inview span:nth-child(4) {
+    -webkit-animation-delay: 0.24s;
+            animation-delay: 0.24s;
+  }
+  #animation-container.inview span:nth-child(5) {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  #animation-container.inview span:nth-child(6) {
+    -webkit-animation-delay: 0.36s;
+            animation-delay: 0.36s;
+  }
+  #animation-container.inview span:nth-child(7) {
+    -webkit-animation-delay: 0.42s;
+            animation-delay: 0.42s;
+  }
+  #animation-container.inview span:nth-child(8) {
+    -webkit-animation-delay: 0.48s;
+            animation-delay: 0.48s;
+  }
+  #animation-container.inview span:nth-child(9) {
+    -webkit-animation-delay: 0.54s;
+            animation-delay: 0.54s;
+  }
+  @-webkit-keyframes test {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(10000px);
+    }
+  }
+  @keyframes test {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(10000px);
+    }
+  }
+  /*# sourceMappingURL=base.css.map */
