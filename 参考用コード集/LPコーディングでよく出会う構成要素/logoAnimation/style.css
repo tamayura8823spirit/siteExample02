@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.box {
+  margin: 200px auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: hidden;
+  position: relative;
+}
+
+/*アニメーション前の指定*/
+#mask {
+  fill: none; /*塗りがない状態*/
+  stroke: #333; /*線の色*/
+}
+/*# sourceMappingURL=style.css.map */
