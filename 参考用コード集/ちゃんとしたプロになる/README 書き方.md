@@ -95,10 +95,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 文中にコードを埋め込みたい時は、`インラインコード`を用います。
 
-半角スペースを２回で  
+半角スペースを２回入れると、  
 改行します。
 
+<br>
+
 ★ これはコメントです。
+
+<br>
 
 <details><summary>折りたたみ</summary>
 
@@ -106,20 +110,26 @@ HTMLの詳細折りたたみ要素を使えます。
 HTMLタグの下には空行が必要です。
 </details>
 
+<br>
 
 :::note info
 目を引く形で補足説明をしたい場合はこうします。 　
 infoは省略可能です。
 :::
 
+<br>
+
 :::note warn
 警告
 :::
+
+<br>
 
 :::note alert
 より強い警告
 :::
 
+<br>
 
 
 
