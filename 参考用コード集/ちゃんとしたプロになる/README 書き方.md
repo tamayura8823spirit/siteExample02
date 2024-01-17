@@ -93,11 +93,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <br>
 
-これは`インラインコード`である
+文中にコードを埋め込みたい時は、`インラインコード`を用います。
 
-これは  
-Br 改行である
+半角スペースを２回で  
+改行します。
 
-★ コメントである
+★ これはコメントです。
+
+<details><summary>折りたたみ</summary>
+
+HTMLの詳細折りたたみ要素を使えます。  
+HTMLタグの下には空行が必要です。
+</details>
+
+
+:::note info
+目を引く形で補足説明をしたい場合はこうします。 　
+infoは省略可能です。
+:::
+
+:::note warn
+警告
+:::
+
+:::note alert
+より強い警告
+:::
+
+
 
 
