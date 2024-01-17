@@ -112,14 +112,14 @@ HTMLタグの下には空行が必要です。
 
 <br>
 
-:::note info
+::: note info
 目を引く形で補足説明をしたい場合はこうします。
 infoは省略可能です。
 :::
 
 <br>
 
-:::note warn
+::: note warn
 警告
 :::
 
